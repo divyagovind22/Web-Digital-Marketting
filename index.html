@@ -1,0 +1,1042 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebTech & E-Commerce | Learning Portal</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    color:#25334a;
+    background:#f7f9fc;
+    line-height:1.7;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+header{
+    background:white;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 3px 15px rgba(0,0,0,.06);
+}
+
+.navbar{
+    min-height:75px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.logo{
+    font-size:23px;
+    font-weight:800;
+    color:#174e8c;
+}
+
+.logo span{
+    color:#f39b42;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:28px;
+    list-style:none;
+}
+
+.nav-links a{
+    font-size:14px;
+    font-weight:500;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#f39b42;
+}
+
+.menu-btn{
+    display:none;
+    font-size:24px;
+    cursor:pointer;
+    color:#174e8c;
+}
+
+/* HERO */
+
+.hero{
+    padding:95px 0;
+    background:linear-gradient(120deg,#eaf3ff,#fff5e9);
+}
+
+.hero-content{
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    align-items:center;
+    gap:50px;
+}
+
+.tag{
+    display:inline-block;
+    background:#dcecff;
+    color:#15569a;
+    padding:8px 17px;
+    border-radius:30px;
+    font-size:12px;
+    font-weight:700;
+    margin-bottom:22px;
+}
+
+.hero h1{
+    font-size:48px;
+    line-height:1.25;
+    margin-bottom:20px;
+    color:#172e4b;
+}
+
+.hero h1 span{
+    color:#e58b36;
+}
+
+.hero p{
+    color:#65748a;
+    font-size:15px;
+    max-width:620px;
+    margin-bottom:28px;
+}
+
+.btn{
+    display:inline-block;
+    padding:13px 25px;
+    background:#175b9e;
+    color:white;
+    border-radius:7px;
+    font-size:14px;
+    font-weight:600;
+    margin:5px 8px 5px 0;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#e58b36;
+    transform:translateY(-3px);
+}
+
+.btn-outline{
+    background:transparent;
+    color:#175b9e;
+    border:1px solid #175b9e;
+}
+
+.btn-outline:hover{
+    color:white;
+}
+
+.hero-card{
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 15px 40px rgba(35,72,110,.1);
+}
+
+.hero-card h3{
+    color:#175b9e;
+    margin-bottom:20px;
+}
+
+.hero-card .step{
+    display:flex;
+    gap:15px;
+    align-items:center;
+    margin:18px 0;
+}
+
+.step-icon{
+    width:43px;
+    height:43px;
+    display:grid;
+    place-items:center;
+    background:#eaf3ff;
+    color:#175b9e;
+    border-radius:12px;
+}
+
+.step p{
+    margin:0;
+    font-weight:600;
+    color:#34445c;
+}
+
+/* COMMON SECTION */
+
+section{
+    padding:75px 0;
+}
+
+.section-heading{
+    text-align:center;
+    max-width:750px;
+    margin:0 auto 45px;
+}
+
+.section-heading small{
+    color:#e58b36;
+    font-weight:700;
+    letter-spacing:2px;
+}
+
+.section-heading h2{
+    font-size:32px;
+    color:#1b3553;
+    margin:10px 0;
+}
+
+.section-heading p{
+    font-size:14px;
+    color:#718096;
+}
+
+/* LEARNING PATH */
+
+.path{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.path-card{
+    padding:25px 18px;
+    text-align:center;
+    background:white;
+    border-radius:12px;
+    box-shadow:0 5px 20px rgba(0,0,0,.04);
+    border-bottom:3px solid #e7a14f;
+}
+
+.path-card i{
+    font-size:27px;
+    color:#175b9e;
+    margin-bottom:12px;
+}
+
+.path-card h3{
+    font-size:15px;
+}
+
+.path-card p{
+    font-size:12px;
+    color:#7c8999;
+}
+
+/* MODULES */
+
+.modules-section{
+    background:#eef3f9;
+}
+
+.modules{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.module-card{
+    background:white;
+    border-radius:14px;
+    overflow:hidden;
+    padding:28px;
+    transition:.3s;
+    border:1px solid #edf0f5;
+}
+
+.module-card:hover{
+    transform:translateY(-7px);
+    box-shadow:0 12px 30px rgba(0,0,0,.09);
+}
+
+.module-number{
+    display:inline-block;
+    padding:7px 14px;
+    background:#e8f2ff;
+    color:#175b9e;
+    font-size:13px;
+    font-weight:700;
+    border-radius:6px;
+    margin-bottom:18px;
+}
+
+.module-card h4{
+    color:#e58b36;
+    font-size:11px;
+    letter-spacing:1.5px;
+    margin-bottom:8px;
+}
+
+.module-card h3{
+    font-size:19px;
+    line-height:1.4;
+    margin-bottom:12px;
+    color:#1d3552;
+}
+
+.module-card p{
+    font-size:13px;
+    color:#778396;
+    min-height:75px;
+}
+
+.module-link{
+    display:inline-block;
+    margin-top:20px;
+    color:#175b9e;
+    font-weight:700;
+    font-size:13px;
+}
+
+.module-link:hover{
+    color:#e58b36;
+}
+
+/* PRACTICE */
+
+.practice{
+    background:#fff;
+}
+
+.practice-box{
+    background:linear-gradient(120deg,#174e8c,#2877bd);
+    padding:40px;
+    border-radius:18px;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px;
+}
+
+.practice-box h3{
+    font-size:25px;
+    margin-bottom:10px;
+}
+
+.practice-box p{
+    font-size:14px;
+    color:#e0edff;
+}
+
+.practice-box .btn{
+    background:#f2a04a;
+    color:#172e4b;
+    white-space:nowrap;
+}
+
+/* LEARNING FLOW */
+
+.flow{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:22px;
+}
+
+.flow-card{
+    text-align:center;
+    padding:25px 15px;
+}
+
+.flow-card .number{
+    height:55px;
+    width:55px;
+    display:grid;
+    place-items:center;
+    border-radius:50%;
+    background:#eaf3ff;
+    color:#175b9e;
+    font-weight:800;
+    font-size:20px;
+    margin:0 auto 18px;
+}
+
+.flow-card h3{
+    font-size:17px;
+    margin-bottom:8px;
+}
+
+.flow-card p{
+    font-size:13px;
+    color:#7b8796;
+}
+
+/* CAPSTONE */
+
+.capstone{
+    background:#eef3f9;
+}
+
+.capstone-box{
+    background:white;
+    padding:40px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.capstone-box h2{
+    font-size:29px;
+    margin-bottom:12px;
+}
+
+.capstone-box p{
+    color:#778396;
+    font-size:14px;
+    max-width:700px;
+    margin:0 auto 30px;
+}
+
+.project-steps{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    margin:30px 0;
+}
+
+.project-step{
+    background:#edf4fc;
+    padding:15px 10px;
+    border-radius:8px;
+    font-weight:600;
+    font-size:13px;
+    color:#175b9e;
+}
+
+/* RESOURCES */
+
+.resources{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.resource-card{
+    background:white;
+    padding:25px;
+    border:1px solid #edf0f5;
+    border-radius:12px;
+    transition:.3s;
+}
+
+.resource-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,.07);
+}
+
+.resource-card i{
+    font-size:30px;
+    color:#175b9e;
+    margin-bottom:15px;
+}
+
+.resource-card h3{
+    font-size:17px;
+    margin-bottom:10px;
+}
+
+.resource-card p{
+    font-size:13px;
+    color:#788597;
+    min-height:65px;
+}
+
+.resource-card a{
+    display:inline-block;
+    color:#175b9e;
+    font-weight:700;
+    font-size:13px;
+    margin-top:15px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#142b46;
+    color:white;
+    padding:50px 0 20px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:40px;
+    margin-bottom:35px;
+}
+
+footer h3{
+    margin-bottom:15px;
+    color:#f3a14b;
+}
+
+footer p{
+    color:#c3d0df;
+    font-size:13px;
+}
+
+footer ul{
+    list-style:none;
+}
+
+footer li{
+    margin:9px 0;
+}
+
+footer a{
+    color:#c3d0df;
+    font-size:13px;
+}
+
+footer a:hover{
+    color:#f3a14b;
+}
+
+.copyright{
+    border-top:1px solid #354960;
+    padding-top:20px;
+    text-align:center;
+    font-size:12px;
+    color:#b4c2d1;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .hero-content{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:39px;
+    }
+
+    .modules{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .resources{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .path,.flow{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:600px){
+
+    .navbar{
+        min-height:65px;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .nav-links{
+        display:none;
+        position:absolute;
+        top:65px;
+        left:0;
+        width:100%;
+        background:white;
+        flex-direction:column;
+        padding:20px;
+        gap:18px;
+        box-shadow:0 8px 15px rgba(0,0,0,.08);
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .hero{
+        padding:60px 0;
+    }
+
+    .hero h1{
+        font-size:32px;
+    }
+
+    .hero-card{
+        padding:25px;
+    }
+
+    section{
+        padding:55px 0;
+    }
+
+    .section-heading h2{
+        font-size:25px;
+    }
+
+    .modules,.resources,.path,.flow{
+        grid-template-columns:1fr;
+    }
+
+    .module-card p,.resource-card p{
+        min-height:auto;
+    }
+
+    .practice-box{
+        flex-direction:column;
+        align-items:flex-start;
+        padding:28px;
+    }
+
+    .project-steps{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+        gap:25px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<header>
+<div class="container navbar">
+
+<a href="#home" class="logo">
+<i class="fas fa-laptop-code"></i> WebTech <span>& E-Commerce</span>
+</a>
+
+<i class="fas fa-bars menu-btn" onclick="toggleMenu()"></i>
+
+<ul class="nav-links" id="navLinks">
+<li><a href="#home" onclick="closeMenu()">Home</a></li>
+<li><a href="#modules" onclick="closeMenu()">Modules</a></li>
+<li><a href="#learning-flow" onclick="closeMenu()">How It Works</a></li>
+<li><a href="#capstone" onclick="closeMenu()">Capstone</a></li>
+<li><a href="#resources" onclick="closeMenu()">Resources</a></li>
+</ul>
+
+</div>
+</header>
+
+<!-- HERO SECTION -->
+
+<section class="hero" id="home">
+<div class="container hero-content">
+
+<div>
+<span class="tag">DIGITAL MARKETING STUDENTS</span>
+
+<h1>Learn How Websites <span>Work, Sell & Get Found.</span></h1>
+
+<p>
+A practical learning portal for understanding websites, e-commerce,
+AI content and SEO — without turning the course into a programming class.
+</p>
+
+<a href="#modules" class="btn">Start Learning <i class="fas fa-arrow-right"></i></a>
+
+<a href="#learning-flow" class="btn btn-outline">How It Works</a>
+
+</div>
+
+<div class="hero-card">
+<h3><i class="fas fa-graduation-cap"></i> Learn → See → Do → Submit</h3>
+
+<div class="step">
+<div class="step-icon"><i class="fas fa-book-open"></i></div>
+<p>Learn the concepts</p>
+</div>
+
+<div class="step">
+<div class="step-icon"><i class="fas fa-eye"></i></div>
+<p>See real demonstrations</p>
+</div>
+
+<div class="step">
+<div class="step-icon"><i class="fas fa-laptop"></i></div>
+<p>Do practical activities</p>
+</div>
+
+<div class="step">
+<div class="step-icon"><i class="fas fa-file-circle-check"></i></div>
+<p>Submit your assignments</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- LEARNING PATH -->
+
+<section>
+<div class="container">
+
+<div class="section-heading">
+<small>YOUR LEARNING PATH</small>
+<h2>Build Your Digital Skills</h2>
+<p>Explore the essential skills required to create, manage and optimize websites.</p>
+</div>
+
+<div class="path">
+
+<div class="path-card">
+<i class="fas fa-layer-group"></i>
+<h3>7 Modules</h3>
+<p>Complete learning journey</p>
+</div>
+
+<div class="path-card">
+<i class="fas fa-globe"></i>
+<h3>Domain & Hosting</h3>
+<p>Website basics</p>
+</div>
+
+<div class="path-card">
+<i class="fas fa-code"></i>
+<h3>CMS & Development</h3>
+<p>WordPress & platforms</p>
+</div>
+
+<div class="path-card">
+<i class="fas fa-sitemap"></i>
+<h3>Website Planning</h3>
+<p>Structure & user journey</p>
+</div>
+
+<div class="path-card">
+<i class="fas fa-cart-shopping"></i>
+<h3>E-Commerce</h3>
+<p>Products & checkout</p>
+</div>
+
+<div class="path-card">
+<i class="fas fa-chart-line"></i>
+<h3>SEO</h3>
+<p>Get found in search</p>
+</div>
+
+<div class="path-card">
+<i class="fas fa-wand-magic-sparkles"></i>
+<h3>AI Content</h3>
+<p>Smart content creation</p>
+</div>
+
+<div class="path-card">
+<i class="fas fa-magnifying-glass-chart"></i>
+<h3>SEO Tools</h3>
+<p>Practical optimization</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- MODULES -->
+
+<section class="modules-section" id="modules">
+<div class="container">
+
+<div class="section-heading">
+<small>COURSE MODULES</small>
+<h2>Your Learning Journey</h2>
+<p>Seven practical modules designed for Digital Marketing students.</p>
+</div>
+
+<div class="modules">
+
+<div class="module-card">
+<span class="module-number">01</span>
+<h4>FOUNDATION</h4>
+<h3>Domain, Hosting & Website Setup</h3>
+<p>Understand domains, URLs, hosting, DNS, SSL and basic website security.</p>
+<a href="module1.html" class="module-link">Explore Module <i class="fas fa-arrow-right"></i></a>
+</div>
+
+<div class="module-card">
+<span class="module-number">02</span>
+<h4>PLATFORMS</h4>
+<h3>CMS vs Custom Development</h3>
+<p>Learn WordPress, Shopify, WooCommerce and when custom development is useful.</p>
+<a href="module2.html" class="module-link">Explore Module <i class="fas fa-arrow-right"></i></a>
+</div>
+
+<div class="module-card">
+<span class="module-number">03</span>
+<h4>PLANNING</h4>
+<h3>Website Structure Planning</h3>
+<p>Plan pages, navigation, CTAs, categories, user journeys and sitemaps.</p>
+<a href="module3.html" class="module-link">Explore Module <i class="fas fa-arrow-right"></i></a>
+</div>
+
+<div class="module-card">
+<span class="module-number">04</span>
+<h4>E-COMMERCE</h4>
+<h3>E-Commerce Application</h3>
+<p>Learn products, categories, inventory, cart, checkout, payments and orders.</p>
+<a href="module4.html" class="module-link">Explore Module <i class="fas fa-arrow-right"></i></a>
+</div>
+
+<div class="module-card">
+<span class="module-number">05</span>
+<h4>AI CONTENT</h4>
+<h3>AI Content Creation</h3>
+<p>Use AI for product descriptions, blogs, landing pages and content planning.</p>
+<a href="module5.html" class="module-link">Explore Module <i class="fas fa-arrow-right"></i></a>
+</div>
+
+<div class="module-card">
+<span class="module-number">06</span>
+<h4>SEO</h4>
+<h3>SEO for Websites & E-Commerce</h3>
+<p>Learn keywords, on-page SEO, technical SEO and e-commerce optimization.</p>
+<a href="module6.html" class="module-link">Explore Module <i class="fas fa-arrow-right"></i></a>
+</div>
+
+<div class="module-card">
+<span class="module-number">07</span>
+<h4>TOOLS</h4>
+<h3>SEO Tools & Platforms</h3>
+<p>Explore Google Search Console, SEO Minion, SEMrush and Ahrefs.</p>
+<a href="module7.html" class="module-link">Explore Module <i class="fas fa-arrow-right"></i></a>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- PRACTICE -->
+
+<section>
+<div class="container">
+
+<div class="practice-box">
+<div>
+<h3>Build Your Own Project</h3>
+<p>Apply everything you learn through the complete capstone project.</p>
+</div>
+<a href="#capstone" class="btn">View Project <i class="fas fa-arrow-right"></i></a>
+</div>
+
+</div>
+</section>
+
+<!-- LEARNING FLOW -->
+
+<section id="learning-flow">
+<div class="container">
+
+<div class="section-heading">
+<small>HOW YOU WILL LEARN</small>
+<h2>Learn Less by Memorizing. Learn More by Doing.</h2>
+<p>Every major topic follows a simple practical learning process.</p>
+</div>
+
+<div class="flow">
+
+<div class="flow-card">
+<div class="number">01</div>
+<h3>Learn</h3>
+<p>Understand the concept using simple Digital Marketing language.</p>
+</div>
+
+<div class="flow-card">
+<div class="number">02</div>
+<h3>See</h3>
+<p>Watch the trainer demonstrate the concept on a real example.</p>
+</div>
+
+<div class="flow-card">
+<div class="number">03</div>
+<h3>Do</h3>
+<p>Repeat the practical task using your own project.</p>
+</div>
+
+<div class="flow-card">
+<div class="number">04</div>
+<h3>Submit</h3>
+<p>Complete a small assignment and demonstrate what you learned.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- CAPSTONE -->
+
+<section class="capstone" id="capstone">
+<div class="container">
+
+<div class="section-heading">
+<small>FINAL PROJECT</small>
+<h2>Build One Complete Website</h2>
+<p>Put everything together by building and optimizing one complete business website from planning to SEO.</p>
+</div>
+
+<div class="capstone-box">
+
+<h2><i class="fas fa-laptop-code"></i> Your Business Website Project</h2>
+
+<p>
+Create a complete business website, add products and AI-generated content,
+publish it online and perform an SEO audit.
+</p>
+
+<div class="project-steps">
+<div class="project-step">01 Business</div>
+<div class="project-step">02 Domain</div>
+<div class="project-step">03 Planning</div>
+<div class="project-step">04 Website</div>
+<div class="project-step">05 E-Commerce</div>
+<div class="project-step">06 AI Content</div>
+<div class="project-step">07 SEO</div>
+<div class="project-step">08 Audit</div>
+</div>
+
+<a href="capstone.html" class="btn">View Project Roadmap <i class="fas fa-arrow-right"></i></a>
+
+</div>
+</div>
+</section>
+
+<!-- RESOURCES -->
+
+<section id="resources">
+<div class="container">
+
+<div class="section-heading">
+<small>RESOURCES</small>
+<h2>Tools & Practical Guides</h2>
+<p>Useful resources to help you build, publish, manage and optimize your website.</p>
+</div>
+
+<div class="resources">
+
+<div class="resource-card">
+<i class="fab fa-wordpress"></i>
+<h3>WordPress Practical Guide</h3>
+<p>Step-by-step guide to setting up, managing and publishing a WordPress website.</p>
+<a href="wordpress-guide.html" target="_blank">Open Guide <i class="fas fa-arrow-up-right-from-square"></i></a>
+</div>
+
+<div class="resource-card">
+<i class="fab fa-github"></i>
+<h3>GitHub Pages</h3>
+<p>Learn how to publish a custom HTML, CSS and JavaScript website.</p>
+<a href="https://docs.github.com/en/pages" target="_blank">Open Guide <i class="fas fa-arrow-up-right-from-square"></i></a>
+</div>
+
+<div class="resource-card">
+<i class="fab fa-google"></i>
+<h3>Google Search Console</h3>
+<p>Inspect URLs, check indexing and analyse search performance.</p>
+<a href="https://search.google.com/search-console" target="_blank">Open Tool <i class="fas fa-arrow-up-right-from-square"></i></a>
+</div>
+
+<div class="resource-card">
+<i class="fas fa-cart-shopping"></i>
+<h3>WooCommerce</h3>
+<p>Learn how to create products, manage orders and build an e-commerce flow.</p>
+<a href="https://woocommerce.com/documentation/" target="_blank">Documentation <i class="fas fa-arrow-up-right-from-square"></i></a>
+</div>
+
+<div class="resource-card">
+<i class="fas fa-magnifying-glass"></i>
+<h3>SEO Minion</h3>
+<p>Analyse on-page SEO elements and identify common page issues.</p>
+<a href="https://seominion.com/" target="_blank">Open Tool <i class="fas fa-arrow-up-right-from-square"></i></a>
+</div>
+
+<div class="resource-card">
+<i class="fas fa-chart-column"></i>
+<h3>SEO Research Tools</h3>
+<p>Explore keywords, competitors and SEO opportunities using professional tools.</p>
+<a href="https://www.semrush.com/" target="_blank">Explore <i class="fas fa-arrow-up-right-from-square"></i></a>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+<div class="container">
+
+<div class="footer-grid">
+
+<div>
+<h3><i class="fas fa-laptop-code"></i> WebTech & E-Commerce</h3>
+<p>A practical learning portal for Digital Marketing students. Learn website development, e-commerce, AI content and SEO through practical activities.</p>
+</div>
+
+<div>
+<h3>Learn</h3>
+<ul>
+<li><a href="#modules">Modules</a></li>
+<li><a href="#learning-flow">How It Works</a></li>
+<li><a href="#capstone">Capstone</a></li>
+<li><a href="#resources">Resources</a></li>
+</ul>
+</div>
+
+<div>
+<h3>Course</h3>
+<ul>
+<li><a href="#modules">Practical Tasks</a></li>
+<li><a href="#modules">Assignments</a></li>
+<li><a href="#modules">Quizzes</a></li>
+<li><a href="#capstone">Final Audit</a></li>
+</ul>
+</div>
+
+</div>
+
+<div class="copyright">
+© 2026 WebTech & E-Commerce Learning Portal. All rights reserved.
+</div>
+
+</div>
+</footer>
+
+<script>
+function toggleMenu(){
+    document.getElementById("navLinks").classList.toggle("active");
+}
+
+function closeMenu(){
+    document.getElementById("navLinks").classList.remove("active");
+}
+</script>
+
+</body>
+</html>

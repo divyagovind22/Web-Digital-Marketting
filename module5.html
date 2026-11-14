@@ -1,0 +1,1293 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 5 - AI Content Creation | WebTech & E-Commerce</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f5f7fb;
+    color:#26344a;
+    line-height:1.7;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:#fff;
+    box-shadow:0 3px 15px rgba(0,0,0,.07);
+    padding:15px 7%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:21px;
+    font-weight:800;
+    color:#173b70;
+}
+
+.logo span{
+    color:#3285e9;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.nav-links a{
+    font-size:13px;
+    font-weight:600;
+    color:#35445a;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#3285e9;
+}
+
+.menu-btn{
+    display:none;
+    font-size:23px;
+    cursor:pointer;
+    color:#173b70;
+}
+
+.container{
+    width:86%;
+    max-width:1200px;
+    margin:auto;
+}
+
+.hero{
+    background:linear-gradient(120deg,#102c54,#174d89,#3285e9);
+    color:white;
+    padding:85px 7%;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    width:350px;
+    height:350px;
+    border:60px solid rgba(255,255,255,.07);
+    border-radius:50%;
+    right:-100px;
+    top:-100px;
+}
+
+.hero-content{
+    max-width:850px;
+    position:relative;
+    z-index:1;
+}
+
+.module-label{
+    display:inline-block;
+    padding:7px 17px;
+    background:rgba(255,255,255,.15);
+    border:1px solid rgba(255,255,255,.3);
+    border-radius:30px;
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:1px;
+    margin-bottom:22px;
+}
+
+.hero h1{
+    font-size:45px;
+    line-height:1.25;
+    margin-bottom:20px;
+}
+
+.hero p{
+    max-width:750px;
+    color:#e2edff;
+    font-size:15px;
+}
+
+.back-link{
+    display:inline-block;
+    margin-bottom:25px;
+    font-size:13px;
+    font-weight:600;
+    color:#dceaff;
+}
+
+.back-link:hover{
+    color:white;
+}
+
+.section{
+    padding:65px 0;
+}
+
+.section-heading{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.section-heading .tag{
+    color:#3285e9;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:2px;
+}
+
+.section-heading h2{
+    font-size:30px;
+    color:#173b70;
+    margin-top:8px;
+}
+
+.section-heading p{
+    color:#718096;
+    font-size:14px;
+    margin-top:8px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:22px;
+}
+
+.card{
+    background:white;
+    padding:27px;
+    border-radius:14px;
+    box-shadow:0 5px 20px rgba(30,60,100,.06);
+    border:1px solid #e9eef6;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 12px 25px rgba(30,60,100,.12);
+}
+
+.card-icon{
+    width:48px;
+    height:48px;
+    border-radius:12px;
+    background:#e9f2ff;
+    color:#2878d0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:21px;
+    margin-bottom:18px;
+}
+
+.card h3{
+    color:#173b70;
+    font-size:17px;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#69778a;
+    font-size:13px;
+}
+
+.concept-box{
+    background:white;
+    border-left:5px solid #3285e9;
+    border-radius:10px;
+    padding:22px 25px;
+    margin-top:25px;
+    box-shadow:0 4px 15px rgba(0,0,0,.04);
+    font-size:14px;
+}
+
+.concept-box strong{
+    color:#173b70;
+}
+
+.highlight{
+    background:#eaf3ff;
+    padding:20px 24px;
+    border-radius:12px;
+    color:#174b86;
+    margin-top:25px;
+    font-size:14px;
+}
+
+.prompt-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+    gap:15px;
+}
+
+.prompt-card{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    border:1px solid #e3ebf6;
+}
+
+.prompt-card h3{
+    color:#2878d0;
+    font-size:16px;
+    margin-bottom:8px;
+}
+
+.prompt-card p{
+    font-size:13px;
+    color:#6d7b8e;
+}
+
+.formula{
+    background:linear-gradient(120deg,#173b70,#3285e9);
+    color:white;
+    padding:25px;
+    text-align:center;
+    border-radius:14px;
+    margin-top:25px;
+}
+
+.formula h3{
+    font-size:18px;
+    margin-bottom:10px;
+}
+
+.formula p{
+    font-size:14px;
+    font-weight:500;
+}
+
+.demo-box{
+    background:white;
+    border-radius:15px;
+    padding:30px;
+    box-shadow:0 5px 20px rgba(30,60,100,.06);
+}
+
+.demo-box h3{
+    color:#173b70;
+    margin-bottom:18px;
+}
+
+.prompt-content{
+    background:#f2f6fc;
+    border:1px solid #dce7f5;
+    padding:22px;
+    border-radius:10px;
+    font-size:14px;
+}
+
+.prompt-content p{
+    margin-bottom:12px;
+}
+
+.prompt-content strong{
+    color:#174b86;
+}
+
+.workflow{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:12px;
+    margin-top:30px;
+}
+
+.workflow-item{
+    background:white;
+    padding:22px 12px;
+    border-radius:13px;
+    text-align:center;
+    border:1px solid #e4ebf5;
+    position:relative;
+}
+
+.workflow-item .number{
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    background:#2878d0;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 12px;
+    font-weight:700;
+}
+
+.workflow-item h3{
+    color:#173b70;
+    font-size:15px;
+    margin-bottom:6px;
+}
+
+.workflow-item p{
+    color:#758196;
+    font-size:12px;
+}
+
+.check-list{
+    list-style:none;
+}
+
+.check-list li{
+    display:flex;
+    gap:12px;
+    margin:13px 0;
+    font-size:14px;
+    color:#5c6b7e;
+}
+
+.check-list i{
+    color:#2587d8;
+    margin-top:5px;
+}
+
+.practical-card{
+    background:white;
+    border-radius:14px;
+    padding:28px;
+    box-shadow:0 5px 20px rgba(30,60,100,.06);
+    border:1px solid #e8edf5;
+    margin-bottom:22px;
+}
+
+.practical-number{
+    display:inline-flex;
+    width:38px;
+    height:38px;
+    align-items:center;
+    justify-content:center;
+    border-radius:10px;
+    background:#e8f2ff;
+    color:#2878d0;
+    font-weight:700;
+    margin-bottom:12px;
+}
+
+.practical-card h3{
+    color:#173b70;
+    font-size:19px;
+    margin-bottom:10px;
+}
+
+.practical-card p,
+.practical-card li{
+    color:#68778b;
+    font-size:13px;
+}
+
+.practical-card ul{
+    padding-left:22px;
+    margin:12px 0;
+}
+
+.deliverable{
+    display:inline-block;
+    background:#eaf7f0;
+    color:#21734b;
+    padding:8px 14px;
+    border-radius:7px;
+    font-size:12px;
+    font-weight:600;
+    margin-top:10px;
+}
+
+.assignment-box{
+    background:white;
+    border-radius:15px;
+    padding:30px;
+    box-shadow:0 5px 20px rgba(30,60,100,.06);
+}
+
+.assignment-box h3{
+    color:#173b70;
+    margin-bottom:15px;
+}
+
+.assignment-box label{
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+    padding:11px 0;
+    border-bottom:1px solid #edf0f5;
+    font-size:14px;
+    color:#59687b;
+    cursor:pointer;
+}
+
+.assignment-box input{
+    margin-top:5px;
+    accent-color:#2878d0;
+}
+
+.quiz-box{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(30,60,100,.06);
+}
+
+.question{
+    margin-bottom:25px;
+    padding-bottom:20px;
+    border-bottom:1px solid #edf0f5;
+}
+
+.question h3{
+    font-size:15px;
+    color:#173b70;
+    margin-bottom:13px;
+}
+
+.option{
+    display:block;
+    padding:9px 13px;
+    border-radius:7px;
+    margin:7px 0;
+    background:#f6f8fc;
+    cursor:pointer;
+    font-size:13px;
+    color:#526176;
+}
+
+.option:hover{
+    background:#eaf2ff;
+}
+
+.option input{
+    margin-right:8px;
+    accent-color:#2878d0;
+}
+
+.quiz-btn{
+    background:#2878d0;
+    color:white;
+    border:0;
+    border-radius:8px;
+    padding:12px 25px;
+    font-family:inherit;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.quiz-btn:hover{
+    background:#173b70;
+}
+
+#quiz-result{
+    margin-top:18px;
+    font-weight:600;
+    color:#21734b;
+    font-size:15px;
+}
+
+.completion{
+    background:linear-gradient(120deg,#102c54,#2878d0);
+    color:white;
+    padding:55px 7%;
+    text-align:center;
+}
+
+.completion h2{
+    font-size:29px;
+    margin:12px 0;
+}
+
+.completion p{
+    color:#e2edff;
+    font-size:14px;
+    max-width:650px;
+    margin:0 auto 25px;
+}
+
+.module-buttons{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.module-buttons a{
+    padding:11px 23px;
+    border-radius:8px;
+    font-size:13px;
+    font-weight:600;
+    background:white;
+    color:#173b70;
+    transition:.3s;
+}
+
+.module-buttons a:hover{
+    background:#dceaff;
+    transform:translateY(-3px);
+}
+
+.footer{
+    background:#10243f;
+    color:#d6dfeb;
+    padding:45px 7% 20px;
+}
+
+.footer-content{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:35px;
+    margin-bottom:30px;
+}
+
+.footer h3{
+    color:white;
+    font-size:16px;
+    margin-bottom:15px;
+}
+
+.footer p,
+.footer a{
+    font-size:12px;
+    color:#b9c8dc;
+}
+
+.footer a{
+    display:block;
+    margin:9px 0;
+}
+
+.footer a:hover{
+    color:white;
+}
+
+.copyright{
+    text-align:center;
+    border-top:1px solid #30435c;
+    padding-top:20px;
+    font-size:11px;
+    color:#9aabc0;
+}
+
+@media(max-width:850px){
+    .nav-links{
+        position:absolute;
+        top:65px;
+        left:0;
+        width:100%;
+        background:white;
+        display:none;
+        flex-direction:column;
+        align-items:flex-start;
+        padding:20px 7%;
+        box-shadow:0 10px 15px rgba(0,0,0,.08);
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .workflow{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .footer-content{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:600px){
+    .hero{
+        padding:65px 7%;
+    }
+
+    .hero h1{
+        font-size:32px;
+    }
+
+    .section{
+        padding:48px 0;
+    }
+
+    .section-heading h2{
+        font-size:24px;
+    }
+
+    .container{
+        width:90%;
+    }
+
+    .workflow{
+        grid-template-columns:1fr;
+    }
+
+    .footer-content{
+        grid-template-columns:1fr;
+    }
+
+    .demo-box,
+    .quiz-box,
+    .assignment-box{
+        padding:20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <a href="index.html" class="logo">
+        <i class="fas fa-laptop-code"></i> WebTech<span> & E-Commerce</span>
+    </a>
+
+    <div class="menu-btn" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="modules.html">Modules</a>
+        <a href="index.html#how-it-works">How It Works</a>
+        <a href="index.html#capstone">Capstone</a>
+        <a href="index.html#resources">Resources</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+    <div class="hero-content">
+
+        <a href="modules.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to Modules
+        </a>
+
+        <br>
+
+        <span class="module-label">MODULE 05 • AI CONTENT</span>
+
+        <h1>AI Content Creation</h1>
+
+        <p>
+            Learn how to use AI as a practical content assistant for websites,
+            e-commerce products, blogs, landing pages and content planning —
+            while keeping human review and fact-checking at every stage.
+        </p>
+
+    </div>
+</header>
+
+<!-- LEARNING OBJECTIVES -->
+<section class="section">
+<div class="container">
+
+    <div class="section-heading">
+        <span class="tag">LEARNING OBJECTIVES</span>
+        <h2>What You Will Learn</h2>
+        <p>By the end of this module, students should be able to use AI to create and improve different types of digital content.</p>
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-pen-nib"></i></div>
+            <h3>AI Copywriting</h3>
+            <p>Use AI to create website copy, product descriptions, landing page content and blog drafts.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-terminal"></i></div>
+            <h3>Prompt Writing</h3>
+            <p>Create clear prompts using role, task, audience, context, tone, constraints and output format.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-calendar-alt"></i></div>
+            <h3>Content Planning</h3>
+            <p>Generate useful blog ideas and a simple 7-day content calendar for a business.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-check-double"></i></div>
+            <h3>Review & Fact-Check</h3>
+            <p>Check AI output for accuracy, relevance, tone and unsupported claims before publishing.</p>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<!-- WHERE CAN AI HELP -->
+<section class="section" style="background:#edf3fa;">
+<div class="container">
+
+    <div class="section-heading">
+        <span class="tag">CONCEPT</span>
+        <h2>Where Can AI Help?</h2>
+        <p>AI can support many parts of a digital marketer's content workflow. The final content should still be reviewed and edited by a human.</p>
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-globe"></i></div>
+            <h3>Website Content</h3>
+            <p>Home page headlines, About sections, service descriptions, FAQs and calls to action.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-box-open"></i></div>
+            <h3>Product Descriptions</h3>
+            <p>Create structured product copy using real product details, audience and desired tone.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-blog"></i></div>
+            <h3>Blog Content</h3>
+            <p>Generate topic ideas, outlines and first drafts that can later be edited and verified.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-bullseye"></i></div>
+            <h3>Landing Pages</h3>
+            <p>Develop headline, supporting copy, benefits and CTA ideas for a campaign or product page.</p>
+        </div>
+
+    </div>
+
+    <div class="highlight">
+        <strong><i class="fas fa-lightbulb"></i> Key idea:</strong>
+        AI is a content assistant. It can help with speed and ideas, but students are responsible for checking the final content before it is published.
+    </div>
+
+</div>
+</section>
+
+<!-- PROMPT WRITING -->
+<section class="section">
+<div class="container">
+
+    <div class="section-heading">
+        <span class="tag">PROMPT WRITING</span>
+        <h2>How to Write a Useful Prompt</h2>
+        <p>A good prompt gives AI enough information to understand exactly what the marketer needs.</p>
+    </div>
+
+    <div class="prompt-grid">
+
+        <div class="prompt-card">
+            <h3><i class="fas fa-user-tie"></i> Role</h3>
+            <p>Tell AI what role or perspective it should use.</p>
+        </div>
+
+        <div class="prompt-card">
+            <h3><i class="fas fa-tasks"></i> Task</h3>
+            <p>Clearly explain what you want AI to create.</p>
+        </div>
+
+        <div class="prompt-card">
+            <h3><i class="fas fa-users"></i> Audience</h3>
+            <p>Describe who will read or use the content.</p>
+        </div>
+
+        <div class="prompt-card">
+            <h3><i class="fas fa-info-circle"></i> Context</h3>
+            <p>Give relevant business, product or campaign information.</p>
+        </div>
+
+        <div class="prompt-card">
+            <h3><i class="fas fa-comment-dots"></i> Tone</h3>
+            <p>Specify the writing style such as natural or professional.</p>
+        </div>
+
+        <div class="prompt-card">
+            <h3><i class="fas fa-ban"></i> Constraints</h3>
+            <p>Set limits such as word count or claims to avoid.</p>
+        </div>
+
+        <div class="prompt-card">
+            <h3><i class="fas fa-file-alt"></i> Output Format</h3>
+            <p>Specify headings, bullets, table, paragraph or another format.</p>
+        </div>
+
+    </div>
+
+    <div class="formula">
+        <h3><i class="fas fa-magic"></i> Prompt Formula</h3>
+        <p>Role + Task + Audience + Context + Tone + Constraints + Output Format</p>
+    </div>
+
+</div>
+</section>
+
+<!-- LIVE DEMO -->
+<section class="section" style="background:#edf3fa;">
+<div class="container">
+
+    <div class="section-heading">
+        <span class="tag">LIVE DEMO</span>
+        <h2>Demo: Women's Cotton Kurti</h2>
+        <p>Use a real product example and show students how detailed instructions can produce more useful output.</p>
+    </div>
+
+    <div class="demo-box">
+
+        <h3><i class="fas fa-robot"></i> Sample AI Prompt</h3>
+
+        <div class="prompt-content">
+
+            <p><strong>Role:</strong> Act as an e-commerce copywriter.</p>
+
+            <p><strong>Task:</strong> Write a product description for a women's cotton kurti.</p>
+
+            <p><strong>Audience:</strong> Women in Kerala aged 20–35.</p>
+
+            <p><strong>Context:</strong> The product is a comfortable cotton kurti suitable for everyday use. Use only the product information provided.</p>
+
+            <p><strong>Tone:</strong> Natural, simple and conversion-focused.</p>
+
+            <p><strong>Constraints:</strong> Do not make unsupported claims. Do not invent product features, certifications, discounts or specifications.</p>
+
+            <p><strong>Output:</strong> Product title, short description, key features and CTA.</p>
+
+        </div>
+
+        <div class="highlight">
+            <strong><i class="fas fa-chalkboard-teacher"></i> Teaching point:</strong>
+            Students should give AI real information about the product instead of asking AI to invent missing facts.
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+<!-- WORKFLOW -->
+<section class="section">
+<div class="container">
+
+    <div class="section-heading">
+        <span class="tag">PRACTICAL WORKFLOW</span>
+        <h2>Generate → Review → Edit → Verify → Publish</h2>
+        <p>Follow this workflow whenever AI is used for content creation.</p>
+    </div>
+
+    <div class="workflow">
+
+        <div class="workflow-item">
+            <div class="number">01</div>
+            <h3>Understand</h3>
+            <p>Know the business, product and content goal.</p>
+        </div>
+
+        <div class="workflow-item">
+            <div class="number">02</div>
+            <h3>Prompt</h3>
+            <p>Give AI clear instructions and context.</p>
+        </div>
+
+        <div class="workflow-item">
+            <div class="number">03</div>
+            <h3>Generate</h3>
+            <p>Create the first content draft.</p>
+        </div>
+
+        <div class="workflow-item">
+            <div class="number">04</div>
+            <h3>Review</h3>
+            <p>Check facts, relevance and tone.</p>
+        </div>
+
+        <div class="workflow-item">
+            <div class="number">05</div>
+            <h3>Publish</h3>
+            <p>Edit and use the final approved version.</p>
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+<!-- QUALITY CHECK -->
+<section class="section" style="background:#edf3fa;">
+<div class="container">
+
+    <div class="section-heading">
+        <span class="tag">QUALITY CHECK</span>
+        <h2>Review AI Output Before Publishing</h2>
+        <p>Students should never treat an AI response as automatically correct.</p>
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-search"></i></div>
+            <h3>Check Facts</h3>
+            <p>Verify prices, specifications, business details, dates and other factual information.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-user-check"></i></div>
+            <h3>Check Audience</h3>
+            <p>Make sure the language matches the target customer's needs.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-volume-up"></i></div>
+            <h3>Check Tone</h3>
+            <p>Remove repetitive, unnatural or overly generic wording.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-edit"></i></div>
+            <h3>Edit Before Publishing</h3>
+            <p>Add real business knowledge and make the content fit the actual website or product.</p>
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+<!-- STUDENT PRACTICAL -->
+<section class="section" id="practical">
+<div class="container">
+
+    <div class="section-heading">
+        <span class="tag">STUDENT PRACTICAL</span>
+        <h2>Use AI on Your Own Project</h2>
+        <p>Continue using the same business/project from Modules 1–4. The goal is to apply AI content creation to the real project.</p>
+    </div>
+
+    <div class="practical-card">
+        <span class="practical-number">01</span>
+        <h3>Create 5 Product Descriptions</h3>
+        <p>Select five products from your e-commerce project and create AI-assisted descriptions.</p>
+        <ul>
+            <li>Use real product information.</li>
+            <li>Define the target audience.</li>
+            <li>Specify tone and output format.</li>
+            <li>Review and edit every result.</li>
+        </ul>
+        <span class="deliverable"><i class="fas fa-file-alt"></i> Deliverable: 5 reviewed product descriptions</span>
+    </div>
+
+    <div class="practical-card">
+        <span class="practical-number">02</span>
+        <h3>Create 2 Blog Ideas</h3>
+        <p>Generate two useful blog topics related to your chosen business.</p>
+        <ul>
+            <li>Blog title/topic.</li>
+            <li>Target audience.</li>
+            <li>Search intent.</li>
+            <li>Short content outline.</li>
+        </ul>
+        <span class="deliverable"><i class="fas fa-file-alt"></i> Deliverable: 2 blog ideas with outlines</span>
+    </div>
+
+    <div class="practical-card">
+        <span class="practical-number">03</span>
+        <h3>Create 1 Landing Page Draft</h3>
+        <p>Create a landing page draft for one product, service or campaign.</p>
+        <ul>
+            <li>Headline.</li>
+            <li>Supporting copy.</li>
+            <li>Benefits.</li>
+            <li>Call to action.</li>
+        </ul>
+        <span class="deliverable"><i class="fas fa-file-alt"></i> Deliverable: 1 edited landing page draft</span>
+    </div>
+
+    <div class="practical-card">
+        <span class="practical-number">04</span>
+        <h3>Create a 7-Day Content Calendar</h3>
+        <p>Use AI to plan one week of content for the chosen business.</p>
+        <ul>
+            <li>Day/date.</li>
+            <li>Content topic.</li>
+            <li>Content format.</li>
+            <li>Short caption or content idea.</li>
+        </ul>
+        <span class="deliverable"><i class="fas fa-calendar-check"></i> Deliverable: 7-day content calendar</span>
+    </div>
+
+</div>
+</section>
+
+<!-- ASSIGNMENT -->
+<section class="section" id="assignment" style="background:#edf3fa;">
+<div class="container">
+
+    <div class="section-heading">
+        <span class="tag">ASSIGNMENT</span>
+        <h2>AI Content Pack</h2>
+        <p>Create a small AI-assisted content pack for the same business used in your project.</p>
+    </div>
+
+    <div class="assignment-box">
+
+        <h3><i class="fas fa-clipboard-list"></i> Submit</h3>
+
+        <label>
+            <input type="checkbox">
+            5 product descriptions.
+        </label>
+
+        <label>
+            <input type="checkbox">
+            2 blog ideas with outlines.
+        </label>
+
+        <label>
+            <input type="checkbox">
+            1 landing page draft.
+        </label>
+
+        <label>
+            <input type="checkbox">
+            7-day content calendar.
+        </label>
+
+        <label>
+            <input type="checkbox">
+            At least 2 prompts used during the work.
+        </label>
+
+        <label>
+            <input type="checkbox">
+            Final edited and fact-checked content.
+        </label>
+
+        <div class="highlight">
+            <strong>Expected outcome:</strong>
+            Students should be able to use AI as a practical content assistant while keeping human review, editing and fact-checking.
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+<!-- QUIZ -->
+<section class="section" id="quiz">
+<div class="container">
+
+    <div class="section-heading">
+        <span class="tag">QUICK QUIZ</span>
+        <h2>Check Your Understanding</h2>
+        <p>Answer the questions before moving to Module 6.</p>
+    </div>
+
+    <div class="quiz-box">
+
+        <form id="quizForm">
+
+            <div class="question">
+                <h3>1. Which combination makes a prompt more useful?</h3>
+
+                <label class="option">
+                    <input type="radio" name="q1" value="a">
+                    Only the word "write"
+                </label>
+
+                <label class="option">
+                    <input type="radio" name="q1" value="b">
+                    Role, task, audience and context
+                </label>
+
+                <label class="option">
+                    <input type="radio" name="q1" value="c">
+                    Only the website URL
+                </label>
+            </div>
+
+            <div class="question">
+                <h3>2. What should you do before publishing AI-generated content?</h3>
+
+                <label class="option">
+                    <input type="radio" name="q2" value="a">
+                    Publish it immediately
+                </label>
+
+                <label class="option">
+                    <input type="radio" name="q2" value="b">
+                    Remove all business information
+                </label>
+
+                <label class="option">
+                    <input type="radio" name="q2" value="c">
+                    Review, edit and verify it
+                </label>
+            </div>
+
+            <div class="question">
+                <h3>3. What should students avoid when creating product content with AI?</h3>
+
+                <label class="option">
+                    <input type="radio" name="q3" value="a">
+                    Giving real product information
+                </label>
+
+                <label class="option">
+                    <input type="radio" name="q3" value="b">
+                    Inventing unsupported product claims
+                </label>
+
+                <label class="option">
+                    <input type="radio" name="q3" value="c">
+                    Defining a target audience
+                </label>
+            </div>
+
+            <button type="button" class="quiz-btn" onclick="checkQuiz()">
+                <i class="fas fa-check-circle"></i> Check Answers
+            </button>
+
+            <button type="reset" class="quiz-btn" style="background:#64748b;margin-left:8px;" onclick="resetQuiz()">
+                Reset
+            </button>
+
+            <div id="quiz-result"></div>
+
+        </form>
+
+    </div>
+
+</div>
+</section>
+
+<!-- MODULE COMPLETE -->
+<section class="completion">
+    <i class="fas fa-award" style="font-size:38px;"></i>
+
+    <h2>Ready for SEO?</h2>
+
+    <p>
+        You have learned how to create AI-assisted content for your project.
+        Next, you will learn how to optimize websites and e-commerce pages for search engines.
+    </p>
+
+    <div class="module-buttons">
+        <a href="module-4.html">
+            <i class="fas fa-arrow-left"></i> Module 4
+        </a>
+
+        <a href="module-6.html">
+            Module 6: SEO <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+<div class="footer-content">
+
+    <div>
+        <h3><i class="fas fa-laptop-code"></i> WebTech & E-Commerce</h3>
+        <p>A practical learning portal for Digital Marketing students.</p>
+        <p style="margin-top:12px;color:#8fb8ef;font-weight:600;">
+            Learn • Build • Optimize
+        </p>
+    </div>
+
+    <div>
+        <h3>Learn</h3>
+        <a href="modules.html">Modules</a>
+        <a href="index.html#how-it-works">How It Works</a>
+        <a href="index.html#capstone">Capstone</a>
+        <a href="index.html#resources">Resources</a>
+    </div>
+
+    <div>
+        <h3>Module 5</h3>
+        <a href="#practical">Practical</a>
+        <a href="#assignment">Assignment</a>
+        <a href="#quiz">Quiz</a>
+    </div>
+
+</div>
+
+<div class="copyright">
+    © 2026 WebTech & E-Commerce Learning Portal. All rights reserved.
+</div>
+</footer>
+
+<script>
+function toggleMenu(){
+    document.getElementById("navLinks").classList.toggle("active");
+}
+
+// Close mobile menu after clicking a navigation link
+document.querySelectorAll(".nav-links a").forEach(function(link){
+    link.addEventListener("click",function(){
+        document.getElementById("navLinks").classList.remove("active");
+    });
+});
+
+// QUIZ
+function checkQuiz(){
+
+    const answers = {
+        q1:"b",
+        q2:"c",
+        q3:"b"
+    };
+
+    let score = 0;
+    let total = Object.keys(answers).length;
+
+    for(let question in answers){
+
+        let selected = document.querySelector(
+            'input[name="' + question + '"]:checked'
+        );
+
+        if(selected && selected.value === answers[question]){
+            score++;
+        }
+    }
+
+    const result = document.getElementById("quiz-result");
+
+    if(score === total){
+        result.style.color = "#21734b";
+        result.innerHTML = "Excellent! You got all " + total + " answers correct. 🎉";
+    }
+    else{
+        result.style.color = "#c06b24";
+        result.innerHTML = "You scored " + score + " out of " + total +
+        ". Review the module and try again.";
+    }
+}
+
+function resetQuiz(){
+    document.getElementById("quiz-result").innerHTML = "";
+}
+</script>
+
+</body>
+</html>

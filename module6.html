@@ -1,0 +1,2092 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 6 - SEO, AEO & GEO | WebTech & E-Commerce</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f5f7fb;
+    color:#26344a;
+    line-height:1.7;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* NAVBAR */
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:#fff;
+    box-shadow:0 3px 15px rgba(0,0,0,.07);
+    padding:15px 7%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:21px;
+    font-weight:800;
+    color:#173b70;
+}
+
+.logo span{
+    color:#3285e9;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.nav-links a{
+    font-size:13px;
+    font-weight:600;
+    color:#35445a;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#3285e9;
+}
+
+.menu-btn{
+    display:none;
+    font-size:23px;
+    cursor:pointer;
+    color:#173b70;
+}
+
+/* HERO */
+.hero{
+    background:linear-gradient(120deg,#102c54,#174d89,#3285e9);
+    color:white;
+    padding:85px 7%;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    width:350px;
+    height:350px;
+    border:60px solid rgba(255,255,255,.07);
+    border-radius:50%;
+    right:-100px;
+    top:-100px;
+}
+
+.hero-content{
+    max-width:850px;
+    position:relative;
+    z-index:1;
+}
+
+.module-label{
+    display:inline-block;
+    padding:7px 17px;
+    background:rgba(255,255,255,.15);
+    border:1px solid rgba(255,255,255,.3);
+    border-radius:30px;
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:1px;
+    margin-bottom:22px;
+}
+
+.hero h1{
+    font-size:43px;
+    line-height:1.3;
+    margin-bottom:20px;
+}
+
+.hero p{
+    max-width:750px;
+    color:#e2edff;
+    font-size:15px;
+}
+
+.back-link{
+    display:inline-block;
+    margin-bottom:25px;
+    font-size:13px;
+    font-weight:600;
+    color:#dceaff;
+}
+
+.back-link:hover{
+    color:white;
+}
+
+/* COMMON */
+.container{
+    width:86%;
+    max-width:1200px;
+    margin:auto;
+}
+
+.section{
+    padding:65px 0;
+}
+
+.section-heading{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.section-heading .tag{
+    color:#3285e9;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:2px;
+}
+
+.section-heading h2{
+    font-size:30px;
+    color:#173b70;
+    margin-top:8px;
+}
+
+.section-heading p{
+    color:#718096;
+    font-size:14px;
+    margin-top:8px;
+}
+
+/* CARDS */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:22px;
+}
+
+.card{
+    background:white;
+    padding:27px;
+    border-radius:14px;
+    box-shadow:0 5px 20px rgba(30,60,100,.06);
+    border:1px solid #e9eef6;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 12px 25px rgba(30,60,100,.12);
+}
+
+.card-icon{
+    width:48px;
+    height:48px;
+    border-radius:12px;
+    background:#e9f2ff;
+    color:#2878d0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:21px;
+    margin-bottom:18px;
+}
+
+.card h3{
+    color:#173b70;
+    font-size:17px;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#69778a;
+    font-size:13px;
+}
+
+/* PROCESS */
+.process-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.process-card{
+    background:white;
+    padding:28px;
+    border-radius:14px;
+    text-align:center;
+    border:1px solid #e6edf6;
+    box-shadow:0 5px 20px rgba(30,60,100,.05);
+}
+
+.process-number{
+    width:45px;
+    height:45px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#2878d0;
+    color:white;
+    border-radius:50%;
+    font-weight:700;
+    margin:0 auto 15px;
+}
+
+.process-card h3{
+    color:#173b70;
+    margin-bottom:8px;
+    font-size:18px;
+}
+
+.process-card p{
+    color:#718096;
+    font-size:13px;
+}
+
+/* SEARCH INTENT */
+.intent-card{
+    background:white;
+    border-radius:14px;
+    padding:25px;
+    border-top:4px solid #3285e9;
+    box-shadow:0 5px 20px rgba(30,60,100,.05);
+}
+
+.intent-card h3{
+    color:#173b70;
+    margin-bottom:10px;
+    font-size:17px;
+}
+
+.intent-card p{
+    color:#6b788a;
+    font-size:13px;
+}
+
+.example{
+    display:block;
+    background:#edf4ff;
+    padding:12px;
+    margin-top:15px;
+    border-radius:8px;
+    color:#205a9a;
+    font-size:13px;
+    font-weight:600;
+}
+
+/* HIGHLIGHT */
+.highlight{
+    background:#eaf3ff;
+    padding:20px 24px;
+    border-radius:12px;
+    color:#174b86;
+    margin-top:25px;
+    font-size:14px;
+}
+
+/* DEMO */
+.demo-box{
+    background:white;
+    border-radius:15px;
+    padding:30px;
+    box-shadow:0 5px 20px rgba(30,60,100,.06);
+}
+
+.demo-box h3{
+    color:#173b70;
+    margin-bottom:20px;
+}
+
+.seo-example{
+    background:#f3f7fd;
+    border:1px solid #e1e9f4;
+    border-radius:12px;
+    padding:22px;
+}
+
+.seo-row{
+    padding:12px 0;
+    border-bottom:1px solid #dce5f0;
+    font-size:14px;
+}
+
+.seo-row:last-child{
+    border-bottom:none;
+}
+
+.seo-row strong{
+    color:#174b86;
+    display:block;
+    margin-bottom:4px;
+}
+
+.seo-row span{
+    color:#5f6f83;
+}
+
+/* TECHNICAL SEO */
+.technical-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:18px;
+}
+
+.technical-card{
+    background:white;
+    padding:23px;
+    border-radius:12px;
+    border:1px solid #e6edf6;
+    box-shadow:0 4px 15px rgba(30,60,100,.04);
+}
+
+.technical-card h3{
+    color:#173b70;
+    font-size:16px;
+    margin-bottom:8px;
+}
+
+.technical-card h3 i{
+    color:#3285e9;
+    margin-right:8px;
+}
+
+.technical-card p{
+    color:#718096;
+    font-size:13px;
+}
+
+/* AEO AND GEO */
+.info-card{
+    background:white;
+    padding:28px;
+    border-radius:14px;
+    box-shadow:0 5px 20px rgba(30,60,100,.06);
+    border:1px solid #e6edf6;
+    margin-bottom:22px;
+}
+
+.info-card h3{
+    color:#173b70;
+    font-size:19px;
+    margin-bottom:12px;
+}
+
+.info-card p{
+    color:#68778b;
+    font-size:14px;
+    margin-bottom:12px;
+}
+
+.info-card ul,
+.info-card ol{
+    padding-left:23px;
+    color:#68778b;
+    font-size:13px;
+}
+
+.info-card li{
+    margin-bottom:9px;
+}
+
+.info-card h4{
+    color:#2878d0;
+    margin:18px 0 10px;
+}
+
+.info-icon{
+    font-size:28px;
+    color:#3285e9;
+    margin-bottom:12px;
+}
+
+.answer-example{
+    background:#f0f6ff;
+    border-left:4px solid #3285e9;
+    padding:20px;
+    border-radius:8px;
+    margin-top:15px;
+}
+
+.answer-example h4{
+    color:#173b70;
+    margin-bottom:8px;
+}
+
+.answer-example p{
+    color:#526176;
+    font-size:13px;
+    margin:0;
+}
+
+/* COMPARISON TABLE */
+.table-wrapper{
+    overflow-x:auto;
+    background:white;
+    padding:15px;
+    border-radius:14px;
+    box-shadow:0 5px 20px rgba(30,60,100,.06);
+}
+
+.comparison-table{
+    width:100%;
+    min-width:650px;
+    border-collapse:collapse;
+    text-align:left;
+}
+
+.comparison-table th{
+    background:#173b70;
+    color:white;
+    padding:16px;
+    font-size:14px;
+}
+
+.comparison-table td{
+    padding:15px;
+    border-bottom:1px solid #e6edf6;
+    color:#5f6f83;
+    font-size:13px;
+    vertical-align:top;
+}
+
+.comparison-table tr:nth-child(even){
+    background:#f5f8fd;
+}
+
+/* PRACTICAL */
+.practical-card{
+    background:white;
+    border-radius:14px;
+    padding:28px;
+    box-shadow:0 5px 20px rgba(30,60,100,.06);
+    border:1px solid #e8edf5;
+    margin-bottom:22px;
+}
+
+.practical-number{
+    display:inline-flex;
+    width:38px;
+    height:38px;
+    align-items:center;
+    justify-content:center;
+    border-radius:10px;
+    background:#e8f2ff;
+    color:#2878d0;
+    font-weight:700;
+    margin-bottom:12px;
+}
+
+.practical-card h3{
+    color:#173b70;
+    font-size:19px;
+    margin-bottom:10px;
+}
+
+.practical-card p,
+.practical-card li{
+    color:#68778b;
+    font-size:13px;
+}
+
+.practical-card ul{
+    padding-left:22px;
+    margin:12px 0;
+}
+
+.deliverable{
+    display:inline-block;
+    background:#eaf7f0;
+    color:#21734b;
+    padding:8px 14px;
+    border-radius:7px;
+    font-size:12px;
+    font-weight:600;
+    margin-top:10px;
+}
+
+/* ASSIGNMENT */
+.assignment-box{
+    background:white;
+    border-radius:15px;
+    padding:30px;
+    box-shadow:0 5px 20px rgba(30,60,100,.06);
+}
+
+.assignment-box h3{
+    color:#173b70;
+    margin-bottom:15px;
+}
+
+.assignment-box label{
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+    padding:11px 0;
+    border-bottom:1px solid #edf0f5;
+    font-size:14px;
+    color:#59687b;
+    cursor:pointer;
+}
+
+.assignment-box input{
+    margin-top:5px;
+    accent-color:#2878d0;
+}
+
+/* QUIZ */
+.quiz-box{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(30,60,100,.06);
+}
+
+.question{
+    margin-bottom:25px;
+    padding-bottom:20px;
+    border-bottom:1px solid #edf0f5;
+}
+
+.question h3{
+    font-size:15px;
+    color:#173b70;
+    margin-bottom:13px;
+}
+
+.option{
+    display:block;
+    padding:9px 13px;
+    border-radius:7px;
+    margin:7px 0;
+    background:#f6f8fc;
+    cursor:pointer;
+    font-size:13px;
+    color:#526176;
+}
+
+.option:hover{
+    background:#eaf2ff;
+}
+
+.option input{
+    margin-right:8px;
+    accent-color:#2878d0;
+}
+
+.quiz-btn{
+    background:#2878d0;
+    color:white;
+    border:0;
+    border-radius:8px;
+    padding:12px 25px;
+    font-family:inherit;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.quiz-btn:hover{
+    background:#173b70;
+}
+
+#quiz-result{
+    margin-top:18px;
+    font-weight:600;
+    font-size:15px;
+}
+
+/* COMPLETION */
+.completion{
+    background:linear-gradient(120deg,#102c54,#2878d0);
+    color:white;
+    padding:55px 7%;
+    text-align:center;
+}
+
+.completion h2{
+    font-size:29px;
+    margin:12px 0;
+}
+
+.completion p{
+    color:#e2edff;
+    font-size:14px;
+    max-width:700px;
+    margin:0 auto 25px;
+}
+
+.module-buttons{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.module-buttons a{
+    padding:11px 23px;
+    border-radius:8px;
+    font-size:13px;
+    font-weight:600;
+    background:white;
+    color:#173b70;
+    transition:.3s;
+}
+
+.module-buttons a:hover{
+    background:#dceaff;
+    transform:translateY(-3px);
+}
+
+/* FOOTER */
+.footer{
+    background:#10243f;
+    color:#d6dfeb;
+    padding:45px 7% 20px;
+}
+
+.footer-content{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:35px;
+    margin-bottom:30px;
+}
+
+.footer h3{
+    color:white;
+    font-size:16px;
+    margin-bottom:15px;
+}
+
+.footer p,
+.footer a{
+    font-size:12px;
+    color:#b9c8dc;
+}
+
+.footer a{
+    display:block;
+    margin:9px 0;
+}
+
+.footer a:hover{
+    color:white;
+}
+
+.copyright{
+    text-align:center;
+    border-top:1px solid #30435c;
+    padding-top:20px;
+    font-size:11px;
+    color:#9aabc0;
+}
+
+/* RESPONSIVE */
+@media(max-width:850px){
+
+    .nav-links{
+        position:absolute;
+        top:65px;
+        left:0;
+        width:100%;
+        background:white;
+        display:none;
+        flex-direction:column;
+        align-items:flex-start;
+        padding:20px 7%;
+        box-shadow:0 10px 15px rgba(0,0,0,.08);
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .process-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-content{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    .hero{
+        padding:65px 7%;
+    }
+
+    .hero h1{
+        font-size:31px;
+    }
+
+    .section{
+        padding:48px 0;
+    }
+
+    .section-heading h2{
+        font-size:24px;
+    }
+
+    .container{
+        width:90%;
+    }
+
+    .footer-content{
+        grid-template-columns:1fr;
+    }
+
+    .demo-box,
+    .quiz-box,
+    .assignment-box,
+    .info-card{
+        padding:20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+
+    <a href="index.html" class="logo">
+        <i class="fas fa-laptop-code"></i> WebTech<span> & E-Commerce</span>
+    </a>
+
+    <div class="menu-btn" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="modules.html">Modules</a>
+        <a href="index.html#how-it-works">How It Works</a>
+        <a href="index.html#capstone">Capstone</a>
+        <a href="index.html#resources">Resources</a>
+    </div>
+
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+
+    <div class="hero-content">
+
+        <a href="modules.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to Modules
+        </a>
+
+        <br>
+
+        <span class="module-label">MODULE 06 • SEO • AEO • GEO</span>
+
+        <h1>SEO, AEO & GEO for Websites and E-Commerce</h1>
+
+        <p>
+            Learn how search engines discover, understand and rank website pages.
+            Explore Answer Engine Optimization and Generative Engine Optimization
+            to prepare website content for modern search experiences.
+        </p>
+
+    </div>
+
+</header>
+
+<!-- LEARNING OBJECTIVES -->
+<section class="section">
+<div class="container">
+
+    <div class="section-heading">
+        <span class="tag">LEARNING OBJECTIVES</span>
+        <h2>What You Will Learn</h2>
+        <p>By the end of this module, students should be able to understand and apply SEO, AEO and GEO techniques to a website or online store.</p>
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-search"></i></div>
+            <h3>Understand SEO</h3>
+            <p>Understand crawling, indexing, ranking and the role of search intent.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-key"></i></div>
+            <h3>Research Keywords</h3>
+            <p>Identify relevant website, product, location and long-tail keywords.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-file-alt"></i></div>
+            <h3>Apply On-Page SEO</h3>
+            <p>Optimize URLs, titles, headings, content, images, links and meta data.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-cogs"></i></div>
+            <h3>Check Technical SEO</h3>
+            <p>Understand mobile usability, speed, HTTPS, sitemap, robots.txt and indexing.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-comments"></i></div>
+            <h3>Understand AEO</h3>
+            <p>Prepare clear answers for frequently asked questions and answer-focused search experiences.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-robot"></i></div>
+            <h3>Understand GEO</h3>
+            <p>Prepare helpful, accurate and well-structured content for generative AI systems.</p>
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+<!-- SEO FUNDAMENTALS -->
+<section class="section" style="background:#edf3fa;">
+<div class="container">
+
+    <div class="section-heading">
+        <span class="tag">SEO FUNDAMENTALS</span>
+        <h2>How Search Engines Understand a Website</h2>
+        <p>SEO helps search engines discover pages, understand their content and decide which pages are useful for a search.</p>
+    </div>
+
+    <div class="process-grid">
+
+        <div class="process-card">
+            <div class="process-number">01</div>
+            <h3>Crawling</h3>
+            <p>Search engines discover and access website pages.</p>
+        </div>
+
+        <div class="process-card">
+            <div class="process-number">02</div>
+            <h3>Indexing</h3>
+            <p>Search engines process and store information about pages.</p>
+        </div>
+
+        <div class="process-card">
+            <div class="process-number">03</div>
+            <h3>Ranking</h3>
+            <p>Relevant pages may appear in search results for suitable queries.</p>
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+<!-- SEARCH INTENT -->
+<section class="section">
+<div class="container">
+
+    <div class="section-heading">
+        <span class="tag">SEARCH INTENT</span>
+        <h2>Understand What the User Wants</h2>
+        <p>Before selecting a keyword, understand the reason behind the user's search.</p>
+    </div>
+
+    <div class="grid">
+
+        <div class="intent-card">
+            <div class="card-icon"><i class="fas fa-book-open"></i></div>
+            <h3>Informational</h3>
+            <p>The user wants to learn something.</p>
+            <span class="example">"how to choose a website domain"</span>
+        </div>
+
+        <div class="intent-card">
+            <div class="card-icon"><i class="fas fa-balance-scale"></i></div>
+            <h3>Commercial</h3>
+            <p>The user is researching before making a decision.</p>
+            <span class="example">"best website design company Kerala"</span>
+        </div>
+
+        <div class="intent-card">
+            <div class="card-icon"><i class="fas fa-shopping-cart"></i></div>
+            <h3>Transactional</h3>
+            <p>The user is ready to take an action such as buying or booking.</p>
+            <span class="example">"buy cotton kurti online Kerala"</span>
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+<!-- KEYWORD RESEARCH -->
+<section class="section" style="background:#edf3fa;">
+<div class="container">
+
+    <div class="section-heading">
+        <span class="tag">KEYWORD RESEARCH</span>
+        <h2>Choose Keywords with a Purpose</h2>
+        <p>Keywords should match the page topic, audience and search intent.</p>
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-globe"></i></div>
+            <h3>Website Keywords</h3>
+            <p>Keywords describing the main service or website topic.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-box"></i></div>
+            <h3>Product Keywords</h3>
+            <p>Keywords people may use when searching for a specific product.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <h3>Location Keywords</h3>
+            <p>Useful for local businesses targeting a particular city, district or area.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-search-plus"></i></div>
+            <h3>Long-Tail Keywords</h3>
+            <p>More specific search phrases that describe a particular need.</p>
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+<!-- ON PAGE SEO -->
+<section class="section">
+<div class="container">
+
+    <div class="section-heading">
+        <span class="tag">ON-PAGE SEO</span>
+        <h2>Optimize the Page Itself</h2>
+        <p>On-page SEO focuses on elements that can be improved directly on the webpage.</p>
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-link"></i></div>
+            <h3>SEO-Friendly URL</h3>
+            <p>Keep URLs clear, readable and relevant to the page topic.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-heading"></i></div>
+            <h3>Meta Title</h3>
+            <p>Create a clear title that describes the page and its topic.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-align-left"></i></div>
+            <h3>Meta Description</h3>
+            <p>Write a useful description that encourages relevant clicks.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-list"></i></div>
+            <h3>Headings</h3>
+            <p>Use H1, H2 and H3 headings to create a logical page structure.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-file-alt"></i></div>
+            <h3>Helpful Content</h3>
+            <p>Create useful, relevant content that satisfies the user's need.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-image"></i></div>
+            <h3>Images</h3>
+            <p>Compress images and use meaningful alternative text.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-project-diagram"></i></div>
+            <h3>Internal Links</h3>
+            <p>Connect related pages to help users and search engines navigate the site.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-mouse-pointer"></i></div>
+            <h3>CTA</h3>
+            <p>Give visitors a clear next action such as Enquire, Contact, Buy or Book.</p>
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+<!-- LIVE DEMO -->
+<section class="section" style="background:#edf3fa;">
+<div class="container">
+
+    <div class="section-heading">
+        <span class="tag">LIVE DEMO</span>
+        <h2>Example: Optimize One Product Page</h2>
+        <p>Take one product from the student's WooCommerce store and improve its SEO elements.</p>
+    </div>
+
+    <div class="demo-box">
+
+        <h3><i class="fas fa-shopping-bag"></i> Product SEO Example</h3>
+
+        <div class="seo-example">
+
+            <div class="seo-row">
+                <strong>Product:</strong>
+                <span>Women's Cotton Kurti</span>
+            </div>
+
+            <div class="seo-row">
+                <strong>SEO URL:</strong>
+                <span>/womens-cotton-kurti/</span>
+            </div>
+
+            <div class="seo-row">
+                <strong>Meta Title:</strong>
+                <span>Women's Cotton Kurti | Comfortable Everyday Wear</span>
+            </div>
+
+            <div class="seo-row">
+                <strong>Meta Description:</strong>
+                <span>Explore comfortable women's cotton kurtis designed for everyday wear. View styles, sizes and product details.</span>
+            </div>
+
+            <div class="seo-row">
+                <strong>H1:</strong>
+                <span>Women's Cotton Kurti</span>
+            </div>
+
+            <div class="seo-row">
+                <strong>Image Alt:</strong>
+                <span>Women's blue cotton kurti</span>
+            </div>
+
+            <div class="seo-row">
+                <strong>Internal Link:</strong>
+                <span>Link the product to the relevant category page.</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+<!-- TECHNICAL SEO -->
+<section class="section">
+<div class="container">
+
+    <div class="section-heading">
+        <span class="tag">TECHNICAL SEO</span>
+        <h2>Make the Website Search-Friendly</h2>
+        <p>Technical SEO focuses on how a website can be accessed, understood and maintained.</p>
+    </div>
+
+    <div class="technical-grid">
+
+        <div class="technical-card">
+            <h3><i class="fas fa-mobile-alt"></i> Mobile</h3>
+            <p>Check whether important content and navigation work properly on mobile.</p>
+        </div>
+
+        <div class="technical-card">
+            <h3><i class="fas fa-tachometer-alt"></i> Speed</h3>
+            <p>Check loading performance and important Core Web Vitals.</p>
+        </div>
+
+        <div class="technical-card">
+            <h3><i class="fas fa-lock"></i> HTTPS</h3>
+            <p>Ensure the website uses a secure HTTPS connection.</p>
+        </div>
+
+        <div class="technical-card">
+            <h3><i class="fas fa-sitemap"></i> XML Sitemap</h3>
+            <p>Understand how an XML sitemap helps search engines discover URLs.</p>
+        </div>
+
+        <div class="technical-card">
+            <h3><i class="fas fa-robot"></i> robots.txt</h3>
+            <p>Understand how robots.txt can provide crawling instructions.</p>
+        </div>
+
+        <div class="technical-card">
+            <h3><i class="fas fa-copy"></i> Canonical</h3>
+            <p>Understand canonical URLs and their role in duplicate or similar pages.</p>
+        </div>
+
+        <div class="technical-card">
+            <h3><i class="fas fa-unlink"></i> Broken Links</h3>
+            <p>Identify broken links and unnecessary 404 pages.</p>
+        </div>
+
+        <div class="technical-card">
+            <h3><i class="fas fa-database"></i> Indexing</h3>
+            <p>Check whether important pages can be indexed.</p>
+        </div>
+
+        <div class="technical-card">
+            <h3><i class="fas fa-folder-tree"></i> Site Structure</h3>
+            <p>Maintain a logical structure that helps users and search engines.</p>
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+<!-- E-COMMERCE SEO -->
+<section class="section" style="background:#edf3fa;">
+<div class="container">
+
+    <div class="section-heading">
+        <span class="tag">E-COMMERCE SEO</span>
+        <h2>Optimize Online Store Pages</h2>
+        <p>Product and category pages need useful information so customers and search engines can understand what is being sold.</p>
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-tag"></i></div>
+            <h3>Product Title</h3>
+            <p>Use a clear product name that accurately describes the item.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-link"></i></div>
+            <h3>Product URL</h3>
+            <p>Keep the URL readable and related to the product.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-align-left"></i></div>
+            <h3>Product Description</h3>
+            <p>Provide useful, original information instead of thin or copied content.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-images"></i></div>
+            <h3>Product Images</h3>
+            <p>Use suitable image sizes, compression and descriptive alt text.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-th-large"></i></div>
+            <h3>Category Pages</h3>
+            <p>Create useful category pages with clear names and relevant products.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-boxes"></i></div>
+            <h3>Related Products</h3>
+            <p>Connect relevant products and categories through useful internal links.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-copy"></i></div>
+            <h3>Duplicate Content</h3>
+            <p>Avoid unnecessary duplicate or very thin product content.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-filter"></i></div>
+            <h3>Filters & Sorting</h3>
+            <p>Understand how filtering and sorting can create additional URLs that need careful management.</p>
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+<!-- AEO -->
+<section class="section" id="aeo">
+<div class="container">
+
+    <div class="section-heading">
+        <span class="tag">ANSWER ENGINE OPTIMIZATION</span>
+        <h2>AEO - Optimize Content for Answers</h2>
+        <p>Help answer engines understand your content and find direct answers to user questions.</p>
+    </div>
+
+    <div class="info-card">
+
+        <div class="info-icon">
+            <i class="fas fa-comments"></i>
+        </div>
+
+        <h3>What is AEO?</h3>
+
+        <p>
+            AEO stands for Answer Engine Optimization. It is the process of
+            creating and organizing website content so that answer engines
+            can understand the information and potentially present it
+            as an answer to a user's question.
+        </p>
+
+        <p>
+            Instead of searching only with short keywords, users may ask
+            complete questions such as "What is a cotton kurti?" or
+            "How do I choose a website domain?"
+        </p>
+
+        <div class="highlight">
+            <strong>Simple meaning:</strong>
+            SEO helps improve search visibility. AEO focuses on making
+            useful answers easy to find and understand.
+        </div>
+
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+            <div class="card-icon"><i class="fab fa-google"></i></div>
+            <h3>Featured Snippets</h3>
+            <p>Short answers that may appear prominently in search results.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-microphone"></i></div>
+            <h3>Voice Search</h3>
+            <p>Users ask questions using voice assistants and receive spoken answers.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-question-circle"></i></div>
+            <h3>Question-Based Search</h3>
+            <p>Users search using complete questions rather than only keywords.</p>
+        </div>
+
+    </div>
+
+    <div class="info-card" style="margin-top:25px;">
+
+        <h3>How to Optimize Content for AEO</h3>
+
+        <ol>
+            <li>Identify common questions asked by your target audience.</li>
+            <li>Use question-based headings such as What, Why, How and When.</li>
+            <li>Provide clear and direct answers below each question.</li>
+            <li>Use bullet points and numbered lists where appropriate.</li>
+            <li>Create useful FAQ sections.</li>
+            <li>Use suitable structured data where appropriate.</li>
+            <li>Keep the information accurate and updated.</li>
+            <li>Write content in simple language that users can understand.</li>
+        </ol>
+
+    </div>
+
+    <div class="info-card">
+
+        <h3>AEO Live Example: Women's Cotton Kurti</h3>
+
+        <div class="answer-example">
+
+            <h4>Question: What is a cotton kurti?</h4>
+
+            <p>
+                A cotton kurti is a garment made from cotton fabric.
+                It is commonly worn for everyday use and is available
+                in different styles, sizes and designs.
+            </p>
+
+        </div>
+
+        <div class="answer-example">
+
+            <h4>Question: How do you care for a cotton kurti?</h4>
+
+            <p>
+                Follow the washing and care instructions provided on
+                the product label. Check the fabric instructions before washing.
+            </p>
+
+        </div>
+
+        <div class="highlight">
+            <strong>Teaching point:</strong>
+            Use real product information. Do not invent product features,
+            fabric quality, certifications or benefits.
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+<!-- GEO -->
+<section class="section" style="background:#edf3fa;" id="geo">
+<div class="container">
+
+    <div class="section-heading">
+        <span class="tag">GENERATIVE ENGINE OPTIMIZATION</span>
+        <h2>GEO - Optimize Content for Generative AI</h2>
+        <p>Prepare useful and trustworthy website information for generative AI systems.</p>
+    </div>
+
+    <div class="info-card">
+
+        <div class="info-icon">
+            <i class="fas fa-robot"></i>
+        </div>
+
+        <h3>What is GEO?</h3>
+
+        <p>
+            GEO stands for Generative Engine Optimization. It focuses on
+            improving website content so generative AI systems can understand
+            the information and may use or cite it when generating answers.
+        </p>
+
+        <p>
+            Generative AI systems can combine information from different
+            sources to create responses to user questions.
+        </p>
+
+        <div class="highlight">
+            <strong>Simple meaning:</strong>
+            GEO focuses on preparing clear, accurate, useful and trustworthy
+            information that generative AI systems can understand.
+        </div>
+
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-brain"></i></div>
+            <h3>ChatGPT</h3>
+            <p>A generative AI assistant that can answer questions and summarize information.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon"><i class="fab fa-google"></i></div>
+            <h3>Google AI Experiences</h3>
+            <p>AI-powered search experiences that generate responses to user queries.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-globe"></i></div>
+            <h3>Perplexity</h3>
+            <p>An AI answer platform that provides responses with supporting sources.</p>
+        </div>
+
+    </div>
+
+    <div class="info-card" style="margin-top:25px;">
+
+        <h3>How to Improve Content for GEO</h3>
+
+        <ol>
+            <li>Publish original and helpful information.</li>
+            <li>Provide accurate facts and verify important claims.</li>
+            <li>Use clear headings and organized sections.</li>
+            <li>Include relevant examples and explanations.</li>
+            <li>Use statistics only when they are supported by reliable sources.</li>
+            <li>Show author information and relevant experience where appropriate.</li>
+            <li>Keep business name, address and contact information consistent.</li>
+            <li>Update outdated information regularly.</li>
+            <li>Make important website pages accessible to search crawlers.</li>
+            <li>Use descriptive page titles and meaningful internal links.</li>
+        </ol>
+
+    </div>
+
+    <div class="info-card">
+
+        <h3>GEO Live Example: Local Fashion Boutique</h3>
+
+        <div class="answer-example">
+
+            <h4>Website Topic: Choosing Cotton Kurtis for Everyday Wear</h4>
+
+            <p>
+                Create a useful article explaining available fabric details,
+                product sizes, care instructions, designs and verified store
+                information. Organize the content using headings, short
+                explanations and relevant examples.
+            </p>
+
+        </div>
+
+        <div class="highlight">
+            <strong>Goal:</strong>
+            Make the information clear, trustworthy and useful for people.
+            Generative AI systems may reference useful content, but GEO
+            does not guarantee that a website will be mentioned or cited.
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+<!-- SEO AEO GEO COMPARISON -->
+<section class="section" id="comparison">
+<div class="container">
+
+    <div class="section-heading">
+        <span class="tag">UNDERSTAND THE DIFFERENCE</span>
+        <h2>SEO vs AEO vs GEO</h2>
+        <p>All three approaches help improve how online information can be discovered and understood.</p>
+    </div>
+
+    <div class="table-wrapper">
+
+        <table class="comparison-table">
+
+            <thead>
+                <tr>
+                    <th>SEO</th>
+                    <th>AEO</th>
+                    <th>GEO</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>Search Engine Optimization</td>
+                    <td>Answer Engine Optimization</td>
+                    <td>Generative Engine Optimization</td>
+                </tr>
+
+                <tr>
+                    <td>Focuses on search visibility and relevant search results.</td>
+                    <td>Focuses on providing direct answers to user questions.</td>
+                    <td>Focuses on content being understood and potentially referenced by generative AI.</td>
+                </tr>
+
+                <tr>
+                    <td>Keywords, links, technical SEO and helpful content.</td>
+                    <td>Questions, FAQs, concise answers and suitable structured data.</td>
+                    <td>Original content, accuracy, expertise and clear information.</td>
+                </tr>
+
+                <tr>
+                    <td>Traditional search engines such as Google and Bing.</td>
+                    <td>Featured snippets, answer boxes and answer-focused search experiences.</td>
+                    <td>Generative AI and AI-powered search experiences.</td>
+                </tr>
+
+                <tr>
+                    <td>Example: Optimize a product page for "buy cotton kurti".</td>
+                    <td>Example: Answer "What is a cotton kurti?"</td>
+                    <td>Example: Publish a detailed and trustworthy guide about cotton kurtis.</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <div class="highlight">
+        <strong>Remember:</strong>
+        SEO, AEO and GEO are complementary approaches.
+        Creating useful, accurate and well-structured content supports all three.
+        None of these techniques guarantees a search ranking, featured answer
+        or AI citation.
+    </div>
+
+</div>
+</section>
+
+<!-- STUDENT PRACTICAL -->
+<section class="section" id="practical">
+<div class="container">
+
+    <div class="section-heading">
+        <span class="tag">STUDENT PRACTICAL</span>
+        <h2>Optimize Your Own Website</h2>
+        <p>Continue with the same website and e-commerce project used throughout the previous modules.</p>
+    </div>
+
+    <div class="practical-card">
+
+        <span class="practical-number">01</span>
+
+        <h3>Choose One Target Page</h3>
+
+        <p>Select one important page from your website or one product page from your WooCommerce store.</p>
+
+        <ul>
+            <li>Identify the page purpose.</li>
+            <li>Identify the target audience.</li>
+            <li>Identify the main search intent.</li>
+            <li>Select a primary keyword.</li>
+        </ul>
+
+        <span class="deliverable">Deliverable: Page + keyword + search intent</span>
+
+    </div>
+
+    <div class="practical-card">
+
+        <span class="practical-number">02</span>
+
+        <h3>Optimize On-Page SEO</h3>
+
+        <p>Improve the selected page using the on-page SEO checklist.</p>
+
+        <ul>
+            <li>SEO-friendly URL.</li>
+            <li>Meta title and meta description.</li>
+            <li>H1/H2 headings.</li>
+            <li>Image alt text.</li>
+            <li>Internal links.</li>
+        </ul>
+
+        <span class="deliverable">Deliverable: Before/after screenshots</span>
+
+    </div>
+
+    <div class="practical-card">
+
+        <span class="practical-number">03</span>
+
+        <h3>Check Technical SEO</h3>
+
+        <p>Perform a basic technical SEO check on your website.</p>
+
+        <ul>
+            <li>Mobile usability.</li>
+            <li>Page speed.</li>
+            <li>HTTPS.</li>
+            <li>XML sitemap.</li>
+            <li>robots.txt.</li>
+            <li>Broken links.</li>
+        </ul>
+
+        <span class="deliverable">Deliverable: Technical SEO checklist</span>
+
+    </div>
+
+    <div class="practical-card">
+
+        <span class="practical-number">04</span>
+
+        <h3>Optimize One E-Commerce Product</h3>
+
+        <p>Select one WooCommerce product and optimize its SEO elements.</p>
+
+        <ul>
+            <li>Product title and URL.</li>
+            <li>Product description.</li>
+            <li>Image alt text.</li>
+            <li>Meta title and description.</li>
+            <li>Internal links.</li>
+        </ul>
+
+        <span class="deliverable">Deliverable: Optimized product page</span>
+
+    </div>
+
+    <div class="practical-card">
+
+        <span class="practical-number">05</span>
+
+        <h3>Create an FAQ Section for AEO</h3>
+
+        <p>Select one e-commerce product and prepare five common customer questions.</p>
+
+        <ul>
+            <li>Write five relevant questions.</li>
+            <li>Provide short and direct answers.</li>
+            <li>Use question-based headings.</li>
+            <li>Verify that all answers match the actual product information.</li>
+        </ul>
+
+        <span class="deliverable">Deliverable: Five FAQs with answers</span>
+
+    </div>
+
+    <div class="practical-card">
+
+        <span class="practical-number">06</span>
+
+        <h3>Optimize a Blog for AEO</h3>
+
+        <p>Choose a topic related to your website and create an answer-focused blog.</p>
+
+        <ul>
+            <li>Choose a topic based on user questions.</li>
+            <li>Create question-based H2 headings.</li>
+            <li>Write direct answers.</li>
+            <li>Include bullet points and useful examples.</li>
+            <li>Add a relevant FAQ section.</li>
+        </ul>
+
+        <span class="deliverable">Deliverable: Answer-focused blog draft</span>
+
+    </div>
+
+    <div class="practical-card">
+
+        <span class="practical-number">07</span>
+
+        <h3>Improve Content for GEO</h3>
+
+        <p>Prepare a useful article that explains a topic in a clear and trustworthy way.</p>
+
+        <ul>
+            <li>Write original and helpful content.</li>
+            <li>Use clear headings and organized sections.</li>
+            <li>Include relevant examples.</li>
+            <li>Verify facts using reliable sources.</li>
+            <li>Add author or business information where relevant.</li>
+        </ul>
+
+        <span class="deliverable">Deliverable: Structured and fact-checked article</span>
+
+    </div>
+
+    <div class="practical-card">
+
+        <span class="practical-number">08</span>
+
+        <h3>Compare Search and AI Answers</h3>
+
+        <p>Search for the same question using a search engine and a generative AI platform.</p>
+
+        <ul>
+            <li>Choose one question related to your website.</li>
+            <li>Search the question in a search engine.</li>
+            <li>Ask the same question in a generative AI platform.</li>
+            <li>Compare the answers and supporting sources.</li>
+            <li>Identify useful content improvements for your website.</li>
+        </ul>
+
+        <span class="deliverable">Deliverable: Search and AI answer comparison report</span>
+
+    </div>
+
+</div>
+</section>
+
+<!-- ASSIGNMENT -->
+<section class="section" id="assignment" style="background:#edf3fa;">
+<div class="container">
+
+    <div class="section-heading">
+        <span class="tag">ASSIGNMENT</span>
+        <h2>SEO, AEO & GEO Optimization Report</h2>
+        <p>Prepare a complete optimization report for one page or product from your project.</p>
+    </div>
+
+    <div class="assignment-box">
+
+        <h3><i class="fas fa-clipboard-list"></i> Submission Checklist</h3>
+
+        <label><input type="checkbox"> Selected page/product and its purpose.</label>
+
+        <label><input type="checkbox"> Primary keyword and search intent.</label>
+
+        <label><input type="checkbox"> SEO-friendly URL.</label>
+
+        <label><input type="checkbox"> Meta title and meta description.</label>
+
+        <label><input type="checkbox"> H1/H2 heading structure.</label>
+
+        <label><input type="checkbox"> Image alt text.</label>
+
+        <label><input type="checkbox"> At least 2 internal links.</label>
+
+        <label><input type="checkbox"> Basic technical SEO checklist.</label>
+
+        <label><input type="checkbox"> Five FAQs with direct answers for AEO.</label>
+
+        <label><input type="checkbox"> One question-based blog draft.</label>
+
+        <label><input type="checkbox"> One structured and fact-checked article for GEO.</label>
+
+        <label><input type="checkbox"> Search engine and AI answer comparison report.</label>
+
+        <label><input type="checkbox"> Three improvements made to the website content.</label>
+
+        <div class="highlight">
+            <strong>Expected outcome:</strong>
+            Students should be able to identify practical SEO problems,
+            prepare direct answers for AEO and create useful, trustworthy
+            content that is understandable to generative AI systems.
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+<!-- QUIZ -->
+<section class="section" id="quiz">
+<div class="container">
+
+    <div class="section-heading">
+        <span class="tag">QUICK QUIZ</span>
+        <h2>Check Your Understanding</h2>
+        <p>Test your knowledge of SEO, AEO and GEO.</p>
+    </div>
+
+    <div class="quiz-box">
+
+        <form id="quizForm">
+
+            <div class="question">
+                <h3>1. What is crawling?</h3>
+
+                <label class="option">
+                    <input type="radio" name="q1" value="a">
+                    Creating a product description
+                </label>
+
+                <label class="option">
+                    <input type="radio" name="q1" value="b">
+                    Search engines discovering and accessing pages
+                </label>
+
+                <label class="option">
+                    <input type="radio" name="q1" value="c">
+                    Designing a website logo
+                </label>
+            </div>
+
+            <div class="question">
+                <h3>2. Which is an example of informational intent?</h3>
+
+                <label class="option">
+                    <input type="radio" name="q2" value="a">
+                    Buy cotton kurti online
+                </label>
+
+                <label class="option">
+                    <input type="radio" name="q2" value="b">
+                    Best website agency Kerala
+                </label>
+
+                <label class="option">
+                    <input type="radio" name="q2" value="c">
+                    How to choose a domain name
+                </label>
+            </div>
+
+            <div class="question">
+                <h3>3. Which is an on-page SEO element?</h3>
+
+                <label class="option">
+                    <input type="radio" name="q3" value="a">
+                    Meta title
+                </label>
+
+                <label class="option">
+                    <input type="radio" name="q3" value="b">
+                    Computer monitor
+                </label>
+
+                <label class="option">
+                    <input type="radio" name="q3" value="c">
+                    Office chair
+                </label>
+            </div>
+
+            <div class="question">
+                <h3>4. What is the main focus of AEO?</h3>
+
+                <label class="option">
+                    <input type="radio" name="q4" value="a">
+                    Designing website logos
+                </label>
+
+                <label class="option">
+                    <input type="radio" name="q4" value="b">
+                    Providing clear answers to user questions
+                </label>
+
+                <label class="option">
+                    <input type="radio" name="q4" value="c">
+                    Increasing image file sizes
+                </label>
+            </div>
+
+            <div class="question">
+                <h3>5. What is the main focus of GEO?</h3>
+
+                <label class="option">
+                    <input type="radio" name="q5" value="a">
+                    Creating website animations
+                </label>
+
+                <label class="option">
+                    <input type="radio" name="q5" value="b">
+                    Changing website colours
+                </label>
+
+                <label class="option">
+                    <input type="radio" name="q5" value="c">
+                    Preparing useful content for generative AI systems to understand and potentially reference
+                </label>
+            </div>
+
+            <div class="question">
+                <h3>6. Which is a good AEO practice?</h3>
+
+                <label class="option">
+                    <input type="radio" name="q6" value="a">
+                    Writing clear questions and direct answers
+                </label>
+
+                <label class="option">
+                    <input type="radio" name="q6" value="b">
+                    Hiding important information
+                </label>
+
+                <label class="option">
+                    <input type="radio" name="q6" value="c">
+                    Using unrelated keywords
+                </label>
+            </div>
+
+            <div class="question">
+                <h3>7. Which practice supports GEO?</h3>
+
+                <label class="option">
+                    <input type="radio" name="q7" value="a">
+                    Publishing copied and inaccurate information
+                </label>
+
+                <label class="option">
+                    <input type="radio" name="q7" value="b">
+                    Publishing original, accurate and well-structured content
+                </label>
+
+                <label class="option">
+                    <input type="radio" name="q7" value="c">
+                    Removing all headings
+                </label>
+            </div>
+
+            <div class="question">
+                <h3>8. What should be checked for an e-commerce product page?</h3>
+
+                <label class="option">
+                    <input type="radio" name="q8" value="a">
+                    Only the website logo
+                </label>
+
+                <label class="option">
+                    <input type="radio" name="q8" value="b">
+                    Only the footer colour
+                </label>
+
+                <label class="option">
+                    <input type="radio" name="q8" value="c">
+                    Product title, URL, description and image alt text
+                </label>
+            </div>
+
+            <button type="button" class="quiz-btn" onclick="checkQuiz()">
+                <i class="fas fa-check-circle"></i> Check Answers
+            </button>
+
+            <button type="reset" class="quiz-btn"
+                style="background:#64748b;margin-left:8px;"
+                onclick="resetQuiz()">
+                Reset
+            </button>
+
+            <div id="quiz-result"></div>
+
+        </form>
+
+    </div>
+
+</div>
+</section>
+
+<!-- MODULE COMPLETE -->
+<section class="completion">
+
+    <i class="fas fa-award" style="font-size:38px;"></i>
+
+    <h2>Ready for SEO Tools?</h2>
+
+    <p>
+        You have learned SEO fundamentals, keyword research, on-page SEO,
+        technical SEO, e-commerce SEO, AEO and GEO.
+        In Module 7, you will explore practical SEO tools and platforms
+        to inspect and improve websites.
+    </p>
+
+    <div class="module-buttons">
+
+        <a href="module5.html">
+            <i class="fas fa-arrow-left"></i> Module 5
+        </a>
+
+        <a href="module7.html">
+            Module 7: SEO Tools <i class="fas fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+
+<div class="footer-content">
+
+    <div>
+        <h3>
+            <i class="fas fa-laptop-code"></i>
+            WebTech & E-Commerce
+        </h3>
+
+        <p>A practical learning portal for Digital Marketing students.</p>
+
+        <p style="margin-top:12px;color:#8fb8ef;font-weight:600;">
+            Learn • Build • Optimize
+        </p>
+    </div>
+
+    <div>
+        <h3>Learn</h3>
+
+        <a href="modules.html">Modules</a>
+        <a href="index.html#how-it-works">How It Works</a>
+        <a href="index.html#capstone">Capstone</a>
+        <a href="index.html#resources">Resources</a>
+    </div>
+
+    <div>
+        <h3>Module 6</h3>
+
+        <a href="#aeo">AEO</a>
+        <a href="#geo">GEO</a>
+        <a href="#comparison">SEO vs AEO vs GEO</a>
+        <a href="#practical">Practical</a>
+        <a href="#assignment">Assignment</a>
+        <a href="#quiz">Quiz</a>
+    </div>
+
+</div>
+
+<div class="copyright">
+    © 2026 WebTech & E-Commerce Learning Portal. All rights reserved.
+</div>
+
+</footer>
+
+<script>
+
+// MOBILE MENU
+function toggleMenu(){
+
+    document.getElementById("navLinks").classList.toggle("active");
+
+}
+
+// CLOSE MENU AFTER CLICKING A LINK
+document.querySelectorAll(".nav-links a").forEach(function(link){
+
+    link.addEventListener("click",function(){
+
+        document.getElementById("navLinks").classList.remove("active");
+
+    });
+
+});
+
+// QUIZ
+function checkQuiz(){
+
+    const answers = {
+        q1:"b",
+        q2:"c",
+        q3:"a",
+        q4:"b",
+        q5:"c",
+        q6:"a",
+        q7:"b",
+        q8:"c"
+    };
+
+    let score = 0;
+    let total = Object.keys(answers).length;
+
+    for(let question in answers){
+
+        let selected = document.querySelector(
+            'input[name="' + question + '"]:checked'
+        );
+
+        if(selected && selected.value === answers[question]){
+
+            score++;
+
+        }
+
+    }
+
+    const result = document.getElementById("quiz-result");
+
+    if(score === total){
+
+        result.style.color = "#21734b";
+
+        result.innerHTML =
+        "Excellent! You got all " + total + " answers correct. 🎉";
+
+    }
+
+    else{
+
+        result.style.color = "#c06b24";
+
+        result.innerHTML =
+        "You scored " + score + " out of " + total +
+        ". Review the module and try again.";
+
+    }
+
+}
+
+// RESET QUIZ RESULT
+function resetQuiz(){
+
+    document.getElementById("quiz-result").innerHTML = "";
+
+}
+
+</script>
+
+</body>
+</html>

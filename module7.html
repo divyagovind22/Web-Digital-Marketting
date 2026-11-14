@@ -1,0 +1,1666 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 7 - SEO Tools & Platforms | WebTech & E-Commerce</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f5f7fb;
+    color:#26344a;
+    line-height:1.7;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* NAVBAR */
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:#fff;
+    box-shadow:0 3px 15px rgba(0,0,0,.07);
+    padding:15px 7%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:21px;
+    font-weight:800;
+    color:#173b70;
+}
+
+.logo span{
+    color:#3285e9;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.nav-links a{
+    font-size:13px;
+    font-weight:600;
+    color:#35445a;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#3285e9;
+}
+
+.menu-btn{
+    display:none;
+    font-size:23px;
+    cursor:pointer;
+    color:#173b70;
+}
+
+/* HERO */
+.hero{
+    background:linear-gradient(120deg,#102c54,#174d89,#3285e9);
+    color:white;
+    padding:85px 7%;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    width:350px;
+    height:350px;
+    border:60px solid rgba(255,255,255,.07);
+    border-radius:50%;
+    right:-100px;
+    top:-100px;
+}
+
+.hero-content{
+    max-width:850px;
+    position:relative;
+    z-index:1;
+}
+
+.module-label{
+    display:inline-block;
+    padding:7px 17px;
+    background:rgba(255,255,255,.15);
+    border:1px solid rgba(255,255,255,.3);
+    border-radius:30px;
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:1px;
+    margin-bottom:22px;
+}
+
+.hero h1{
+    font-size:43px;
+    line-height:1.3;
+    margin-bottom:20px;
+}
+
+.hero p{
+    max-width:750px;
+    color:#e2edff;
+    font-size:15px;
+}
+
+.back-link{
+    display:inline-block;
+    margin-bottom:25px;
+    font-size:13px;
+    font-weight:600;
+    color:#dceaff;
+}
+
+.back-link:hover{
+    color:white;
+}
+
+/* COMMON */
+.container{
+    width:86%;
+    max-width:1200px;
+    margin:auto;
+}
+
+.section{
+    padding:65px 0;
+}
+
+.section-heading{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.section-heading .tag{
+    color:#3285e9;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:2px;
+}
+
+.section-heading h2{
+    font-size:30px;
+    color:#173b70;
+    margin-top:8px;
+}
+
+.section-heading p{
+    color:#718096;
+    font-size:14px;
+    margin-top:8px;
+}
+
+/* GRID CARDS */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:22px;
+}
+
+.card{
+    background:white;
+    padding:27px;
+    border-radius:14px;
+    box-shadow:0 5px 20px rgba(30,60,100,.06);
+    border:1px solid #e9eef6;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 12px 25px rgba(30,60,100,.12);
+}
+
+.card-icon{
+    width:48px;
+    height:48px;
+    border-radius:12px;
+    background:#e9f2ff;
+    color:#2878d0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:21px;
+    margin-bottom:18px;
+}
+
+.card h3{
+    color:#173b70;
+    font-size:17px;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#69778a;
+    font-size:13px;
+}
+
+/* TOOL CARDS */
+.tool-card{
+    background:white;
+    padding:28px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(30,60,100,.06);
+    border:1px solid #e7edf5;
+    transition:.3s;
+}
+
+.tool-card:hover{
+    transform:translateY(-5px);
+}
+
+.tool-top{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:15px;
+}
+
+.tool-icon{
+    width:52px;
+    height:52px;
+    border-radius:13px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#eaf2ff;
+    color:#2878d0;
+    font-size:24px;
+}
+
+.tool-card h3{
+    font-size:18px;
+    color:#173b70;
+}
+
+.tool-card p{
+    color:#68778b;
+    font-size:13px;
+    margin-bottom:12px;
+}
+
+.tool-card ul{
+    padding-left:20px;
+    margin-bottom:15px;
+}
+
+.tool-card li{
+    color:#66758a;
+    font-size:13px;
+    margin:6px 0;
+}
+
+.tool-label{
+    display:inline-block;
+    padding:6px 13px;
+    border-radius:20px;
+    background:#eaf3ff;
+    color:#2878d0;
+    font-size:11px;
+    font-weight:700;
+}
+
+/* TOOL LINKS */
+.tool-link{
+    display:inline-block;
+    color:#2878d0;
+    font-size:12px;
+    font-weight:600;
+    margin-top:12px;
+}
+
+.tool-link:hover{
+    color:#173b70;
+}
+
+/* TABLE */
+.table-wrap{
+    overflow-x:auto;
+    background:white;
+    border-radius:12px;
+    box-shadow:0 5px 20px rgba(30,60,100,.06);
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:650px;
+}
+
+th,td{
+    padding:17px;
+    text-align:left;
+    border-bottom:1px solid #edf0f5;
+    font-size:13px;
+}
+
+th{
+    background:#173b70;
+    color:white;
+    font-weight:600;
+}
+
+td{
+    color:#657388;
+}
+
+td strong{
+    color:#173b70;
+}
+
+/* WORKFLOW */
+.workflow{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.workflow-card{
+    background:white;
+    padding:25px 18px;
+    text-align:center;
+    border-radius:13px;
+    border:1px solid #e6edf6;
+    box-shadow:0 4px 15px rgba(30,60,100,.05);
+}
+
+.workflow-number{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    background:#2878d0;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:700;
+    margin:0 auto 13px;
+}
+
+.workflow-card h3{
+    color:#173b70;
+    font-size:16px;
+    margin-bottom:7px;
+}
+
+.workflow-card p{
+    color:#718096;
+    font-size:12px;
+}
+
+/* METRICS */
+.metric-card{
+    background:white;
+    padding:23px;
+    border-radius:12px;
+    border-left:4px solid #3285e9;
+    box-shadow:0 4px 15px rgba(30,60,100,.05);
+}
+
+.metric-card h3{
+    color:#173b70;
+    font-size:16px;
+    margin-bottom:8px;
+}
+
+.metric-card p{
+    color:#718096;
+    font-size:13px;
+}
+
+/* HIGHLIGHT */
+.highlight{
+    background:#eaf3ff;
+    padding:20px 24px;
+    border-radius:12px;
+    color:#174b86;
+    margin-top:25px;
+    font-size:14px;
+}
+
+/* PRACTICAL */
+.practical-card{
+    background:white;
+    border-radius:14px;
+    padding:28px;
+    box-shadow:0 5px 20px rgba(30,60,100,.06);
+    border:1px solid #e8edf5;
+    margin-bottom:22px;
+}
+
+.practical-number{
+    display:inline-flex;
+    width:38px;
+    height:38px;
+    align-items:center;
+    justify-content:center;
+    border-radius:10px;
+    background:#e8f2ff;
+    color:#2878d0;
+    font-weight:700;
+    margin-bottom:12px;
+}
+
+.practical-card h3{
+    color:#173b70;
+    font-size:19px;
+    margin-bottom:10px;
+}
+
+.practical-card p,
+.practical-card li{
+    color:#68778b;
+    font-size:13px;
+}
+
+.practical-card ul{
+    padding-left:22px;
+    margin:12px 0;
+}
+
+.deliverable{
+    display:inline-block;
+    background:#eaf7f0;
+    color:#21734b;
+    padding:8px 14px;
+    border-radius:7px;
+    font-size:12px;
+    font-weight:600;
+    margin-top:10px;
+}
+
+/* AUDIT PROCESS */
+.audit-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+    gap:16px;
+}
+
+.audit-card{
+    background:white;
+    padding:23px;
+    border-radius:12px;
+    border:1px solid #e6edf6;
+    box-shadow:0 4px 15px rgba(30,60,100,.05);
+}
+
+.audit-card h3{
+    color:#173b70;
+    font-size:16px;
+    margin-bottom:8px;
+}
+
+.audit-card h3 i{
+    color:#3285e9;
+    margin-right:7px;
+}
+
+.audit-card p{
+    color:#718096;
+    font-size:13px;
+}
+
+/* ASSIGNMENT */
+.assignment-box{
+    background:white;
+    border-radius:15px;
+    padding:30px;
+    box-shadow:0 5px 20px rgba(30,60,100,.06);
+}
+
+.assignment-box h3{
+    color:#173b70;
+    margin-bottom:15px;
+}
+
+.assignment-box label{
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+    padding:11px 0;
+    border-bottom:1px solid #edf0f5;
+    font-size:14px;
+    color:#59687b;
+    cursor:pointer;
+}
+
+.assignment-box input{
+    margin-top:5px;
+    accent-color:#2878d0;
+}
+
+/* QUIZ */
+.quiz-box{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(30,60,100,.06);
+}
+
+.question{
+    margin-bottom:25px;
+    padding-bottom:20px;
+    border-bottom:1px solid #edf0f5;
+}
+
+.question h3{
+    font-size:15px;
+    color:#173b70;
+    margin-bottom:13px;
+}
+
+.option{
+    display:block;
+    padding:9px 13px;
+    border-radius:7px;
+    margin:7px 0;
+    background:#f6f8fc;
+    cursor:pointer;
+    font-size:13px;
+    color:#526176;
+}
+
+.option:hover{
+    background:#eaf2ff;
+}
+
+.option input{
+    margin-right:8px;
+    accent-color:#2878d0;
+}
+
+.quiz-btn{
+    background:#2878d0;
+    color:white;
+    border:0;
+    border-radius:8px;
+    padding:12px 25px;
+    font-family:inherit;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.quiz-btn:hover{
+    background:#173b70;
+}
+
+#quiz-result{
+    margin-top:18px;
+    font-weight:600;
+    font-size:15px;
+}
+
+/* COURSE COMPLETE */
+.completion{
+    background:linear-gradient(120deg,#102c54,#2878d0);
+    color:white;
+    padding:60px 7%;
+    text-align:center;
+}
+
+.completion h2{
+    font-size:30px;
+    margin:12px 0;
+}
+
+.completion p{
+    color:#e2edff;
+    font-size:14px;
+    max-width:750px;
+    margin:0 auto 25px;
+}
+
+.module-buttons{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.module-buttons a{
+    padding:12px 24px;
+    border-radius:8px;
+    font-size:13px;
+    font-weight:600;
+    background:white;
+    color:#173b70;
+    transition:.3s;
+}
+
+.module-buttons a:hover{
+    background:#dceaff;
+    transform:translateY(-3px);
+}
+
+/* FOOTER */
+.footer{
+    background:#10243f;
+    color:#d6dfeb;
+    padding:45px 7% 20px;
+}
+
+.footer-content{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:35px;
+    margin-bottom:30px;
+}
+
+.footer h3{
+    color:white;
+    font-size:16px;
+    margin-bottom:15px;
+}
+
+.footer p,
+.footer a{
+    font-size:12px;
+    color:#b9c8dc;
+}
+
+.footer a{
+    display:block;
+    margin:9px 0;
+}
+
+.footer a:hover{
+    color:white;
+}
+
+.copyright{
+    text-align:center;
+    border-top:1px solid #30435c;
+    padding-top:20px;
+    font-size:11px;
+    color:#9aabc0;
+}
+
+/* RESPONSIVE */
+@media(max-width:850px){
+
+    .nav-links{
+        position:absolute;
+        top:65px;
+        left:0;
+        width:100%;
+        background:white;
+        display:none;
+        flex-direction:column;
+        align-items:flex-start;
+        padding:20px 7%;
+        box-shadow:0 10px 15px rgba(0,0,0,.08);
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .workflow{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .footer-content{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    .hero{
+        padding:65px 7%;
+    }
+
+    .hero h1{
+        font-size:31px;
+    }
+
+    .section{
+        padding:48px 0;
+    }
+
+    .section-heading h2{
+        font-size:24px;
+    }
+
+    .container{
+        width:90%;
+    }
+
+    .workflow{
+        grid-template-columns:1fr;
+    }
+
+    .footer-content{
+        grid-template-columns:1fr;
+    }
+
+    .demo-box,
+    .quiz-box,
+    .assignment-box{
+        padding:20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+
+    <a href="index.html" class="logo">
+        <i class="fas fa-laptop-code"></i>
+        WebTech<span> & E-Commerce</span>
+    </a>
+
+    <div class="menu-btn" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="modules.html">Modules</a>
+        <a href="index.html#how-it-works">How It Works</a>
+        <a href="index.html#capstone">Capstone</a>
+        <a href="index.html#resources">Resources</a>
+    </div>
+
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+
+    <div class="hero-content">
+
+        <a href="modules.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to Modules
+        </a>
+
+        <br>
+
+        <span class="module-label">MODULE 07 • SEO TOOLS</span>
+
+        <h1>SEO Tools & Platforms</h1>
+
+        <p>
+            Learn how to use practical SEO tools to inspect websites,
+            understand search performance, identify problems and find
+            opportunities for improvement.
+        </p>
+
+    </div>
+
+</header>
+
+<!-- LEARNING OBJECTIVES -->
+<section class="section">
+<div class="container">
+
+    <div class="section-heading">
+        <span class="tag">LEARNING OBJECTIVES</span>
+        <h2>What You Will Learn</h2>
+        <p>This module focuses on using SEO tools as part of a real website optimization workflow.</p>
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+            <div class="card-icon">
+                <i class="fas fa-chart-line"></i>
+            </div>
+            <h3>Read Search Performance</h3>
+            <p>Understand clicks, impressions, CTR, average position and search queries.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">
+                <i class="fas fa-link"></i>
+            </div>
+            <h3>Inspect URLs</h3>
+            <p>Check whether important pages are known to Google and understand indexing issues.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">
+                <i class="fas fa-clipboard-check"></i>
+            </div>
+            <h3>Audit Pages</h3>
+            <p>Use browser-based SEO tools to identify basic on-page SEO issues.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">
+                <i class="fas fa-lightbulb"></i>
+            </div>
+            <h3>Find Improvements</h3>
+            <p>Use SEO data to identify practical improvements instead of only collecting reports.</p>
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+<!-- SEO TOOLKIT -->
+<section class="section" style="background:#edf3fa;">
+<div class="container">
+
+    <div class="section-heading">
+        <span class="tag">SEO TOOLKIT</span>
+        <h2>Four Tools You Should Know</h2>
+        <p>Students do not need to learn every feature. Focus on the features that are useful for everyday Digital Marketing work.</p>
+    </div>
+
+    <div class="grid">
+
+        <!-- GOOGLE SEARCH CONSOLE -->
+        <div class="tool-card">
+
+            <div class="tool-top">
+                <div class="tool-icon">
+                    <i class="fab fa-google"></i>
+                </div>
+
+                <h3>Google Search Console</h3>
+            </div>
+
+            <p>
+                A Google platform for monitoring a website's search visibility
+                and understanding indexing and search performance.
+            </p>
+
+            <ul>
+                <li>Search queries</li>
+                <li>Clicks and impressions</li>
+                <li>CTR and position</li>
+                <li>URL Inspection</li>
+                <li>Indexing information</li>
+            </ul>
+
+            <span class="tool-label">Priority Tool</span>
+
+            <br>
+
+            <a class="tool-link" href="https://search.google.com/search-console/about" target="_blank" rel="noopener">
+                Visit Google Search Console <i class="fas fa-external-link-alt"></i>
+            </a>
+
+        </div>
+
+        <!-- SEO MINION -->
+        <div class="tool-card">
+
+            <div class="tool-top">
+                <div class="tool-icon">
+                    <i class="fas fa-puzzle-piece"></i>
+                </div>
+
+                <h3>SEO Minion</h3>
+            </div>
+
+            <p>
+                A browser-based tool useful for quickly checking important
+                on-page SEO elements.
+            </p>
+
+            <ul>
+                <li>Headings</li>
+                <li>Links</li>
+                <li>Broken links</li>
+                <li>SERP preview</li>
+                <li>Basic page analysis</li>
+            </ul>
+
+            <span class="tool-label">Quick Audit</span>
+
+            <br>
+
+            <a class="tool-link" href="https://seominion.com/" target="_blank" rel="noopener">
+                Visit SEO Minion <i class="fas fa-external-link-alt"></i>
+            </a>
+
+        </div>
+
+        <!-- SEMRUSH -->
+        <div class="tool-card">
+
+            <div class="tool-top">
+                <div class="tool-icon">
+                    <i class="fas fa-chart-pie"></i>
+                </div>
+
+                <h3>SEMrush</h3>
+            </div>
+
+            <p>
+                A broader SEO and digital marketing platform useful for
+                keyword, competitor and website research.
+            </p>
+
+            <ul>
+                <li>Keyword research</li>
+                <li>Competitor research</li>
+                <li>Site audit concepts</li>
+                <li>Keyword opportunities</li>
+                <li>Domain overview</li>
+            </ul>
+
+            <span class="tool-label">Research</span>
+
+            <br>
+
+            <a class="tool-link" href="https://www.semrush.com/" target="_blank" rel="noopener">
+                Visit SEMrush <i class="fas fa-external-link-alt"></i>
+            </a>
+
+        </div>
+
+        <!-- AHREFS -->
+        <div class="tool-card">
+
+            <div class="tool-top">
+                <div class="tool-icon">
+                    <i class="fas fa-link"></i>
+                </div>
+
+                <h3>Ahrefs</h3>
+            </div>
+
+            <p>
+                An SEO platform commonly used for keyword, competitor
+                and backlink research.
+            </p>
+
+            <ul>
+                <li>Keyword research</li>
+                <li>Competitor research</li>
+                <li>Backlink concepts</li>
+                <li>Content opportunities</li>
+                <li>Site analysis</li>
+            </ul>
+
+            <span class="tool-label">Research</span>
+
+            <br>
+
+            <a class="tool-link" href="https://ahrefs.com/" target="_blank" rel="noopener">
+                Visit Ahrefs <i class="fas fa-external-link-alt"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+<!-- TOOL COMPARISON -->
+<section class="section">
+<div class="container">
+
+    <div class="section-heading">
+        <span class="tag">TOOL COMPARISON</span>
+        <h2>Which Tool Helps With What?</h2>
+        <p>Compare the main purpose of each SEO platform and the features students should learn.</p>
+    </div>
+
+    <div class="table-wrap">
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Tool</th>
+                    <th>Main Purpose</th>
+                    <th>Student Should Learn</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td><strong>Google Search Console</strong></td>
+                    <td>Google search performance and indexing</td>
+                    <td>Queries, clicks, impressions, URL Inspection</td>
+                </tr>
+
+                <tr>
+                    <td><strong>SEO Minion</strong></td>
+                    <td>Quick page-level SEO checks</td>
+                    <td>Headings, links, broken links, SERP preview</td>
+                </tr>
+
+                <tr>
+                    <td><strong>SEMrush</strong></td>
+                    <td>SEO and competitor research</td>
+                    <td>Keywords, competitors, basic site audit</td>
+                </tr>
+
+                <tr>
+                    <td><strong>Ahrefs</strong></td>
+                    <td>SEO, keywords and backlink research</td>
+                    <td>Keywords, competitors, backlinks</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+</section>
+
+<!-- GOOGLE SEARCH CONSOLE -->
+<section class="section" style="background:#edf3fa;">
+<div class="container">
+
+    <div class="section-heading">
+        <span class="tag">GOOGLE SEARCH CONSOLE</span>
+        <h2>Practical Search Console Workflow</h2>
+        <p>Search Console is the most important tool in this module because it provides first-party information about how a website performs in Google Search.</p>
+    </div>
+
+    <div class="workflow">
+
+        <div class="workflow-card">
+            <div class="workflow-number">01</div>
+            <h3>Connect</h3>
+            <p>Add and verify the website property in Search Console.</p>
+        </div>
+
+        <div class="workflow-card">
+            <div class="workflow-number">02</div>
+            <h3>Inspect</h3>
+            <p>Use URL Inspection to check an important page and its indexing status.</p>
+        </div>
+
+        <div class="workflow-card">
+            <div class="workflow-number">03</div>
+            <h3>Analyse</h3>
+            <p>Review queries, clicks, impressions, CTR and position.</p>
+        </div>
+
+        <div class="workflow-card">
+            <div class="workflow-number">04</div>
+            <h3>Improve</h3>
+            <p>Identify useful SEO improvements from the data.</p>
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+<!-- UNDERSTAND DATA -->
+<section class="section">
+<div class="container">
+
+    <div class="section-heading">
+        <span class="tag">UNDERSTAND THE DATA</span>
+        <h2>What Do These Numbers Mean?</h2>
+        <p>Learn the important metrics available in Google Search Console.</p>
+    </div>
+
+    <div class="grid">
+
+        <div class="metric-card">
+            <h3><i class="fas fa-mouse-pointer"></i> Clicks</h3>
+            <p>How many times users clicked the website from Google Search.</p>
+        </div>
+
+        <div class="metric-card">
+            <h3><i class="fas fa-eye"></i> Impressions</h3>
+            <p>How many times a website result was shown in Google Search.</p>
+        </div>
+
+        <div class="metric-card">
+            <h3><i class="fas fa-percentage"></i> CTR</h3>
+            <p>The percentage of impressions that resulted in clicks.</p>
+        </div>
+
+        <div class="metric-card">
+            <h3><i class="fas fa-sort-numeric-up"></i> Average Position</h3>
+            <p>An average position metric for the site's results in the selected Search Console data.</p>
+        </div>
+
+        <div class="metric-card">
+            <h3><i class="fas fa-search"></i> Queries</h3>
+            <p>Search terms for which the website received impressions or clicks.</p>
+        </div>
+
+    </div>
+
+    <div class="highlight">
+        <strong><i class="fas fa-info-circle"></i> Remember:</strong>
+        A new or low-traffic website may not have enough Search Console data yet. Students can still practise property verification and URL Inspection, and record that performance data is not yet available.
+    </div>
+
+</div>
+</section>
+
+<!-- STUDENT PRACTICAL -->
+<section class="section" id="practical" style="background:#edf3fa;">
+<div class="container">
+
+    <div class="section-heading">
+        <span class="tag">STUDENT PRACTICAL</span>
+        <h2>Use the Tools on Your Own Project</h2>
+        <p>Students should work with the same website created and optimized during Modules 1–6.</p>
+    </div>
+
+    <!-- PRACTICAL 1 -->
+    <div class="practical-card">
+
+        <span class="practical-number">01</span>
+
+        <h3>Connect Google Search Console</h3>
+
+        <p>Connect the student's website to Google Search Console.</p>
+
+        <ul>
+            <li>Add the website property.</li>
+            <li>Complete verification.</li>
+            <li>Open the Search Console dashboard.</li>
+            <li>Locate Performance and URL Inspection.</li>
+        </ul>
+
+        <span class="deliverable">
+            <i class="fas fa-camera"></i>
+            Deliverable: Screenshot of verified property/dashboard
+        </span>
+
+    </div>
+
+    <!-- PRACTICAL 2 -->
+    <div class="practical-card">
+
+        <span class="practical-number">02</span>
+
+        <h3>Inspect One Important URL</h3>
+
+        <p>Select an important page or product and inspect it using URL Inspection.</p>
+
+        <ul>
+            <li>Enter the URL.</li>
+            <li>Check the inspection result.</li>
+            <li>Identify indexing information.</li>
+            <li>Record any issue shown.</li>
+        </ul>
+
+        <span class="deliverable">
+            <i class="fas fa-link"></i>
+            Deliverable: URL Inspection screenshot + observation
+        </span>
+
+    </div>
+
+    <!-- PRACTICAL 3 -->
+    <div class="practical-card">
+
+        <span class="practical-number">03</span>
+
+        <h3>Analyse Search Queries</h3>
+
+        <p>Use the Performance report to understand how the website appears in Google Search.</p>
+
+        <ul>
+            <li>Find search queries.</li>
+            <li>Note clicks.</li>
+            <li>Note impressions.</li>
+            <li>Check CTR and position.</li>
+            <li>Identify useful queries.</li>
+        </ul>
+
+        <span class="deliverable">
+            <i class="fas fa-chart-line"></i>
+            Deliverable: Five useful search queries
+        </span>
+
+    </div>
+
+    <!-- PRACTICAL 4 -->
+    <div class="practical-card">
+
+        <span class="practical-number">04</span>
+
+        <h3>Audit a Page with SEO Minion</h3>
+
+        <p>Use SEO Minion to perform a quick page-level SEO check.</p>
+
+        <ul>
+            <li>Check headings.</li>
+            <li>Check links.</li>
+            <li>Check broken links.</li>
+            <li>Review SERP preview.</li>
+        </ul>
+
+        <span class="deliverable">
+            <i class="fas fa-clipboard-check"></i>
+            Deliverable: Three observations from the audit
+        </span>
+
+    </div>
+
+    <!-- PRACTICAL 5 -->
+    <div class="practical-card">
+
+        <span class="practical-number">05</span>
+
+        <h3>Research with SEMrush or Ahrefs</h3>
+
+        <p>Use an available free/trial/demo feature to explore keywords or competitors.</p>
+
+        <ul>
+            <li>Search a relevant keyword.</li>
+            <li>Observe related keywords.</li>
+            <li>Explore competitor information.</li>
+            <li>Note one content opportunity.</li>
+        </ul>
+
+        <span class="deliverable">
+            <i class="fas fa-key"></i>
+            Deliverable: Keyword/competitor research screenshot
+        </span>
+
+    </div>
+
+    <!-- PRACTICAL 6 -->
+    <div class="practical-card">
+
+        <span class="practical-number">06</span>
+
+        <h3>Find 3 SEO Improvements</h3>
+
+        <p>Combine the information from the tools and identify three useful improvements.</p>
+
+        <ul>
+            <li>One content improvement.</li>
+            <li>One on-page improvement.</li>
+            <li>One technical or indexing improvement.</li>
+        </ul>
+
+        <span class="deliverable">
+            <i class="fas fa-lightbulb"></i>
+            Deliverable: Three prioritized SEO actions
+        </span>
+
+    </div>
+
+</div>
+</section>
+
+<!-- FINAL AUDIT -->
+<section class="section">
+<div class="container">
+
+    <div class="section-heading">
+        <span class="tag">FINAL AUDIT</span>
+        <h2>From Data to Action</h2>
+        <p>The goal is not simply to generate an SEO report. Students should use the information to decide what needs to be improved first.</p>
+    </div>
+
+    <div class="audit-grid">
+
+        <div class="audit-card">
+            <h3><i class="fas fa-exclamation-circle"></i> Problem</h3>
+            <p>What SEO issue did you find?</p>
+        </div>
+
+        <div class="audit-card">
+            <h3><i class="fas fa-search"></i> Evidence</h3>
+            <p>Which tool or observation showed the problem?</p>
+        </div>
+
+        <div class="audit-card">
+            <h3><i class="fas fa-flag"></i> Priority</h3>
+            <p>Is this a high, medium or low priority issue?</p>
+        </div>
+
+        <div class="audit-card">
+            <h3><i class="fas fa-tools"></i> Action</h3>
+            <p>What specific change should be made?</p>
+        </div>
+
+        <div class="audit-card">
+            <h3><i class="fas fa-chart-line"></i> Expected Result</h3>
+            <p>What improvement do you expect from the action?</p>
+        </div>
+
+    </div>
+
+    <div class="highlight">
+        <strong>Audit Formula:</strong>
+        Problem → Evidence → Priority → Action → Expected Result
+    </div>
+
+</div>
+</section>
+
+<!-- ASSIGNMENT -->
+<section class="section" id="assignment" style="background:#edf3fa;">
+<div class="container">
+
+    <div class="section-heading">
+        <span class="tag">ASSIGNMENT</span>
+        <h2>Mini SEO Audit Report</h2>
+        <p>Prepare a short SEO audit using the tools introduced in this module.</p>
+    </div>
+
+    <div class="assignment-box">
+
+        <h3><i class="fas fa-clipboard-list"></i> Submit</h3>
+
+        <label>
+            <input type="checkbox">
+            Website/project URL.
+        </label>
+
+        <label>
+            <input type="checkbox">
+            Google Search Console screenshot.
+        </label>
+
+        <label>
+            <input type="checkbox">
+            One URL Inspection result.
+        </label>
+
+        <label>
+            <input type="checkbox">
+            Five useful search queries or keyword observations.
+        </label>
+
+        <label>
+            <input type="checkbox">
+            SEO Minion audit observations.
+        </label>
+
+        <label>
+            <input type="checkbox">
+            One SEMrush or Ahrefs research observation.
+        </label>
+
+        <label>
+            <input type="checkbox">
+            Three SEO problems or opportunities.
+        </label>
+
+        <label>
+            <input type="checkbox">
+            Three recommended actions.
+        </label>
+
+        <label>
+            <input type="checkbox">
+            Priority for each action.
+        </label>
+
+        <div class="highlight">
+            <strong>Final Deliverable:</strong>
+            A short SEO Audit Report showing
+            <strong>Problem → Evidence → Priority → Action.</strong>
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+<!-- QUIZ -->
+<section class="section" id="quiz">
+<div class="container">
+
+    <div class="section-heading">
+        <span class="tag">QUICK QUIZ</span>
+        <h2>Check Your Understanding</h2>
+        <p>Test the main concepts covered in this module.</p>
+    </div>
+
+    <div class="quiz-box">
+
+        <form id="quizForm">
+
+            <div class="question">
+
+                <h3>1. Which tool provides first-party information about a site's Google Search performance?</h3>
+
+                <label class="option">
+                    <input type="radio" name="q1" value="a">
+                    Google Search Console
+                </label>
+
+                <label class="option">
+                    <input type="radio" name="q1" value="b">
+                    Photoshop
+                </label>
+
+                <label class="option">
+                    <input type="radio" name="q1" value="c">
+                    Canva
+                </label>
+
+            </div>
+
+            <div class="question">
+
+                <h3>2. What can URL Inspection help you understand?</h3>
+
+                <label class="option">
+                    <input type="radio" name="q2" value="a">
+                    Website logo design
+                </label>
+
+                <label class="option">
+                    <input type="radio" name="q2" value="b">
+                    Information about a specific URL's indexing/search status
+                </label>
+
+                <label class="option">
+                    <input type="radio" name="q2" value="c">
+                    Product packaging
+                </label>
+
+            </div>
+
+            <div class="question">
+
+                <h3>3. Which metric represents how many times a result was shown in search?</h3>
+
+                <label class="option">
+                    <input type="radio" name="q3" value="a">
+                    Impressions
+                </label>
+
+                <label class="option">
+                    <input type="radio" name="q3" value="b">
+                    Passwords
+                </label>
+
+                <label class="option">
+                    <input type="radio" name="q3" value="c">
+                    Sessions only
+                </label>
+
+            </div>
+
+            <div class="question">
+
+                <h3>4. What is the main goal of the final SEO audit?</h3>
+
+                <label class="option">
+                    <input type="radio" name="q4" value="a">
+                    Collect as many screenshots as possible
+                </label>
+
+                <label class="option">
+                    <input type="radio" name="q4" value="b">
+                    Find problems and turn them into prioritized actions
+                </label>
+
+                <label class="option">
+                    <input type="radio" name="q4" value="c">
+                    Change the website colour
+                </label>
+
+            </div>
+
+            <button type="button" class="quiz-btn" onclick="checkQuiz()">
+                <i class="fas fa-check-circle"></i> Check Answers
+            </button>
+
+            <button type="reset"
+                class="quiz-btn"
+                style="background:#64748b;margin-left:8px;"
+                onclick="resetQuiz()">
+                Reset
+            </button>
+
+            <div id="quiz-result"></div>
+
+        </form>
+
+    </div>
+
+</div>
+</section>
+
+<!-- COURSE MODULES COMPLETE -->
+<section class="completion">
+
+    <i class="fas fa-graduation-cap" style="font-size:42px;"></i>
+
+    <h2>You Have Completed All 7 Modules</h2>
+
+    <p>
+        You have now covered the complete practical workflow —
+        from domain and hosting to CMS, website planning, e-commerce,
+        AI content, SEO and SEO tools.
+    </p>
+
+    <div class="module-buttons">
+
+        <a href="module6.html">
+            <i class="fas fa-arrow-left"></i> Module 6
+        </a>
+
+        <a href="index.html#capstone">
+            <i class="fas fa-project-diagram"></i>
+            Start Capstone Project
+        </a>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+
+<div class="footer-content">
+
+    <div>
+        <h3>
+            <i class="fas fa-laptop-code"></i>
+            WebTech & E-Commerce
+        </h3>
+
+        <p>A practical learning portal for Digital Marketing students.</p>
+
+        <p style="margin-top:12px;color:#8fb8ef;font-weight:600;">
+            Learn • Build • Optimize
+        </p>
+    </div>
+
+    <div>
+        <h3>Learn</h3>
+
+        <a href="modules.html">Modules</a>
+        <a href="index.html#how-it-works">How It Works</a>
+        <a href="index.html#capstone">Capstone</a>
+        <a href="index.html#resources">Resources</a>
+    </div>
+
+    <div>
+        <h3>Module 7</h3>
+
+        <a href="#practical">Practical</a>
+        <a href="#assignment">Assignment</a>
+        <a href="#quiz">Quiz</a>
+    </div>
+
+</div>
+
+<div class="copyright">
+    © 2026 WebTech & E-Commerce Learning Portal. All rights reserved.
+</div>
+
+</footer>
+
+<script>
+
+// MOBILE MENU
+function toggleMenu(){
+
+    document.getElementById("navLinks").classList.toggle("active");
+
+}
+
+// CLOSE MENU AFTER CLICKING A LINK
+document.querySelectorAll(".nav-links a").forEach(function(link){
+
+    link.addEventListener("click",function(){
+
+        document.getElementById("navLinks").classList.remove("active");
+
+    });
+
+});
+
+// QUIZ
+function checkQuiz(){
+
+    const answers = {
+        q1:"a",
+        q2:"b",
+        q3:"a",
+        q4:"b"
+    };
+
+    let score = 0;
+    let total = Object.keys(answers).length;
+
+    for(let question in answers){
+
+        let selected = document.querySelector(
+            'input[name="' + question + '"]:checked'
+        );
+
+        if(selected && selected.value === answers[question]){
+
+            score++;
+
+        }
+
+    }
+
+    const result = document.getElementById("quiz-result");
+
+    if(score === total){
+
+        result.style.color = "#21734b";
+
+        result.innerHTML =
+        "Excellent! You got all " + total + " answers correct. 🎉";
+
+    }
+
+    else{
+
+        result.style.color = "#c06b24";
+
+        result.innerHTML =
+        "You scored " + score + " out of " + total +
+        ". Review the module and try again.";
+
+    }
+
+}
+
+// RESET QUIZ RESULT
+function resetQuiz(){
+
+    document.getElementById("quiz-result").innerHTML = "";
+
+}
+
+</script>
+
+</body>
+</html>

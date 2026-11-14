@@ -1,0 +1,1341 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 03 - Website Structure Planning | Web & E-Commerce Learning Lab</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+:root {
+    --primary: #2563eb;
+    --dark: #14213d;
+    --text: #475569;
+    --light: #f4f7fc;
+    --border: #e2e8f0;
+    --green: #16a34a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--light);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+/* NAVBAR */
+
+.navbar {
+    background: white;
+    padding: 15px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.06);
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--dark);
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.menu-btn {
+    display: none;
+    font-size: 23px;
+    cursor: pointer;
+    color: var(--dark);
+}
+
+/* HERO */
+
+.hero {
+    background: linear-gradient(120deg, #102044, #2563eb);
+    color: white;
+    padding: 65px 8%;
+}
+
+.back-link {
+    display: inline-block;
+    color: #dbeafe;
+    text-decoration: none;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.back-link:hover {
+    color: white;
+}
+
+.module-label {
+    color: #bfdbfe;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-size: clamp(30px, 5vw, 48px);
+    line-height: 1.25;
+    margin: 12px 0 18px;
+}
+
+.hero p {
+    max-width: 750px;
+    color: #e0eaff;
+    font-size: 15px;
+}
+
+.hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.hero-tags span {
+    border: 1px solid rgba(255,255,255,0.35);
+    background: rgba(255,255,255,0.12);
+    padding: 7px 14px;
+    border-radius: 30px;
+    font-size: 12px;
+}
+
+/* MAIN CONTENT */
+
+.container {
+    max-width: 1100px;
+    margin: 35px auto;
+    padding: 0 20px;
+}
+
+.section {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    border: 1px solid var(--border);
+    box-shadow: 0 5px 18px rgba(15,23,42,0.035);
+}
+
+.section-number {
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+h2 {
+    color: var(--dark);
+    font-size: 25px;
+    margin: 5px 0 18px;
+}
+
+h3 {
+    color: var(--dark);
+    font-size: 16px;
+    margin: 18px 0 8px;
+}
+
+p {
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+ul {
+    padding-left: 22px;
+    margin: 10px 0;
+}
+
+li {
+    font-size: 14px;
+    margin-bottom: 7px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.card {
+    background: #f8faff;
+    border: 1px solid var(--border);
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.card i {
+    font-size: 23px;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    margin: 3px 0 8px;
+}
+
+.card p {
+    margin-bottom: 0;
+    font-size: 13px;
+}
+
+/* FLOW */
+
+.flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    background: #eff6ff;
+    padding: 22px;
+    border-radius: 12px;
+    margin: 18px 0;
+}
+
+.flow span {
+    background: white;
+    border: 1px solid #bfdbfe;
+    color: #1d4ed8;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.flow i {
+    color: var(--primary);
+}
+
+/* EXAMPLE BOX */
+
+.example {
+    background: #f0fdf4;
+    border-left: 4px solid var(--green);
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 18px;
+}
+
+.example strong {
+    color: #166534;
+}
+
+/* SITEMAP */
+
+.sitemap {
+    background: #f8faff;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.tree-root {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-weight: 700;
+}
+
+.tree-line {
+    width: 2px;
+    height: 25px;
+    background: #94a3b8;
+    margin: auto;
+}
+
+.tree-branches {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    border-top: 2px solid #94a3b8;
+    padding-top: 20px;
+}
+
+.tree-branches div {
+    background: white;
+    border: 1px solid #bfdbfe;
+    padding: 10px 14px;
+    border-radius: 8px;
+    color: var(--dark);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.tree-branches small {
+    display: block;
+    color: var(--text);
+    font-weight: 400;
+}
+
+/* PRACTICAL */
+
+.practical {
+    border: 1px solid var(--border);
+    padding: 22px;
+    border-radius: 12px;
+    margin-top: 17px;
+}
+
+.practical-label {
+    color: var(--primary);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.deliverable {
+    background: #eff6ff;
+    color: #1e40af;
+    padding: 10px 13px;
+    border-radius: 7px;
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+/* ASSIGNMENT */
+
+.assignment-list {
+    list-style: none;
+    padding: 0;
+}
+
+.assignment-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.assignment-list input {
+    margin-right: 10px;
+    accent-color: var(--primary);
+}
+
+/* QUIZ */
+
+.quiz-question {
+    background: #f8faff;
+    padding: 18px;
+    border-radius: 10px;
+    margin: 15px 0;
+    border: 1px solid var(--border);
+}
+
+.quiz-question p {
+    color: var(--dark);
+    font-weight: 600;
+}
+
+.quiz-question label {
+    display: block;
+    font-size: 13px;
+    padding: 7px 0;
+    cursor: pointer;
+}
+
+.quiz-question input {
+    margin-right: 8px;
+    accent-color: var(--primary);
+}
+
+.primary-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.primary-btn:hover {
+    background: #1d4ed8;
+}
+
+#quizResult {
+    margin-top: 18px;
+    padding: 15px;
+    border-radius: 8px;
+    display: none;
+    font-weight: 600;
+}
+
+/* COMPLETION */
+
+.complete {
+    text-align: center;
+    background: #eff6ff;
+}
+
+.complete i {
+    font-size: 40px;
+    color: var(--green);
+    margin-bottom: 12px;
+}
+
+.module-navigation {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.module-navigation a {
+    text-decoration: none;
+    background: var(--dark);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.module-navigation a:hover {
+    background: var(--primary);
+}
+
+/* FOOTER */
+
+footer {
+    background: #101d36;
+    color: white;
+    text-align: center;
+    padding: 35px 15px;
+    margin-top: 40px;
+}
+
+footer h3 {
+    color: white;
+    margin: 0 0 8px;
+}
+
+footer p {
+    color: #cbd5e1;
+    font-size: 13px;
+}
+
+.footer-tag {
+    color: #93c5fd;
+    font-size: 12px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 768px) {
+    .navbar {
+        padding: 14px 5%;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 20px 7%;
+        gap: 18px;
+        box-shadow: 0 8px 15px rgba(0,0,0,0.08);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hero {
+        padding: 45px 6%;
+    }
+
+    .section {
+        padding: 22px 18px;
+    }
+
+    h2 {
+        font-size: 21px;
+    }
+
+    .flow {
+        gap: 7px;
+    }
+
+    .flow span {
+        font-size: 11px;
+        padding: 8px 10px;
+    }
+
+    .tree-branches {
+        border-top: none;
+    }
+
+    .module-navigation {
+        flex-direction: column;
+    }
+
+    .module-navigation a {
+        text-align: center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <a href="index.html" class="logo">
+        WEB & E-COMMERCE<span> Learning Lab</span>
+    </a>
+
+    <div class="menu-btn" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="modules.html">Modules</a></li>
+        <li><a href="index.html#how-it-works">How It Works</a></li>
+        <li><a href="index.html#capstone">Capstone</a></li>
+        <li><a href="index.html#resources">Resources</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+    <a href="modules.html" class="back-link">
+        <i class="fas fa-arrow-left"></i> Back to Modules
+    </a>
+
+    <div class="module-label">MODULE 03</div>
+
+    <h1>Website Structure Planning</h1>
+
+    <p>
+        Learn how to turn a business goal into a clear website structure —
+        including pages, navigation, categories, user journeys and a sitemap.
+    </p>
+
+    <div class="hero-tags">
+        <span>Business Goal</span>
+        <span>Pages</span>
+        <span>Navigation</span>
+        <span>Categories</span>
+        <span>User Journey</span>
+        <span>Sitemap</span>
+    </div>
+</header>
+
+<main class="container">
+
+<!-- 01 OBJECTIVES -->
+<section class="section">
+    <div class="section-number">01 — LEARNING OBJECTIVES</div>
+    <h2>What You Will Learn</h2>
+
+    <p>
+        By the end of this module, you should be able to plan a website
+        structure before building or managing the actual website.
+    </p>
+
+    <div class="cards">
+        <div class="card">
+            <i class="fas fa-bullseye"></i>
+            <h3>Business Goal</h3>
+            <p>Identify what the website needs to achieve.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-file-alt"></i>
+            <h3>Pages</h3>
+            <p>Decide which pages the website needs.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-bars"></i>
+            <h3>Navigation</h3>
+            <p>Organize pages so visitors can move easily.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-layer-group"></i>
+            <h3>Categories</h3>
+            <p>Organize products or content into logical groups.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-route"></i>
+            <h3>User Journey</h3>
+            <p>Plan the path from visitor to desired action.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-sitemap"></i>
+            <h3>Sitemap</h3>
+            <p>Show the hierarchy and relationship between pages.</p>
+        </div>
+    </div>
+</section>
+
+<!-- 02 CONCEPT -->
+<section class="section">
+    <div class="section-number">02 — CONCEPT</div>
+    <h2>What Is Website Structure?</h2>
+
+    <p>
+        Website structure is the way the pages, content, categories and
+        navigation of a website are organized.
+    </p>
+
+    <h3><i class="fas fa-building"></i> Think of a website like a building.</h3>
+
+    <p>
+        Before constructing a building, we need a plan. We decide where
+        the entrance, rooms, corridors and other areas should be located.
+    </p>
+
+    <p>
+        A website works in a similar way. Before creating pages, we decide
+        what pages are required, how they are connected and how visitors
+        will move between them.
+    </p>
+
+    <h3>A Basic Website Structure</h3>
+
+    <div class="flow">
+        <span>Business Goal</span>
+        <i class="fas fa-arrow-right"></i>
+        <span>Pages</span>
+        <i class="fas fa-arrow-right"></i>
+        <span>Navigation</span>
+        <i class="fas fa-arrow-right"></i>
+        <span>Categories</span>
+        <i class="fas fa-arrow-right"></i>
+        <span>User Journey</span>
+        <i class="fas fa-arrow-right"></i>
+        <span>Sitemap</span>
+    </div>
+</section>
+
+<!-- 03 BUSINESS GOAL -->
+<section class="section">
+    <div class="section-number">03 — PLANNING</div>
+    <h2>Business Goal & Target Audience</h2>
+
+    <p>
+        The website structure should begin with the business goal and
+        the people who will use the website.
+    </p>
+
+    <div class="cards">
+        <div class="card">
+            <i class="fas fa-bullseye"></i>
+            <h3>Business Goal</h3>
+            <p>Ask: What should the website help the business achieve?</p>
+            <ul>
+                <li>Generate enquiries</li>
+                <li>Sell products</li>
+                <li>Get bookings</li>
+                <li>Build brand awareness</li>
+                <li>Provide information</li>
+                <li>Generate leads</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-users"></i>
+            <h3>Target Audience</h3>
+            <p>Ask: Who is the website being created for?</p>
+            <ul>
+                <li>Age group</li>
+                <li>Location</li>
+                <li>Needs</li>
+                <li>Problems</li>
+                <li>Buying behaviour</li>
+                <li>Information they are looking for</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="example">
+        <strong>Example: Local Fashion Boutique</strong>
+        <p><b>Business:</b> Local Fashion Boutique</p>
+        <p><b>Goal:</b> Showcase products and generate online enquiries.</p>
+        <p><b>Audience:</b> Women looking for sarees, kurtis and accessories.</p>
+    </div>
+</section>
+
+<!-- 04 PAGES -->
+<section class="section">
+    <div class="section-number">04 — PAGES</div>
+    <h2>Planning Website Pages</h2>
+
+    <p>
+        Every website does not need the same pages. Choose pages according
+        to the business goal and visitor requirements.
+    </p>
+
+    <div class="cards">
+        <div class="card">
+            <i class="fas fa-house"></i>
+            <h3>Home</h3>
+            <p>Introduces the business and guides visitors to important sections.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-circle-info"></i>
+            <h3>About</h3>
+            <p>Explains the business, brand, people or story.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-shopping-bag"></i>
+            <h3>Products / Services</h3>
+            <p>Shows the products or services offered.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-blog"></i>
+            <h3>Blog</h3>
+            <p>Provides useful content and supports content marketing and SEO.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-phone"></i>
+            <h3>Contact</h3>
+            <p>Gives visitors a way to contact the business.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-shield-halved"></i>
+            <h3>Privacy Policy</h3>
+            <p>Provides important information about privacy and data handling.</p>
+        </div>
+    </div>
+</section>
+
+<!-- 05 COMPONENTS -->
+<section class="section">
+    <div class="section-number">05 — WEBSITE COMPONENTS</div>
+    <h2>Header, Footer & CTA</h2>
+
+    <p>
+        Important website elements should help visitors understand where
+        they are and what they can do next.
+    </p>
+
+    <h3><i class="fas fa-window-maximize"></i> Header</h3>
+    <p>
+        Usually contains the logo, main navigation, important links and
+        sometimes a primary CTA.
+    </p>
+    <div class="flow">
+        <span>Logo</span>
+        <span>Home</span>
+        <span>About</span>
+        <span>Products</span>
+        <span>Contact</span>
+    </div>
+
+    <h3><i class="fas fa-window-minimize"></i> Footer</h3>
+    <p>
+        Provides supporting links, contact details, social links and legal pages.
+    </p>
+    <div class="flow">
+        <span>Contact</span>
+        <span>Social</span>
+        <span>Privacy</span>
+        <span>Copyright</span>
+    </div>
+
+    <h3><i class="fas fa-hand-pointer"></i> CTA — Call To Action</h3>
+    <p>
+        A Call To Action tells the visitor what action they can take next.
+    </p>
+    <div class="flow">
+        <span>Shop Now</span>
+        <span>Book Now</span>
+        <span>Contact Us</span>
+        <span>Enquire</span>
+    </div>
+</section>
+
+<!-- 06 NAVIGATION -->
+<section class="section">
+    <div class="section-number">06 — NAVIGATION</div>
+    <h2>Planning Website Navigation</h2>
+
+    <p>
+        Navigation helps users move from one page or section to another
+        without getting confused.
+    </p>
+
+    <h3>Good navigation should be:</h3>
+    <ul>
+        <li>Simple</li>
+        <li>Consistent</li>
+        <li>Easy to understand</li>
+        <li>Relevant to the website goal</li>
+        <li>Easy to use on mobile devices</li>
+    </ul>
+
+    <div class="flow">
+        <span>Home</span>
+        <i class="fas fa-arrow-right"></i>
+        <span>About</span>
+        <i class="fas fa-arrow-right"></i>
+        <span>Products</span>
+        <i class="fas fa-arrow-right"></i>
+        <span>Blog</span>
+        <i class="fas fa-arrow-right"></i>
+        <span>Contact</span>
+    </div>
+</section>
+
+<!-- 07 CATEGORIES -->
+<section class="section">
+    <div class="section-number">07 — CATEGORIES</div>
+    <h2>Categories & Subcategories</h2>
+
+    <p>
+        Categories help organize products, services or content into meaningful groups.
+    </p>
+
+    <div class="example">
+        <strong>Example — Fashion Boutique</strong>
+
+        <div class="cards">
+            <div class="card">
+                <i class="fas fa-shirt"></i>
+                <h3>Products</h3>
+                <p>Main product section.</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-person-dress"></i>
+                <h3>Sarees</h3>
+                <p>Traditional and designer sarees.</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-tshirt"></i>
+                <h3>Kurtis</h3>
+                <p>Different types of kurtis.</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-gem"></i>
+                <h3>Accessories</h3>
+                <p>Jewellery and fashion accessories.</p>
+            </div>
+        </div>
+    </div>
+
+    <h3>Why Categories Matter</h3>
+    <p>
+        A well-organized category structure helps visitors find products
+        or information quickly. It also gives the website a clearer
+        content structure.
+    </p>
+</section>
+
+<!-- 08 USER JOURNEY -->
+<section class="section">
+    <div class="section-number">08 — USER JOURNEY</div>
+    <h2>Planning the User Journey</h2>
+
+    <p>
+        A user journey describes the path a visitor takes from entering
+        the website to completing the desired action.
+    </p>
+
+    <div class="flow">
+        <span><b>Home</b><br>First impression</span>
+        <i class="fas fa-arrow-right"></i>
+        <span><b>Products</b><br>Explore</span>
+        <i class="fas fa-arrow-right"></i>
+        <span><b>Sarees</b><br>Category</span>
+        <i class="fas fa-arrow-right"></i>
+        <span><b>Product</b><br>Details</span>
+        <i class="fas fa-arrow-right"></i>
+        <span><b>Enquire / Buy</b><br>Action</span>
+    </div>
+
+    <div class="example">
+        <strong>Goal:</strong>
+        Move the visitor from discovering the website to taking the
+        desired business action.
+    </div>
+</section>
+
+<!-- 09 SITEMAP -->
+<section class="section">
+    <div class="section-number">09 — SITEMAP</div>
+    <h2>What Is a Sitemap?</h2>
+
+    <p>
+        A sitemap is a visual or structured representation of the pages
+        and hierarchy of a website.
+    </p>
+
+    <div class="example">
+        <strong>Important Distinction</strong>
+        <p>
+            In this module, students first learn the concept of a
+            <b>website structure sitemap</b> — a planning document
+            showing pages and relationships.
+        </p>
+        <p>
+            Later, in the SEO module, you will learn about the
+            <b>XML sitemap</b> used by search engines.
+        </p>
+    </div>
+
+    <h3>Example — Boutique Website Sitemap</h3>
+
+    <div class="sitemap">
+        <div class="tree-root">Home</div>
+        <div class="tree-line"></div>
+
+        <div class="tree-branches">
+            <div>About</div>
+
+            <div>
+                Products
+                <small>├ Sarees</small>
+                <small>├ Kurtis</small>
+                <small>└ Accessories</small>
+            </div>
+
+            <div>Blog</div>
+            <div>Contact</div>
+            <div>Privacy</div>
+        </div>
+    </div>
+</section>
+
+<!-- 10 REAL EXAMPLE -->
+<section class="section">
+    <div class="section-number">10 — REAL EXAMPLE</div>
+    <h2>Example: Boutique Website</h2>
+
+    <p>
+        Let's combine everything we learned into one practical example.
+    </p>
+
+    <div class="example">
+        <strong>BUSINESS EXAMPLE — Fashion Boutique</strong>
+
+        <p><b>Business Goal:</b> Showcase products and generate enquiries or sales.</p>
+
+        <p><b>Target Audience:</b> Customers interested in fashion products such as sarees, kurtis and accessories.</p>
+
+        <p><b>Pages:</b> Home, About, Products, Blog, Contact, Privacy Policy.</p>
+
+        <p><b>Categories:</b> Sarees, Kurtis, Accessories.</p>
+
+        <p><b>User Journey:</b> Home → Products → Sarees → Product → Enquire / Buy.</p>
+
+        <h3>Sitemap</h3>
+
+        <div class="sitemap">
+            <div class="tree-root">Home</div>
+            <div class="tree-line"></div>
+
+            <div class="tree-branches">
+                <div>About</div>
+                <div>
+                    Products
+                    <small>├── Sarees</small>
+                    <small>├── Kurtis</small>
+                    <small>└── Accessories</small>
+                </div>
+                <div>Blog</div>
+                <div>Contact</div>
+                <div>Privacy Policy</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 11 PRACTICAL -->
+<section class="section">
+    <div class="section-number">11 — STUDENT PRACTICAL</div>
+    <h2>Plan Your Own Website Structure</h2>
+
+    <p>
+        Use the same business/project you worked with in Modules 1 and 2.
+        Do not start a completely different project unless your trainer asks you to.
+    </p>
+
+    <div class="flow">
+        <span>Business Goal</span>
+        <span>Target Audience</span>
+        <span>Pages</span>
+        <span>Navigation</span>
+        <span>Categories</span>
+        <span>User Journey</span>
+        <span>Sitemap</span>
+    </div>
+
+    <div class="practical">
+        <div class="practical-label">PRACTICAL 01</div>
+        <h3>Define the Business Goal & Target Audience</h3>
+
+        <p>Start with the business/project you are already working on.</p>
+
+        <ul>
+            <li>Write the business name.</li>
+            <li>Identify the main business goal.</li>
+            <li>Define the target audience.</li>
+            <li>Write what the visitor should do on the website.</li>
+        </ul>
+
+        <div class="deliverable">
+            <b>Deliverable:</b> One-page Business Goal & Target Audience note.
+        </div>
+    </div>
+
+    <div class="practical">
+        <div class="practical-label">PRACTICAL 02</div>
+        <h3>List Website Pages & Navigation</h3>
+
+        <p>Decide which pages your website needs.</p>
+
+        <ul>
+            <li>List the required pages.</li>
+            <li>Choose which pages appear in the main navigation.</li>
+            <li>Decide whether any page belongs under another page.</li>
+            <li>Keep the navigation simple and clear.</li>
+        </ul>
+
+        <div class="deliverable">
+            <b>Deliverable:</b> Page list + planned navigation menu.
+        </div>
+    </div>
+
+    <div class="practical">
+        <div class="practical-label">PRACTICAL 03</div>
+        <h3>Build Categories & Subcategories</h3>
+
+        <p>
+            If your website contains products, services or content groups,
+            organize them into categories.
+        </p>
+
+        <ul>
+            <li>Create main categories.</li>
+            <li>Add relevant subcategories if required.</li>
+            <li>Avoid unnecessary categories.</li>
+            <li>Make category names easy for visitors to understand.</li>
+        </ul>
+
+        <div class="deliverable">
+            <b>Deliverable:</b> Category and subcategory structure.
+        </div>
+    </div>
+
+    <div class="practical">
+        <div class="practical-label">PRACTICAL 04</div>
+        <h3>Map the User Journey</h3>
+
+        <p>
+            Select one important visitor goal and map the path from
+            landing on the website to completing the action.
+        </p>
+
+        <ul>
+            <li>Where does the visitor enter?</li>
+            <li>What page do they visit next?</li>
+            <li>What information do they need?</li>
+            <li>What CTA should they see?</li>
+            <li>What is the final desired action?</li>
+        </ul>
+
+        <div class="deliverable">
+            <b>Example:</b> Home → Products → Product → Enquire
+        </div>
+    </div>
+
+    <div class="practical">
+        <div class="practical-label">PRACTICAL 05</div>
+        <h3>Create Your Website Sitemap</h3>
+
+        <p>
+            Combine everything you planned into one visual website structure.
+        </p>
+
+        <ul>
+            <li>Start with Home.</li>
+            <li>Add the main pages.</li>
+            <li>Add categories and subcategories.</li>
+            <li>Show the page hierarchy clearly.</li>
+            <li>Make sure the sitemap matches your navigation.</li>
+        </ul>
+
+        <div class="deliverable">
+            <b>Deliverable:</b> One complete sitemap for your project.
+        </div>
+    </div>
+</section>
+
+<!-- 12 ASSIGNMENT -->
+<section class="section">
+    <div class="section-number">12 — ASSIGNMENT</div>
+    <h2>Create Your Website Structure Plan</h2>
+
+    <p>
+        Prepare a complete structure plan for the same website/project
+        you are building throughout the course.
+    </p>
+
+    <h3>Website Structure Planning Document</h3>
+
+    <ul class="assignment-list">
+        <li><label><input type="checkbox"> Business name</label></li>
+        <li><label><input type="checkbox"> Business goal</label></li>
+        <li><label><input type="checkbox"> Target audience</label></li>
+        <li><label><input type="checkbox"> Required website pages</label></li>
+        <li><label><input type="checkbox"> Main navigation</label></li>
+        <li><label><input type="checkbox"> Categories</label></li>
+        <li><label><input type="checkbox"> Subcategories if required</label></li>
+        <li><label><input type="checkbox"> Primary CTA</label></li>
+        <li><label><input type="checkbox"> User journey</label></li>
+        <li><label><input type="checkbox"> Complete sitemap</label></li>
+    </ul>
+
+    <div class="example">
+        <strong>Final Submission:</strong>
+        <p>
+            Submit your website structure plan as a PDF, document, or
+            clearly designed image/diagram, according to your trainer's instructions.
+        </p>
+    </div>
+</section>
+
+<!-- 13 QUIZ -->
+<section class="section">
+    <div class="section-number">13 — QUICK QUIZ</div>
+    <h2>Check Your Understanding</h2>
+
+    <p>Answer the questions before moving to Module 4.</p>
+
+    <form id="quizForm">
+
+        <div class="quiz-question">
+            <p>1. What should you identify before planning website pages?</p>
+
+            <label>
+                <input type="radio" name="q1" value="a">
+                Font style
+            </label>
+
+            <label>
+                <input type="radio" name="q1" value="b">
+                Business goal and target audience
+            </label>
+
+            <label>
+                <input type="radio" name="q1" value="c">
+                Footer colour
+            </label>
+        </div>
+
+        <div class="quiz-question">
+            <p>2. What is the purpose of a sitemap in website planning?</p>
+
+            <label>
+                <input type="radio" name="q2" value="a">
+                To choose website colours
+            </label>
+
+            <label>
+                <input type="radio" name="q2" value="b">
+                To write product descriptions
+            </label>
+
+            <label>
+                <input type="radio" name="q2" value="c">
+                To show the structure and relationship between pages
+            </label>
+        </div>
+
+        <div class="quiz-question">
+            <p>3. Which is an example of a user journey?</p>
+
+            <label>
+                <input type="radio" name="q3" value="a">
+                Logo → Colour → Font
+            </label>
+
+            <label>
+                <input type="radio" name="q3" value="b">
+                Home → Products → Product → Enquire
+            </label>
+
+            <label>
+                <input type="radio" name="q3" value="c">
+                Header → CSS → JavaScript
+            </label>
+        </div>
+
+        <button type="button" class="primary-btn" onclick="checkQuiz()">
+            <i class="fas fa-check-circle"></i> Check Answers
+        </button>
+
+        <button type="reset" class="primary-btn" style="background:#64748b;">
+            Try Again
+        </button>
+
+    </form>
+
+    <div id="quizResult"></div>
+</section>
+
+<!-- COMPLETION -->
+<section class="section complete">
+    <i class="fas fa-circle-check"></i>
+
+    <h2>Module 3 Complete</h2>
+
+    <p>
+        You have learned how to move from a business goal to a complete
+        website structure using pages, navigation, categories,
+        user journeys and a sitemap.
+    </p>
+
+    <div class="module-navigation">
+        <a href="module-2.html">
+            <i class="fas fa-arrow-left"></i> Module 2
+        </a>
+
+        <a href="module-4.html">
+            Module 4: E-Commerce <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <h3>WEB & E-COMMERCE Learning Lab</h3>
+    <p>Practical Web Skills for Digital Marketing Students</p>
+    <div class="footer-tag">
+        Module 4 — E-Commerce Application Development
+    </div>
+    <p style="margin-top:15px;">
+        Learn • Build • Optimize
+    </p>
+</footer>
+
+<script>
+function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("active");
+}
+
+// Close mobile menu after clicking a link
+document.querySelectorAll(".nav-links a").forEach(function(link) {
+    link.addEventListener("click", function() {
+        document.getElementById("navLinks").classList.remove("active");
+    });
+});
+
+// QUIZ
+function checkQuiz() {
+
+    const answers = {
+        q1: "b",
+        q2: "c",
+        q3: "b"
+    };
+
+    let score = 0;
+    let total = 3;
+
+    for (let question in answers) {
+        const selected = document.querySelector(
+            'input[name="' + question + '"]:checked'
+        );
+
+        if (selected && selected.value === answers[question]) {
+            score++;
+        }
+    }
+
+    const result = document.getElementById("quizResult");
+    result.style.display = "block";
+
+    if (score === total) {
+        result.style.background = "#dcfce7";
+        result.style.color = "#166534";
+        result.innerHTML =
+            "Excellent! You scored " + score + "/" + total +
+            ". All answers are correct!";
+    } else {
+        result.style.background = "#fef3c7";
+        result.style.color = "#92400e";
+        result.innerHTML =
+            "You scored " + score + "/" + total +
+            ". Review the module and try again.";
+    }
+}
+
+// Reset quiz result
+document.getElementById("quizForm").addEventListener("reset", function() {
+    document.getElementById("quizResult").style.display = "none";
+});
+</script>
+
+</body>
+</html>

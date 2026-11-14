@@ -1,0 +1,1850 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 02 - CMS vs Custom Development</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f7f9fc;
+    color:#293b50;
+    line-height:1.7;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.container{
+    width:90%;
+    max-width:1050px;
+    margin:auto;
+}
+
+/* NAVBAR */
+
+header{
+    background:white;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 3px 15px rgba(0,0,0,.06);
+}
+
+.navbar{
+    min-height:72px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+}
+
+.logo{
+    font-size:20px;
+    font-weight:800;
+    color:#175b9e;
+}
+
+.logo span{
+    color:#e89542;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:25px;
+    list-style:none;
+}
+
+.nav-links a{
+    font-size:13px;
+    font-weight:500;
+}
+
+.nav-links a:hover{
+    color:#e89542;
+}
+
+.menu-btn{
+    display:none;
+    font-size:23px;
+    color:#175b9e;
+    cursor:pointer;
+}
+
+/* HERO */
+
+.back{
+    display:inline-block;
+    margin:30px 0 15px;
+    color:#175b9e;
+    font-size:13px;
+    font-weight:600;
+}
+
+.hero{
+    padding:30px 0 55px;
+}
+
+.module-tag{
+    display:inline-block;
+    background:#e4efff;
+    color:#175b9e;
+    padding:7px 15px;
+    border-radius:30px;
+    font-size:12px;
+    font-weight:700;
+    margin-bottom:18px;
+}
+
+.hero h1{
+    font-size:42px;
+    line-height:1.3;
+    color:#193653;
+    margin-bottom:18px;
+}
+
+.hero p{
+    color:#718096;
+    font-size:14px;
+    max-width:850px;
+    margin-bottom:22px;
+}
+
+.badges{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.badge{
+    background:white;
+    padding:9px 15px;
+    border-radius:7px;
+    font-size:12px;
+    font-weight:600;
+    border:1px solid #e7edf5;
+}
+
+/* SECTIONS */
+
+section{
+    padding:48px 0;
+    border-top:1px solid #e9edf2;
+}
+
+.section-label{
+    font-size:12px;
+    font-weight:800;
+    color:#e89542;
+    letter-spacing:1.5px;
+    margin-bottom:10px;
+}
+
+h2{
+    font-size:29px;
+    color:#193653;
+    margin-bottom:20px;
+}
+
+h3{
+    color:#1e3b5a;
+}
+
+p{
+    font-size:14px;
+}
+
+.content-card,
+.learn-box,
+.assignment,
+.quiz{
+    background:white;
+    padding:28px;
+    border-radius:12px;
+    box-shadow:0 5px 20px rgba(0,0,0,.04);
+    margin-bottom:20px;
+}
+
+/* OBJECTIVES */
+
+.objectives{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+}
+
+.objective{
+    display:flex;
+    gap:15px;
+    align-items:flex-start;
+    padding:12px 0;
+}
+
+.objective-number{
+    min-width:35px;
+    height:35px;
+    display:grid;
+    place-items:center;
+    background:#e9f2ff;
+    color:#175b9e;
+    border-radius:8px;
+    font-size:13px;
+    font-weight:700;
+}
+
+.objective p{
+    color:#526276;
+    font-weight:500;
+}
+
+/* CONCEPT BOX */
+
+.example{
+    background:#edf4fc;
+    border-left:4px solid #175b9e;
+    padding:22px;
+    border-radius:7px;
+    margin:22px 0;
+}
+
+.example h3{
+    font-size:17px;
+    margin-bottom:10px;
+}
+
+/* CMS CARDS */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 5px 18px rgba(0,0,0,.04);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card i{
+    font-size:32px;
+    color:#175b9e;
+    margin-bottom:15px;
+}
+
+.card h3{
+    font-size:17px;
+    margin-bottom:10px;
+}
+
+.card p{
+    font-size:13px;
+    color:#718096;
+}
+
+.tag{
+    display:inline-block;
+    background:#eaf2fc;
+    color:#175b9e;
+    padding:5px 10px;
+    font-size:10px;
+    font-weight:700;
+    border-radius:5px;
+    margin-bottom:12px;
+}
+
+/* COMPARISON */
+
+.table-wrap{
+    overflow-x:auto;
+    background:white;
+    border-radius:12px;
+    box-shadow:0 5px 20px rgba(0,0,0,.04);
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:600px;
+}
+
+th,td{
+    padding:16px;
+    text-align:left;
+    border-bottom:1px solid #edf0f4;
+    font-size:13px;
+}
+
+th{
+    background:#eaf2fc;
+    color:#175b9e;
+}
+
+td{
+    color:#596b80;
+}
+
+.remember{
+    background:#fff5e8;
+    padding:22px;
+    border-left:4px solid #e89542;
+    border-radius:8px;
+    margin-top:22px;
+}
+
+.remember strong{
+    color:#b56c1f;
+}
+
+/* FEATURES */
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.feature{
+    background:white;
+    padding:20px;
+    border-radius:9px;
+    border:1px solid #e9edf3;
+}
+
+.feature h3{
+    font-size:15px;
+    margin-bottom:7px;
+}
+
+.feature p{
+    font-size:12px;
+    color:#718096;
+}
+
+/* PROCESS */
+
+.process{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.process-card{
+    background:white;
+    padding:20px;
+    text-align:center;
+    border-radius:10px;
+    border:1px solid #e9edf3;
+}
+
+.process-card span{
+    display:inline-grid;
+    place-items:center;
+    width:38px;
+    height:38px;
+    background:#eaf2fc;
+    color:#175b9e;
+    border-radius:50%;
+    font-weight:700;
+}
+
+.process-card h3{
+    font-size:14px;
+    margin:12px 0 7px;
+}
+
+.process-card p{
+    font-size:12px;
+    color:#718096;
+}
+
+/* PRACTICAL */
+
+.practical-card{
+    background:white;
+    padding:28px;
+    border-radius:12px;
+    margin-bottom:22px;
+    box-shadow:0 5px 20px rgba(0,0,0,.04);
+    border-left:4px solid #175b9e;
+}
+
+.practical-tag{
+    display:inline-block;
+    background:#eaf2fc;
+    color:#175b9e;
+    padding:5px 12px;
+    border-radius:5px;
+    font-size:11px;
+    font-weight:700;
+    margin-bottom:13px;
+}
+
+.practical-card h3{
+    font-size:20px;
+    margin-bottom:15px;
+}
+
+.practical-card h4{
+    font-size:14px;
+    margin:15px 0 8px;
+}
+
+.practical-card ol,
+.practical-card ul{
+    padding-left:22px;
+    color:#637287;
+    font-size:13px;
+}
+
+.practical-card li{
+    padding:5px 0;
+}
+
+.deliverable{
+    background:#edf6ff;
+    padding:17px;
+    border-radius:8px;
+    margin-top:20px;
+    color:#175b9e;
+}
+
+.deliverable h4{
+    margin:0 0 7px;
+}
+
+.deliverable p{
+    font-size:13px;
+}
+
+/* WARNING */
+
+.warning{
+    background:#fff4e8;
+    border-left:4px solid #e89542;
+    padding:20px;
+    border-radius:8px;
+    margin-top:20px;
+}
+
+/* ASSIGNMENT */
+
+.assignment h3{
+    font-size:20px;
+    margin-bottom:12px;
+}
+
+.assignment ul{
+    list-style:none;
+    margin-top:18px;
+}
+
+.assignment li{
+    padding:10px 0;
+    border-bottom:1px solid #edf0f4;
+    font-size:13px;
+    color:#536276;
+}
+
+.assignment li i{
+    color:#30a879;
+    margin-right:10px;
+}
+
+.outcome{
+    background:#eaf4ff;
+    padding:22px;
+    border-radius:10px;
+    margin-top:22px;
+}
+
+/* QUIZ */
+
+.question{
+    padding:20px 0;
+    border-bottom:1px solid #e9edf3;
+}
+
+.question h3{
+    font-size:15px;
+    margin-bottom:13px;
+}
+
+.option{
+    display:block;
+    padding:10px 13px;
+    background:#f7f9fc;
+    border-radius:7px;
+    margin:8px 0;
+    cursor:pointer;
+    font-size:13px;
+}
+
+.option:hover{
+    background:#eaf2fc;
+}
+
+.option input{
+    margin-right:9px;
+    accent-color:#175b9e;
+}
+
+.quiz-btn{
+    border:none;
+    background:#175b9e;
+    color:white;
+    padding:13px 25px;
+    border-radius:7px;
+    cursor:pointer;
+    font-family:inherit;
+    font-size:14px;
+    font-weight:600;
+    margin-top:20px;
+}
+
+.quiz-btn:hover{
+    background:#e89542;
+}
+
+#quizResult{
+    margin-top:20px;
+    padding:15px;
+    border-radius:8px;
+    font-weight:600;
+    display:none;
+}
+
+/* MODULE END */
+
+.module-end{
+    background:#eaf3ff;
+    padding:40px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.complete{
+    color:#269b70;
+    font-weight:700;
+    font-size:12px;
+    letter-spacing:1px;
+}
+
+.module-end h2{
+    margin:15px 0;
+}
+
+.module-end p{
+    max-width:700px;
+    margin:0 auto 25px;
+    color:#65748a;
+}
+
+.navigation-buttons{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.btn{
+    display:inline-block;
+    background:#175b9e;
+    color:white;
+    padding:12px 22px;
+    border-radius:7px;
+    font-size:13px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#e89542;
+    transform:translateY(-2px);
+}
+
+.btn-outline{
+    background:white;
+    color:#175b9e;
+    border:1px solid #175b9e;
+}
+
+/* FOOTER */
+
+footer{
+    background:#142b46;
+    color:white;
+    padding:30px 0;
+    margin-top:50px;
+    text-align:center;
+}
+
+footer h3{
+    color:#f0a04a;
+    font-size:19px;
+    margin-bottom:8px;
+}
+
+footer p{
+    color:#bdcbd9;
+    font-size:12px;
+    margin:5px 0;
+}
+
+footer .copyright{
+    margin-top:18px;
+    padding-top:15px;
+    border-top:1px solid #3b5068;
+    font-size:11px;
+    color:#aebdcd;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:850px){
+
+    .hero h1{
+        font-size:34px;
+    }
+
+    .cards,.features{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .process{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:600px){
+
+    .container{
+        width:92%;
+    }
+
+    .navbar{
+        min-height:65px;
+    }
+
+    .logo{
+        font-size:15px;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .nav-links{
+        display:none;
+        position:absolute;
+        top:65px;
+        left:0;
+        width:100%;
+        background:white;
+        flex-direction:column;
+        padding:20px;
+        gap:18px;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .hero h1{
+        font-size:29px;
+    }
+
+    h2{
+        font-size:24px;
+    }
+
+    section{
+        padding:35px 0;
+    }
+
+    .objectives,
+    .cards,
+    .features,
+    .process{
+        grid-template-columns:1fr;
+    }
+
+    .content-card,
+    .learn-box,
+    .practical-card,
+    .assignment,
+    .quiz{
+        padding:20px;
+    }
+
+    .module-end{
+        padding:25px 18px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<header>
+<div class="container navbar">
+
+<a href="index.html" class="logo">
+<i class="fas fa-laptop-code"></i>
+WEB & E-COMMERCE <span>Learning Lab</span>
+</a>
+
+<i class="fas fa-bars menu-btn" onclick="toggleMenu()"></i>
+
+<ul class="nav-links" id="navLinks">
+<li><a href="index.html">Home</a></li>
+<li><a href="index.html#modules">Modules</a></li>
+<li><a href="index.html#learning-flow">How It Works</a></li>
+<li><a href="index.html#capstone">Capstone</a></li>
+<li><a href="index.html#resources">Resources</a></li>
+</ul>
+
+</div>
+</header>
+
+
+<!-- BACK LINK -->
+
+<div class="container">
+<a href="index.html#modules" class="back">
+<i class="fas fa-arrow-left"></i> Back to Modules
+</a>
+</div>
+
+
+<!-- HERO -->
+
+<div class="container hero">
+
+<span class="module-tag">MODULE 02</span>
+
+<h1>CMS vs Custom Development</h1>
+
+<p>
+Learn different ways to create, manage and maintain websites.
+Explore WordPress, Shopify, WooCommerce and custom development,
+and understand which platform is suitable for different business needs.
+</p>
+
+<div class="badges">
+<span class="badge">🎯 Platforms</span>
+<span class="badge">🛠️ Practical</span>
+<span class="badge">📚 Beginner Friendly</span>
+</div>
+
+</div>
+
+
+<!-- OBJECTIVES -->
+
+<section>
+<div class="container">
+
+<div class="section-label">WHAT YOU WILL LEARN</div>
+<h2>By the end of this module</h2>
+
+<div class="learn-box">
+
+<div class="objectives">
+
+<div class="objective">
+<div class="objective-number">01</div>
+<p>Explain what a Content Management System (CMS) is.</p>
+</div>
+
+<div class="objective">
+<div class="objective-number">02</div>
+<p>Understand WordPress, Shopify and WooCommerce.</p>
+</div>
+
+<div class="objective">
+<div class="objective-number">03</div>
+<p>Differentiate CMS websites from custom-developed websites.</p>
+</div>
+
+<div class="objective">
+<div class="objective-number">04</div>
+<p>Select a suitable website platform based on business requirements.</p>
+</div>
+
+</div>
+</div>
+</div>
+</section>
+
+
+<!-- CMS INTRODUCTION -->
+
+<section>
+<div class="container">
+
+<div class="section-label">01 · LEARN</div>
+<h2>What is a CMS?</h2>
+
+<div class="content-card">
+
+<p>
+A <strong>Content Management System (CMS)</strong> is software
+that helps users create, edit, organize and manage website content
+without needing to write all the website code manually.
+</p>
+
+<div class="example">
+<h3><i class="fas fa-lightbulb"></i> Simple Example</h3>
+
+<p>
+Imagine you own a bakery website. You want to add a new cake,
+change its price, upload a product image and publish a blog post.
+</p>
+
+<p style="margin-top:12px;">
+With a CMS, you can perform these tasks through an administration
+dashboard instead of manually editing every HTML page.
+</p>
+</div>
+
+<h3>What can you manage using a CMS?</h3>
+
+<div class="features" style="margin-top:18px;">
+
+<div class="feature">
+<h3><i class="fas fa-file-alt"></i> Pages</h3>
+<p>Create About, Home, Contact and other website pages.</p>
+</div>
+
+<div class="feature">
+<h3><i class="fas fa-images"></i> Images</h3>
+<p>Upload and manage website images and media files.</p>
+</div>
+
+<div class="feature">
+<h3><i class="fas fa-pen-to-square"></i> Blog Posts</h3>
+<p>Publish articles, news and updates.</p>
+</div>
+
+<div class="feature">
+<h3><i class="fas fa-box"></i> Products</h3>
+<p>Add products, descriptions and prices.</p>
+</div>
+
+<div class="feature">
+<h3><i class="fas fa-users"></i> Users</h3>
+<p>Manage website users and permissions.</p>
+</div>
+
+<div class="feature">
+<h3><i class="fas fa-puzzle-piece"></i> Plugins</h3>
+<p>Add extra website functionality using supported extensions.</p>
+</div>
+
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- WORDPRESS -->
+
+<section>
+<div class="container">
+
+<div class="section-label">02 · PLATFORMS</div>
+<h2>What is WordPress?</h2>
+
+<div class="content-card">
+
+<p>
+<strong>WordPress</strong> is a popular open-source Content Management
+System used to create blogs, business websites, portfolios,
+educational websites and online stores.
+</p>
+
+<div class="example">
+<h3><i class="fab fa-wordpress"></i> WordPress Example</h3>
+<p>
+A computer training institute wants a website containing Home,
+About, Courses, Gallery, Blog and Contact pages.
+</p>
+<p style="margin-top:10px;">
+Using WordPress, the institute can create these pages, select a theme,
+add images and manage content through the dashboard.
+</p>
+</div>
+
+<h3>Important WordPress Features</h3>
+
+<div class="features" style="margin-top:18px;">
+
+<div class="feature">
+<h3>Themes</h3>
+<p>Control the appearance and layout of a website.</p>
+</div>
+
+<div class="feature">
+<h3>Plugins</h3>
+<p>Add features such as contact forms, SEO and security.</p>
+</div>
+
+<div class="feature">
+<h3>Dashboard</h3>
+<p>Manage pages, posts, media and settings.</p>
+</div>
+
+<div class="feature">
+<h3>Media Library</h3>
+<p>Store and manage images, videos and documents.</p>
+</div>
+
+<div class="feature">
+<h3>Users</h3>
+<p>Assign roles and permissions to website users.</p>
+</div>
+
+<div class="feature">
+<h3>SEO Support</h3>
+<p>Use SEO plugins and content practices to improve search visibility.</p>
+</div>
+
+</div>
+
+<div class="remember">
+<strong>💡 Remember:</strong>
+WordPress is a CMS. WordPress.org provides the open-source software
+that can be installed on compatible hosting. WordPress.com is a
+hosted service with different plans and features.
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- SHOPIFY -->
+
+<section>
+<div class="container">
+
+<div class="section-label">03 · E-COMMERCE PLATFORM</div>
+<h2>What is Shopify?</h2>
+
+<div class="content-card">
+
+<p>
+<strong>Shopify</strong> is a hosted e-commerce platform that helps
+businesses create and manage online stores.
+</p>
+
+<div class="example">
+<h3><i class="fas fa-store"></i> Shopify Example</h3>
+<p>
+A clothing shop wants to sell T-shirts, jeans and shoes online.
+The owner needs product pages, shopping cart, checkout and order management.
+</p>
+<p style="margin-top:10px;">
+Shopify provides tools to build and manage this online store without
+the business owner having to manage the entire server infrastructure.
+</p>
+</div>
+
+<h3>Important Shopify Features</h3>
+
+<div class="features" style="margin-top:18px;">
+
+<div class="feature">
+<h3>Product Management</h3>
+<p>Add products, images, prices and descriptions.</p>
+</div>
+
+<div class="feature">
+<h3>Shopping Cart</h3>
+<p>Allow customers to collect products before checkout.</p>
+</div>
+
+<div class="feature">
+<h3>Checkout</h3>
+<p>Provide a checkout process for customer orders.</p>
+</div>
+
+<div class="feature">
+<h3>Payments</h3>
+<p>Configure supported payment providers.</p>
+</div>
+
+<div class="feature">
+<h3>Order Management</h3>
+<p>View and manage customer orders.</p>
+</div>
+
+<div class="feature">
+<h3>Store Themes</h3>
+<p>Customize the appearance of an online store.</p>
+</div>
+
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- WOOCOMMERCE -->
+
+<section>
+<div class="container">
+
+<div class="section-label">04 · E-COMMERCE PLATFORM</div>
+<h2>What is WooCommerce?</h2>
+
+<div class="content-card">
+
+<p>
+<strong>WooCommerce</strong> is an open-source e-commerce plugin
+for WordPress. It adds online store functionality to a WordPress website.
+</p>
+
+<div class="example">
+<h3><i class="fas fa-cart-shopping"></i> WooCommerce Example</h3>
+
+<p>
+A bakery already has a WordPress website. Now the owner wants to
+sell birthday cakes, chocolates and gift boxes online.
+</p>
+
+<p style="margin-top:10px;">
+By installing WooCommerce, the website can support product listings,
+cart, checkout and order management.
+</p>
+</div>
+
+<h3>WooCommerce Features</h3>
+
+<div class="features" style="margin-top:18px;">
+
+<div class="feature">
+<h3>Products</h3>
+<p>Add simple and variable products.</p>
+</div>
+
+<div class="feature">
+<h3>Categories</h3>
+<p>Organize products into categories.</p>
+</div>
+
+<div class="feature">
+<h3>Cart</h3>
+<p>Allow customers to add and review products.</p>
+</div>
+
+<div class="feature">
+<h3>Checkout</h3>
+<p>Collect customer and delivery details.</p>
+</div>
+
+<div class="feature">
+<h3>Payments</h3>
+<p>Configure compatible payment gateways.</p>
+</div>
+
+<div class="feature">
+<h3>Reports</h3>
+<p>Review store orders and sales information.</p>
+</div>
+
+</div>
+
+<div class="remember">
+<strong>💡 Remember:</strong>
+WooCommerce is not a separate CMS. It is an e-commerce plugin
+that works with WordPress.
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- CUSTOM DEVELOPMENT -->
+
+<section>
+<div class="container">
+
+<div class="section-label">05 · CUSTOM DEVELOPMENT</div>
+<h2>What is Custom Website Development?</h2>
+
+<div class="content-card">
+
+<p>
+Custom website development means building a website according to
+specific business requirements using programming languages,
+frameworks and development tools.
+</p>
+
+<div class="example">
+<h3><i class="fas fa-code"></i> Example</h3>
+<p>
+A school wants a student management portal with student login,
+attendance, marks, fees, staff accounts and examination reports.
+</p>
+<p style="margin-top:10px;">
+If existing platforms do not meet all these requirements,
+developers can build a custom application.
+</p>
+</div>
+
+<h3>Technologies Used</h3>
+
+<div class="features" style="margin-top:18px;">
+
+<div class="feature">
+<h3>HTML</h3>
+<p>Creates the structure of web pages.</p>
+</div>
+
+<div class="feature">
+<h3>CSS</h3>
+<p>Controls design, layout and appearance.</p>
+</div>
+
+<div class="feature">
+<h3>JavaScript</h3>
+<p>Adds interactivity and dynamic behaviour.</p>
+</div>
+
+<div class="feature">
+<h3>Python / PHP</h3>
+<p>Can be used to develop server-side functionality.</p>
+</div>
+
+<div class="feature">
+<h3>MySQL</h3>
+<p>Stores and manages application data.</p>
+</div>
+
+<div class="feature">
+<h3>Django / Laravel</h3>
+<p>Frameworks for building web applications.</p>
+</div>
+
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- CMS VS CUSTOM -->
+
+<section>
+<div class="container">
+
+<div class="section-label">UNDERSTAND</div>
+<h2>CMS vs Custom Development</h2>
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+<tr>
+<th>Feature</th>
+<th>CMS</th>
+<th>Custom Development</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>Development</td>
+<td>Uses an existing platform</td>
+<td>Built according to requirements</td>
+</tr>
+
+<tr>
+<td>Coding Knowledge</td>
+<td>Less coding may be required</td>
+<td>Programming knowledge is usually required</td>
+</tr>
+
+<tr>
+<td>Customization</td>
+<td>Depends on themes and extensions</td>
+<td>Greater control over functionality and design</td>
+</tr>
+
+<tr>
+<td>Development Time</td>
+<td>Often faster to launch</td>
+<td>Can take longer</td>
+</tr>
+
+<tr>
+<td>Maintenance</td>
+<td>Platform, plugin and hosting updates</td>
+<td>Developer-managed maintenance</td>
+</tr>
+
+<tr>
+<td>Examples</td>
+<td>WordPress, Shopify</td>
+<td>Custom Django or PHP application</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<div class="remember">
+<strong>💡 Important:</strong>
+CMS is not always better than custom development, and custom development
+is not always better than CMS. The correct choice depends on the business
+requirements, budget, skills, timeline and maintenance needs.
+</div>
+
+</div>
+</section>
+
+
+<!-- PLATFORM SELECTION -->
+
+<section>
+<div class="container">
+
+<div class="section-label">PLATFORM SELECTION</div>
+<h2>Which Platform Should You Choose?</h2>
+
+<div class="cards">
+
+<div class="card">
+<span class="tag">BUSINESS WEBSITE</span>
+<i class="fab fa-wordpress"></i>
+<h3>WordPress</h3>
+<p>Suitable for business websites, blogs, portfolios and content-driven websites.</p>
+</div>
+
+<div class="card">
+<span class="tag">ONLINE STORE</span>
+<i class="fas fa-store"></i>
+<h3>Shopify</h3>
+<p>Suitable for businesses that want a hosted platform to manage online selling.</p>
+</div>
+
+<div class="card">
+<span class="tag">WORDPRESS STORE</span>
+<i class="fas fa-cart-shopping"></i>
+<h3>WooCommerce</h3>
+<p>Suitable for adding e-commerce features to an existing WordPress website.</p>
+</div>
+
+<div class="card">
+<span class="tag">SPECIAL APPLICATION</span>
+<i class="fas fa-laptop-code"></i>
+<h3>Custom Development</h3>
+<p>Suitable for specialized portals, dashboards and complex business applications.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- LEARNING PROCESS -->
+
+<section>
+<div class="container">
+
+<div class="section-label">HOW IT WORKS</div>
+<h2>How a Website Is Created Using a CMS</h2>
+
+<div class="process">
+
+<div class="process-card">
+<span>01</span>
+<h3>Choose Platform</h3>
+<p>Select WordPress or another suitable platform.</p>
+</div>
+
+<div class="process-card">
+<span>02</span>
+<h3>Install & Setup</h3>
+<p>Configure the website and required settings.</p>
+</div>
+
+<div class="process-card">
+<span>03</span>
+<h3>Design & Content</h3>
+<p>Choose a theme and add pages and content.</p>
+</div>
+
+<div class="process-card">
+<span>04</span>
+<h3>Publish</h3>
+<p>Test and publish the completed website.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- PRACTICAL -->
+
+<section>
+<div class="container">
+
+<div class="section-label">06 · DO</div>
+<h2>Student Practical</h2>
+
+<div class="content-card">
+<p>
+In this module, students will explore website platforms and understand
+how to create and manage websites using CMS tools.
+</p>
+</div>
+
+
+<!-- PRACTICAL 1 -->
+
+<div class="practical-card">
+
+<span class="practical-tag">PRACTICAL 01</span>
+
+<h3>Explore the WordPress Dashboard</h3>
+
+<p>Learn how WordPress helps users manage website content.</p>
+
+<h4>Your task:</h4>
+
+<ol>
+<li>Open a WordPress installation provided by your trainer or create a training website.</li>
+<li>Login to the WordPress administration dashboard.</li>
+<li>Explore Dashboard, Posts, Pages, Media and Appearance.</li>
+<li>Create a new page called About Us.</li>
+<li>Add a heading, paragraph and image.</li>
+<li>Publish the page and view it on the website.</li>
+</ol>
+
+<div class="deliverable">
+<h4><i class="fas fa-file-image"></i> Deliverable</h4>
+<p>Submit the WordPress website URL and screenshots of the dashboard and published About Us page.</p>
+</div>
+
+</div>
+
+
+<!-- PRACTICAL 2 -->
+
+<div class="practical-card">
+
+<span class="practical-tag">PRACTICAL 02</span>
+
+<h3>Install and Explore a WordPress Theme</h3>
+
+<p>Understand how themes control the appearance of a WordPress website.</p>
+
+<h4>Your task:</h4>
+
+<ol>
+<li>Open the WordPress dashboard.</li>
+<li>Go to Appearance → Themes.</li>
+<li>Explore the available themes.</li>
+<li>Preview a suitable theme for a business website.</li>
+<li>Activate the selected theme.</li>
+<li>Check the website layout on desktop and mobile.</li>
+</ol>
+
+<div class="deliverable">
+<h4><i class="fas fa-palette"></i> Deliverable</h4>
+<p>Submit the selected theme name and before/after screenshots of your website.</p>
+</div>
+
+</div>
+
+
+<!-- PRACTICAL 3 -->
+
+<div class="practical-card">
+
+<span class="practical-tag">PRACTICAL 03</span>
+
+<h3>Explore Plugins and Website Features</h3>
+
+<p>Learn how plugins add extra functionality to a WordPress website.</p>
+
+<h4>Your task:</h4>
+
+<ol>
+<li>Open Plugins in the WordPress dashboard.</li>
+<li>Explore plugins for contact forms, SEO and security.</li>
+<li>Identify the purpose of each selected plugin.</li>
+<li>Install a suitable plugin in your training environment.</li>
+<li>Activate it and explore its settings.</li>
+<li>Demonstrate the added feature on your website.</li>
+</ol>
+
+<div class="deliverable">
+<h4><i class="fas fa-puzzle-piece"></i> Deliverable</h4>
+<p>Submit three plugin names, their purposes and screenshots of the installed plugin.</p>
+</div>
+
+</div>
+
+
+<!-- PRACTICAL 4 -->
+
+<div class="practical-card">
+
+<span class="practical-tag">PRACTICAL 04</span>
+
+<h3>Plan an Online Store Using WooCommerce</h3>
+
+<p>Understand how a WordPress website can become an online store.</p>
+
+<h4>Your task:</h4>
+
+<ol>
+<li>Open a WordPress training website.</li>
+<li>Explore WooCommerce and its requirements.</li>
+<li>Install WooCommerce in the training environment if available.</li>
+<li>Explore Products, Categories, Orders and Store Settings.</li>
+<li>Create a sample product with name, price, description and image.</li>
+<li>Preview the product page and shopping cart.</li>
+</ol>
+
+<div class="deliverable">
+<h4><i class="fas fa-cart-shopping"></i> Deliverable</h4>
+<p>Submit a sample product page screenshot and a short explanation of how WooCommerce works.</p>
+</div>
+
+<div class="warning">
+<strong>⚠️ Important:</strong>
+Use a local or trainer-provided training website. Do not connect
+real payment gateways or publish real customer information during
+practice without authorization.
+</div>
+
+</div>
+
+
+<!-- PRACTICAL 5 -->
+
+<div class="practical-card">
+
+<span class="practical-tag">PRACTICAL 05</span>
+
+<h3>Compare CMS and Custom Development</h3>
+
+<p>Choose the right platform for different business requirements.</p>
+
+<h4>Your task:</h4>
+
+<ol>
+<li>Consider a bakery that needs a simple business website.</li>
+<li>Consider a clothing shop that wants an online store.</li>
+<li>Consider a school that needs a student management portal.</li>
+<li>Select a suitable platform for each business.</li>
+<li>Explain why you selected each platform.</li>
+<li>Prepare a comparison table.</li>
+</ol>
+
+<div class="deliverable">
+<h4><i class="fas fa-clipboard-list"></i> Deliverable</h4>
+<p>Submit your platform comparison table with reasons for each selection.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- ASSIGNMENT -->
+
+<section>
+<div class="container">
+
+<div class="section-label">07 · SUBMIT</div>
+<h2>Module Assignment</h2>
+
+<div class="assignment">
+
+<h3><i class="fas fa-file-alt"></i> Website Platform Research</h3>
+
+<p>
+Study different website platforms and prepare a report explaining
+which platform is suitable for different types of businesses.
+</p>
+
+<h3 style="font-size:16px;margin-top:25px;">Submit:</h3>
+
+<ul>
+<li><i class="fas fa-check"></i> Definition of CMS</li>
+<li><i class="fas fa-check"></i> Explanation of WordPress</li>
+<li><i class="fas fa-check"></i> Explanation of Shopify</li>
+<li><i class="fas fa-check"></i> Explanation of WooCommerce</li>
+<li><i class="fas fa-check"></i> Definition of custom development</li>
+<li><i class="fas fa-check"></i> CMS vs Custom Development comparison</li>
+<li><i class="fas fa-check"></i> Three real-world business examples</li>
+<li><i class="fas fa-check"></i> Screenshots of WordPress practical activities</li>
+</ul>
+
+<div class="outcome">
+<strong>🎯 Final Module 2 Outcome</strong>
+<p style="margin-top:10px;">
+By the end of Module 2, students should understand different
+website-building platforms and be able to recommend a suitable
+platform based on business requirements.
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- QUIZ -->
+
+<section>
+<div class="container">
+
+<div class="section-label">QUICK QUIZ</div>
+<h2>Check Your Understanding</h2>
+
+<div class="quiz">
+
+<form id="quizForm">
+
+<div class="question">
+
+<h3>1. What is the full form of CMS?</h3>
+
+<label class="option">
+<input type="radio" name="q1" value="a">
+Computer Management System
+</label>
+
+<label class="option">
+<input type="radio" name="q1" value="b">
+Content Management System
+</label>
+
+<label class="option">
+<input type="radio" name="q1" value="c">
+Content Marketing Software
+</label>
+
+</div>
+
+
+<div class="question">
+
+<h3>2. Which platform is an open-source CMS?</h3>
+
+<label class="option">
+<input type="radio" name="q2" value="a">
+WordPress
+</label>
+
+<label class="option">
+<input type="radio" name="q2" value="b">
+Shopify
+</label>
+
+<label class="option">
+<input type="radio" name="q2" value="c">
+Google Search Console
+</label>
+
+</div>
+
+
+<div class="question">
+
+<h3>3. WooCommerce is mainly used for what?</h3>
+
+<label class="option">
+<input type="radio" name="q3" value="a">
+Image editing
+</label>
+
+<label class="option">
+<input type="radio" name="q3" value="b">
+Email marketing
+</label>
+
+<label class="option">
+<input type="radio" name="q3" value="c">
+Adding e-commerce functionality to WordPress
+</label>
+
+</div>
+
+
+<div class="question">
+
+<h3>4. Which platform is a hosted e-commerce solution?</h3>
+
+<label class="option">
+<input type="radio" name="q4" value="a">
+HTML
+</label>
+
+<label class="option">
+<input type="radio" name="q4" value="b">
+Shopify
+</label>
+
+<label class="option">
+<input type="radio" name="q4" value="c">
+CSS
+</label>
+
+</div>
+
+
+<div class="question">
+
+<h3>5. Which approach is suitable for a highly specialized student management portal?</h3>
+
+<label class="option">
+<input type="radio" name="q5" value="a">
+Custom Development
+</label>
+
+<label class="option">
+<input type="radio" name="q5" value="b">
+Image Gallery
+</label>
+
+<label class="option">
+<input type="radio" name="q5" value="c">
+Search Engine
+</label>
+
+</div>
+
+
+<button type="button" class="quiz-btn" onclick="checkAnswers()">
+Check Answers <i class="fas fa-arrow-right"></i>
+</button>
+
+<button type="reset" class="quiz-btn" style="background:#718096;">
+Reset Quiz
+</button>
+
+</form>
+
+<div id="quizResult"></div>
+
+</div>
+</div>
+</section>
+
+
+<!-- MODULE END -->
+
+<section>
+<div class="container">
+
+<div class="module-end">
+
+<div class="complete">
+<i class="fas fa-circle-check"></i> MODULE 02 COMPLETE
+</div>
+
+<h2>You Know How Websites Are Built. What's Next?</h2>
+
+<p>
+You have explored CMS platforms, WordPress, Shopify, WooCommerce
+and custom website development. Next, you will learn how to plan
+website pages, navigation, categories, CTAs and user journeys
+before building a website.
+</p>
+
+<div class="navigation-buttons">
+
+<a href="module1.html" class="btn btn-outline">
+<i class="fas fa-arrow-left"></i> Module 1
+</a>
+
+<a href="index.html#modules" class="btn btn-outline">
+All Modules
+</a>
+
+<a href="module-3.html" class="btn">
+Start Module 3 <i class="fas fa-arrow-right"></i>
+</a>
+
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="container">
+
+<h3>WEB & E-COMMERCE Learning Lab</h3>
+
+<p>Practical Web Skills for Digital Marketing Students</p>
+
+<p>Module 2 — CMS vs Custom Development</p>
+
+<p>Learn • Build • Optimize</p>
+
+<div class="copyright">
+© 2026 WebTech & E-Commerce Learning Portal. All rights reserved.
+</div>
+
+</div>
+
+</footer>
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+function toggleMenu(){
+
+    document.getElementById("navLinks").classList.toggle("active");
+
+}
+
+
+// CLOSE MENU AFTER CLICK
+
+document.querySelectorAll(".nav-links a").forEach(function(link){
+
+    link.addEventListener("click",function(){
+
+        document.getElementById("navLinks").classList.remove("active");
+
+    });
+
+});
+
+
+// QUIZ
+
+function checkAnswers(){
+
+    let answers = {
+        q1:"b",
+        q2:"a",
+        q3:"c",
+        q4:"b",
+        q5:"a"
+    };
+
+    let form = document.getElementById("quizForm");
+
+    let result = document.getElementById("quizResult");
+
+    let score = 0;
+
+    let total = Object.keys(answers).length;
+
+    for(let question in answers){
+
+        let selected = form.querySelector(
+            'input[name="' + question + '"]:checked'
+        );
+
+        if(!selected){
+
+            result.style.display = "block";
+            result.style.background = "#fff4e8";
+            result.style.color = "#ae6c20";
+
+            result.innerHTML =
+            "⚠️ Please answer all questions before checking your score.";
+
+            return;
+
+        }
+
+        if(selected.value === answers[question]){
+
+            score++;
+
+        }
+
+    }
+
+    result.style.display = "block";
+
+    if(score === total){
+
+        result.style.background = "#e5f7ee";
+        result.style.color = "#20865b";
+
+        result.innerHTML =
+        "🎉 Excellent! You scored " + score + " / " + total +
+        ". All answers are correct!";
+
+    }
+
+    else{
+
+        result.style.background = "#fff0ed";
+        result.style.color = "#c34d43";
+
+        result.innerHTML =
+        "Your Score: " + score + " / " + total +
+        ". Review the module and try again.";
+
+    }
+
+}
+
+
+// RESET QUIZ RESULT
+
+document.getElementById("quizForm").addEventListener("reset",function(){
+
+    document.getElementById("quizResult").style.display = "none";
+
+});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1756 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Module 04 - E-Commerce Application Development | Web & E-Commerce Learning Lab</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+:root {
+    --primary: #2563eb;
+    --dark: #14213d;
+    --text: #475569;
+    --light: #f4f7fc;
+    --border: #e2e8f0;
+    --green: #16a34a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--light);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+/* NAVBAR */
+
+.navbar {
+    background: white;
+    padding: 15px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.06);
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--dark);
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.menu-btn {
+    display: none;
+    font-size: 23px;
+    cursor: pointer;
+    color: var(--dark);
+}
+
+/* HERO */
+
+.hero {
+    background: linear-gradient(120deg, #102044, #2563eb);
+    color: white;
+    padding: 65px 8%;
+}
+
+.back-link {
+    display: inline-block;
+    color: #dbeafe;
+    text-decoration: none;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.back-link:hover {
+    color: white;
+}
+
+.module-label {
+    color: #bfdbfe;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-size: clamp(30px, 5vw, 48px);
+    line-height: 1.25;
+    margin: 12px 0 18px;
+}
+
+.hero p {
+    max-width: 780px;
+    color: #e0eaff;
+    font-size: 15px;
+}
+
+.hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.hero-tags span {
+    border: 1px solid rgba(255,255,255,0.35);
+    background: rgba(255,255,255,0.12);
+    padding: 7px 14px;
+    border-radius: 30px;
+    font-size: 12px;
+}
+
+/* MAIN CONTENT */
+
+.container {
+    max-width: 1100px;
+    margin: 35px auto;
+    padding: 0 20px;
+}
+
+.section {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    border: 1px solid var(--border);
+    box-shadow: 0 5px 18px rgba(15,23,42,0.035);
+}
+
+.section-number {
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+h2 {
+    color: var(--dark);
+    font-size: 25px;
+    margin: 5px 0 18px;
+}
+
+h3 {
+    color: var(--dark);
+    font-size: 16px;
+    margin: 18px 0 8px;
+}
+
+p {
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+ul {
+    padding-left: 22px;
+    margin: 10px 0;
+}
+
+li {
+    font-size: 14px;
+    margin-bottom: 7px;
+}
+
+/* CARDS */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.card {
+    background: #f8faff;
+    border: 1px solid var(--border);
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.card i {
+    font-size: 23px;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    margin: 3px 0 8px;
+}
+
+.card p {
+    margin-bottom: 0;
+    font-size: 13px;
+}
+
+/* FLOW */
+
+.flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    background: #eff6ff;
+    padding: 22px;
+    border-radius: 12px;
+    margin: 18px 0;
+}
+
+.flow span {
+    background: white;
+    border: 1px solid #bfdbfe;
+    color: #1d4ed8;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.flow i {
+    color: var(--primary);
+}
+
+/* EXAMPLE */
+
+.example {
+    background: #f0fdf4;
+    border-left: 4px solid var(--green);
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 18px;
+}
+
+.example strong {
+    color: #166534;
+}
+
+/* PRODUCT BOX */
+
+.product-box {
+    background: #f8faff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 22px;
+    margin-top: 18px;
+    max-width: 430px;
+}
+
+.product-box .product-icon {
+    height: 150px;
+    background: #e0ecff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.product-box .product-icon i {
+    font-size: 65px;
+    color: var(--primary);
+}
+
+.product-box h3 {
+    margin: 5px 0;
+}
+
+.product-price {
+    color: var(--primary);
+    font-size: 23px;
+    font-weight: 800;
+    margin: 8px 0;
+}
+
+.product-info {
+    font-size: 13px;
+    border-top: 1px solid var(--border);
+    padding-top: 12px;
+    margin-top: 12px;
+}
+
+/* PRACTICAL */
+
+.practical {
+    border: 1px solid var(--border);
+    padding: 22px;
+    border-radius: 12px;
+    margin-top: 17px;
+}
+
+.practical-label {
+    color: var(--primary);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.deliverable {
+    background: #eff6ff;
+    color: #1e40af;
+    padding: 10px 13px;
+    border-radius: 7px;
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+/* PROJECT */
+
+.project-box {
+    background: #f8faff;
+    border: 1px solid #bfdbfe;
+    padding: 23px;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+.project-box h3 {
+    margin-top: 0;
+}
+
+/* ASSIGNMENT */
+
+.assignment-list {
+    list-style: none;
+    padding: 0;
+}
+
+.assignment-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.assignment-list input {
+    margin-right: 10px;
+    accent-color: var(--primary);
+}
+
+/* QUIZ */
+
+.quiz-question {
+    background: #f8faff;
+    padding: 18px;
+    border-radius: 10px;
+    margin: 15px 0;
+    border: 1px solid var(--border);
+}
+
+.quiz-question p {
+    color: var(--dark);
+    font-weight: 600;
+}
+
+.quiz-question label {
+    display: block;
+    font-size: 13px;
+    padding: 7px 0;
+    cursor: pointer;
+}
+
+.quiz-question input {
+    margin-right: 8px;
+    accent-color: var(--primary);
+}
+
+.primary-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.primary-btn:hover {
+    background: #1d4ed8;
+}
+
+#quizResult {
+    margin-top: 18px;
+    padding: 15px;
+    border-radius: 8px;
+    display: none;
+    font-weight: 600;
+}
+
+/* COMPLETION */
+
+.complete {
+    text-align: center;
+    background: #eff6ff;
+}
+
+.complete i {
+    font-size: 40px;
+    color: var(--green);
+    margin-bottom: 12px;
+}
+
+.module-navigation {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.module-navigation a {
+    text-decoration: none;
+    background: var(--dark);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.module-navigation a:hover {
+    background: var(--primary);
+}
+
+/* FOOTER */
+
+footer {
+    background: #101d36;
+    color: white;
+    text-align: center;
+    padding: 35px 15px;
+    margin-top: 40px;
+}
+
+footer h3 {
+    color: white;
+    margin: 0 0 8px;
+}
+
+footer p {
+    color: #cbd5e1;
+    font-size: 13px;
+}
+
+.footer-tag {
+    color: #93c5fd;
+    font-size: 12px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 768px) {
+    .navbar {
+        padding: 14px 5%;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 20px 7%;
+        gap: 18px;
+        box-shadow: 0 8px 15px rgba(0,0,0,0.08);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hero {
+        padding: 45px 6%;
+    }
+
+    .section {
+        padding: 22px 18px;
+    }
+
+    h2 {
+        font-size: 21px;
+    }
+
+    .flow {
+        gap: 7px;
+    }
+
+    .flow span {
+        font-size: 11px;
+        padding: 8px 10px;
+    }
+
+    .module-navigation {
+        flex-direction: column;
+    }
+
+    .module-navigation a {
+        text-align: center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <a href="index.html" class="logo">
+        WEB & E-COMMERCE<span> Learning Lab</span>
+    </a>
+
+    <div class="menu-btn" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="modules.html">Modules</a></li>
+        <li><a href="index.html#how-it-works">How It Works</a></li>
+        <li><a href="index.html#capstone">Capstone</a></li>
+        <li><a href="index.html#resources">Resources</a></li>
+    </ul>
+
+</nav>
+
+
+<!-- HERO -->
+
+<header class="hero">
+
+    <a href="modules.html" class="back-link">
+        <i class="fas fa-arrow-left"></i> Back to Modules
+    </a>
+
+    <div class="module-label">MODULE 04</div>
+
+    <h1>E-Commerce Application Development</h1>
+
+    <p>
+        Learn how an e-commerce website works by creating product categories,
+        adding products, managing stock, setting up cart and checkout,
+        understanding payments, and managing orders.
+    </p>
+
+    <div class="hero-tags">
+        <span>Categories</span>
+        <span>Products</span>
+        <span>Inventory</span>
+        <span>Cart</span>
+        <span>Checkout</span>
+        <span>Order</span>
+    </div>
+
+</header>
+
+
+<main class="container">
+
+
+<!-- 01 LEARNING OBJECTIVES -->
+
+<section class="section">
+
+    <div class="section-number">01 — LEARNING OBJECTIVES</div>
+
+    <h2>What You Will Learn</h2>
+
+    <p>
+        By the end of this module, you will understand the main components
+        of an e-commerce website and create a basic working store using
+        WordPress and WooCommerce.
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+            <i class="fas fa-store"></i>
+            <h3>E-Commerce Models</h3>
+            <p>Understand B2B, B2C and D2C models.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-box-open"></i>
+            <h3>Products</h3>
+            <p>Create products with images, price, SKU and details.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-boxes-stacked"></i>
+            <h3>Inventory</h3>
+            <p>Understand stock and product availability.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-cart-shopping"></i>
+            <h3>Cart & Checkout</h3>
+            <p>Test the shopping flow from product to checkout.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-receipt"></i>
+            <h3>Orders</h3>
+            <p>Understand order management from the admin side.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- 02 CONCEPT -->
+
+<section class="section">
+
+    <div class="section-number">02 — CONCEPT</div>
+
+    <h2>What Is E-Commerce?</h2>
+
+    <p>
+        E-commerce means buying and selling products or services through
+        digital channels such as websites and online stores.
+    </p>
+
+    <h3>A Basic E-Commerce Flow</h3>
+
+    <p>
+        A customer discovers a product, views its details, adds it to
+        the cart, proceeds to checkout, places an order and receives
+        order confirmation.
+    </p>
+
+    <div class="flow">
+
+        <span>Discover</span>
+        <i class="fas fa-arrow-right"></i>
+
+        <span>Product</span>
+        <i class="fas fa-arrow-right"></i>
+
+        <span>Cart</span>
+        <i class="fas fa-arrow-right"></i>
+
+        <span>Checkout</span>
+        <i class="fas fa-arrow-right"></i>
+
+        <span>Payment</span>
+        <i class="fas fa-arrow-right"></i>
+
+        <span>Order</span>
+
+    </div>
+
+</section>
+
+
+<!-- 03 E-COMMERCE MODELS -->
+
+<section class="section">
+
+    <div class="section-number">03 — E-COMMERCE MODELS</div>
+
+    <h2>B2B, B2C & D2C</h2>
+
+    <p>
+        Different businesses use e-commerce in different ways depending
+        on who sells to whom.
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <i class="fas fa-building"></i>
+
+            <h3>B2B</h3>
+
+            <p><b>Business to Business</b></p>
+
+            <p>
+                A business sells products or services to another business.
+            </p>
+
+            <div class="example">
+                <b>Example:</b>
+                A mobile spare-parts supplier selling parts to mobile repair shops.
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <i class="fas fa-user"></i>
+
+            <h3>B2C</h3>
+
+            <p><b>Business to Consumer</b></p>
+
+            <p>
+                A business sells directly to individual customers.
+            </p>
+
+            <div class="example">
+                <b>Example:</b>
+                A fashion store selling clothes to individual customers.
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <i class="fas fa-tag"></i>
+
+            <h3>D2C</h3>
+
+            <p><b>Direct to Consumer</b></p>
+
+            <p>
+                A brand sells its own products directly to consumers
+                without relying mainly on traditional retail intermediaries.
+            </p>
+
+            <div class="example">
+                <b>Example:</b>
+                A brand selling its own products through its own online store.
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- 04 PLATFORM -->
+
+<section class="section">
+
+    <div class="section-number">04 — PLATFORM</div>
+
+    <h2>WordPress + WooCommerce</h2>
+
+    <p>
+        In this course, WooCommerce is used as the practical e-commerce
+        platform because students can connect the store-building concepts
+        with the WordPress skills learned in Module 2.
+    </p>
+
+    <div class="flow">
+
+        <span>
+            <i class="fab fa-wordpress"></i><br>
+            WordPress<br>
+            Website / CMS
+        </span>
+
+        <i class="fas fa-plus"></i>
+
+        <span>
+            <i class="fas fa-cart-shopping"></i><br>
+            WooCommerce<br>
+            E-Commerce functionality
+        </span>
+
+        <i class="fas fa-equals"></i>
+
+        <span>
+            <i class="fas fa-store"></i><br>
+            Online Store<br>
+            Products + Cart + Orders
+        </span>
+
+    </div>
+
+    <div class="example">
+
+        <strong>Important</strong>
+
+        <p>
+            WooCommerce is not a replacement for WordPress. It works with
+            WordPress to add e-commerce features such as products, cart,
+            checkout and order management.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- 05 PRODUCT CATALOGUE -->
+
+<section class="section">
+
+    <div class="section-number">05 — PRODUCT CATALOGUE</div>
+
+    <h2>Creating a Product Catalogue</h2>
+
+    <p>
+        An e-commerce website needs organized product information so
+        customers can understand what is being sold.
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+            <i class="fas fa-image"></i>
+            <h3>Product Images</h3>
+            <p>Use clear and relevant images that show the product properly.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-align-left"></i>
+            <h3>Product Description</h3>
+            <p>Explain important product information clearly and accurately.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-indian-rupee-sign"></i>
+            <h3>Price</h3>
+            <p>Add the appropriate product price and understand regular and sale pricing.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-barcode"></i>
+            <h3>SKU</h3>
+            <p>Use a unique stock keeping unit to identify products internally.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-layer-group"></i>
+            <h3>Category</h3>
+            <p>Place the product inside the correct category or subcategory.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-boxes-stacked"></i>
+            <h3>Stock</h3>
+            <p>Record product availability and manage inventory.</p>
+        </div>
+
+    </div>
+
+
+    <h3>Example Product</h3>
+
+    <div class="product-box">
+
+        <div class="product-icon">
+            <i class="fas fa-shirt"></i>
+        </div>
+
+        <h3>Women's Cotton Kurti</h3>
+
+        <div class="product-price">₹899</div>
+
+        <div class="product-info">
+
+            <p><b>Category:</b> Kurtis</p>
+
+            <p><b>SKU:</b> KURTI-001</p>
+
+            <p><b>Stock:</b> 25</p>
+
+            <p><b>Type:</b> Simple Product</p>
+
+            <p><b>Material:</b> Cotton</p>
+
+            <p><b>Image:</b> Product photograph</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- 06 CATEGORIES -->
+
+<section class="section">
+
+    <div class="section-number">06 — CATEGORIES</div>
+
+    <h2>Categories & Subcategories</h2>
+
+    <p>
+        Categories organize products so customers can browse the store
+        more easily.
+    </p>
+
+    <div class="example">
+
+        <strong>Example — Fashion Store</strong>
+
+        <ul>
+            <li>
+                <b>Women</b>
+                <ul>
+                    <li>Sarees</li>
+                    <li>Kurtis</li>
+                    <li>Churidars</li>
+                    <li>Accessories</li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+
+    <h3>Category Planning Rule</h3>
+
+    <p>
+        Categories should help customers find products. Avoid creating
+        many unnecessary categories simply to make the store look larger.
+    </p>
+
+</section>
+
+
+<!-- 07 PRODUCT TYPES -->
+
+<section class="section">
+
+    <div class="section-number">07 — PRODUCT TYPES</div>
+
+    <h2>Simple & Variable Products</h2>
+
+    <p>
+        Products can be structured differently depending on whether
+        customers need to choose variations.
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <i class="fas fa-box"></i>
+
+            <h3>Simple Product</h3>
+
+            <p>
+                A product that does not require customers to select
+                variations before purchasing.
+            </p>
+
+            <div class="example">
+                <b>Example:</b>
+                Black Leather Wallet — ₹699
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <i class="fas fa-shirt"></i>
+
+            <h3>Variable Product</h3>
+
+            <p>
+                A product that has variations such as size, colour
+                or other selectable attributes.
+            </p>
+
+            <div class="example">
+                <b>Example:</b>
+                T-Shirt — Size S / M / L + Colours
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- 08 PRODUCT DISCOVERY -->
+
+<section class="section">
+
+    <div class="section-number">08 — PRODUCT DISCOVERY</div>
+
+    <h2>Filters & Sorting</h2>
+
+    <p>
+        Filters and sorting help customers find products more efficiently,
+        especially when a store has many products.
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+            <i class="fas fa-layer-group"></i>
+            <h3>Category Filter</h3>
+            <p>Filter products by category.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-indian-rupee-sign"></i>
+            <h3>Price Filter</h3>
+            <p>Filter products according to price.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-ruler"></i>
+            <h3>Size Filter</h3>
+            <p>Find products by available sizes.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-palette"></i>
+            <h3>Colour Filter</h3>
+            <p>Find products by colour.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-arrow-down-wide-short"></i>
+            <h3>Price Sorting</h3>
+            <p>Sort products by price.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-clock"></i>
+            <h3>Newest Sorting</h3>
+            <p>Display the newest products first.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- 09 SHOPPING FLOW -->
+
+<section class="section">
+
+    <div class="section-number">09 — SHOPPING FLOW</div>
+
+    <h2>Cart, Checkout & Payment</h2>
+
+    <p>
+        Students should understand and test the complete customer
+        shopping journey.
+    </p>
+
+    <div class="flow">
+
+        <span>Product Page</span>
+        <i class="fas fa-arrow-right"></i>
+
+        <span>Add to Cart</span>
+        <i class="fas fa-arrow-right"></i>
+
+        <span>Cart</span>
+        <i class="fas fa-arrow-right"></i>
+
+        <span>Checkout</span>
+        <i class="fas fa-arrow-right"></i>
+
+        <span>Payment</span>
+        <i class="fas fa-arrow-right"></i>
+
+        <span>Order</span>
+
+    </div>
+
+    <h3><i class="fas fa-credit-card"></i> Payment Gateway Concept</h3>
+
+    <p>
+        A payment gateway is a service that enables online payment
+        processing between a customer, the store and the payment system.
+    </p>
+
+    <div class="example">
+
+        <strong>Classroom Practice</strong>
+
+        <p>
+            For classroom practice, use a suitable test/sandbox payment
+            environment whenever possible. Do not use real customer
+            card or payment information for practice.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- 10 ORDER MANAGEMENT -->
+
+<section class="section">
+
+    <div class="section-number">10 — ORDER MANAGEMENT</div>
+
+    <h2>Managing Orders</h2>
+
+    <p>
+        Once a customer places an order, the store owner needs to manage
+        its status and fulfilment.
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+            <i class="fas fa-file-circle-plus"></i>
+            <h3>New Order</h3>
+            <p>Review the order details.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-box-open"></i>
+            <h3>Processing</h3>
+            <p>Prepare the order for fulfilment.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-circle-check"></i>
+            <h3>Completed</h3>
+            <p>Order has been fulfilled.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-rotate-left"></i>
+            <h3>Refund / Cancellation</h3>
+            <p>Understand how order issues are handled.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- 11 STUDENT PRACTICAL -->
+
+<section class="section">
+
+    <div class="section-number">11 — STUDENT PRACTICAL</div>
+
+    <h2>Build Your Basic E-Commerce Store</h2>
+
+    <p>
+        Use the website structure created in Module 3. You will now
+        turn the planned product structure into an actual store using
+        WordPress + WooCommerce.
+    </p>
+
+    <div class="flow">
+        <span>WordPress</span>
+        <span>WooCommerce</span>
+        <span>Categories</span>
+        <span>Products</span>
+        <span>Cart</span>
+        <span>Checkout</span>
+        <span>Order</span>
+    </div>
+
+
+    <!-- PRACTICAL 01 -->
+
+    <div class="practical">
+
+        <div class="practical-label">PRACTICAL 01</div>
+
+        <h3>Set Up WooCommerce</h3>
+
+        <p>
+            Use your WordPress practice website from Module 2.
+            Install and activate WooCommerce.
+        </p>
+
+        <ul>
+            <li>Open the WordPress dashboard.</li>
+            <li>Install WooCommerce.</li>
+            <li>Complete the basic store setup.</li>
+            <li>Check the WooCommerce menu.</li>
+            <li>Identify Products, Orders and Settings.</li>
+        </ul>
+
+        <div class="deliverable">
+            <b>Deliverable:</b>
+            Screenshot of the WooCommerce dashboard and basic store setup.
+        </div>
+
+    </div>
+
+
+    <!-- PRACTICAL 02 -->
+
+    <div class="practical">
+
+        <div class="practical-label">PRACTICAL 02</div>
+
+        <h3>Create Product Categories</h3>
+
+        <p>Use the categories planned in Module 3.</p>
+
+        <ul>
+            <li>Create at least 3 main product categories.</li>
+            <li>Create subcategories if required.</li>
+            <li>Use clear category names.</li>
+            <li>Add short category descriptions where useful.</li>
+        </ul>
+
+        <div class="deliverable">
+            <b>Target:</b> Minimum 3 categories.
+        </div>
+
+    </div>
+
+
+    <!-- PRACTICAL 03 -->
+
+    <div class="practical">
+
+        <div class="practical-label">PRACTICAL 03</div>
+
+        <h3>Add Products</h3>
+
+        <p>
+            Create products using the product information structure
+            learned in this module.
+        </p>
+
+        <ul>
+            <li>Product name</li>
+            <li>Product image</li>
+            <li>Description</li>
+            <li>Price</li>
+            <li>SKU</li>
+            <li>Category</li>
+            <li>Stock quantity</li>
+        </ul>
+
+        <div class="deliverable">
+            <b>Target:</b> Add 2–3 products for the first practical exercise.
+        </div>
+
+    </div>
+
+
+    <!-- PRACTICAL 04 -->
+
+    <div class="practical">
+
+        <div class="practical-label">PRACTICAL 04</div>
+
+        <h3>Create Simple & Variable Products</h3>
+
+        <p>
+            Create different product types so that you can understand
+            how product configuration changes.
+        </p>
+
+        <ul>
+            <li>Create at least one simple product.</li>
+            <li>Create one variable product if your project requires it.</li>
+            <li>Add attributes such as size or colour.</li>
+            <li>Test the variations on the product page.</li>
+        </ul>
+
+        <div class="deliverable">
+            <b>Deliverable:</b>
+            Product screenshots showing the product type and available variations.
+        </div>
+
+    </div>
+
+
+    <!-- PRACTICAL 05 -->
+
+    <div class="practical">
+
+        <div class="practical-label">PRACTICAL 05</div>
+
+        <h3>Test Product → Cart → Checkout</h3>
+
+        <p>
+            Perform a complete test purchase using your practice store.
+        </p>
+
+        <ul>
+            <li>Open a product.</li>
+            <li>Add the product to the cart.</li>
+            <li>Change quantity if applicable.</li>
+            <li>Open the cart.</li>
+            <li>Proceed to checkout.</li>
+            <li>Enter test customer details.</li>
+            <li>Complete the test order using an appropriate test method.</li>
+        </ul>
+
+        <div class="deliverable">
+            <b>Deliverable:</b>
+            Screenshots showing Product → Cart → Checkout → Order confirmation.
+        </div>
+
+    </div>
+
+
+    <!-- PRACTICAL 06 -->
+
+    <div class="practical">
+
+        <div class="practical-label">PRACTICAL 06</div>
+
+        <h3>Manage the Order from Admin</h3>
+
+        <p>
+            After placing the test order, return to the WordPress dashboard.
+        </p>
+
+        <ul>
+            <li>Open WooCommerce Orders.</li>
+            <li>Find the test order.</li>
+            <li>Review customer and product information.</li>
+            <li>Check the order status.</li>
+            <li>Update the order status.</li>
+        </ul>
+
+        <div class="deliverable">
+            <b>Deliverable:</b>
+            Screenshot of the test order inside the WordPress/WooCommerce dashboard.
+        </div>
+
+    </div>
+
+
+    <!-- PROJECT PRACTICAL -->
+
+    <div class="project-box">
+
+        <div class="practical-label">PROJECT PRACTICAL</div>
+
+        <h3>Build Your Basic Store</h3>
+
+        <p>
+            Expand the practice store into a small, structured e-commerce website.
+        </p>
+
+        <ul>
+            <li>Create 3 product categories.</li>
+            <li>Add at least 10 products.</li>
+            <li>Organize products correctly.</li>
+            <li>Add suitable product images.</li>
+            <li>Configure prices and stock.</li>
+            <li>Test product pages.</li>
+            <li>Test cart and checkout.</li>
+            <li>Create and manage a test order.</li>
+        </ul>
+
+        <div class="deliverable">
+            <b>Project Target:</b>
+            3 Categories + 10 Products + Working Product → Cart → Checkout → Order flow.
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- 12 ASSIGNMENT -->
+
+<section class="section">
+
+    <div class="section-number">12 — ASSIGNMENT</div>
+
+    <h2>Build a Basic E-Commerce Store</h2>
+
+    <p>
+        Convert your Module 3 website structure into a functional
+        e-commerce project.
+    </p>
+
+    <h3>E-Commerce Store Project</h3>
+
+    <p>Your project should contain the following:</p>
+
+    <ul class="assignment-list">
+
+        <li>
+            <label><input type="checkbox"> WordPress practice website</label>
+        </li>
+
+        <li>
+            <label><input type="checkbox"> WooCommerce installed</label>
+        </li>
+
+        <li>
+            <label><input type="checkbox"> Minimum 3 categories</label>
+        </li>
+
+        <li>
+            <label><input type="checkbox"> Minimum 10 products</label>
+        </li>
+
+        <li>
+            <label><input type="checkbox"> Product images</label>
+        </li>
+
+        <li>
+            <label><input type="checkbox"> Product descriptions</label>
+        </li>
+
+        <li>
+            <label><input type="checkbox"> Product prices</label>
+        </li>
+
+        <li>
+            <label><input type="checkbox"> SKU and stock</label>
+        </li>
+
+        <li>
+            <label><input type="checkbox"> Cart functionality</label>
+        </li>
+
+        <li>
+            <label><input type="checkbox"> Checkout flow</label>
+        </li>
+
+        <li>
+            <label><input type="checkbox"> Test order</label>
+        </li>
+
+        <li>
+            <label><input type="checkbox"> Order management screenshot</label>
+        </li>
+
+    </ul>
+
+    <div class="example">
+
+        <strong>Final Submission:</strong>
+
+        <p>
+            Submit the store URL/staging URL, screenshots of the required
+            sections and a short note describing the e-commerce flow.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- 13 QUICK QUIZ -->
+
+<section class="section">
+
+    <div class="section-number">13 — QUICK QUIZ</div>
+
+    <h2>Check Your Understanding</h2>
+
+    <p>
+        Test your understanding before moving to Module 5.
+    </p>
+
+    <form id="quizForm">
+
+
+        <!-- QUESTION 1 -->
+
+        <div class="quiz-question">
+
+            <p>1. What does WooCommerce add to WordPress?</p>
+
+            <label>
+                <input type="radio" name="q1" value="a">
+                Only blog writing
+            </label>
+
+            <label>
+                <input type="radio" name="q1" value="b">
+                E-commerce functionality
+            </label>
+
+            <label>
+                <input type="radio" name="q1" value="c">
+                Only image editing
+            </label>
+
+        </div>
+
+
+        <!-- QUESTION 2 -->
+
+        <div class="quiz-question">
+
+            <p>2. Which information can be part of a product record?</p>
+
+            <label>
+                <input type="radio" name="q2" value="a">
+                Only the product colour
+            </label>
+
+            <label>
+                <input type="radio" name="q2" value="b">
+                Name, image, description, price, SKU and stock
+            </label>
+
+            <label>
+                <input type="radio" name="q2" value="c">
+                Only the website logo
+            </label>
+
+        </div>
+
+
+        <!-- QUESTION 3 -->
+
+        <div class="quiz-question">
+
+            <p>3. What is the correct basic shopping flow?</p>
+
+            <label>
+                <input type="radio" name="q3" value="a">
+                Checkout → Product → Cart
+            </label>
+
+            <label>
+                <input type="radio" name="q3" value="b">
+                Product → Cart → Checkout → Order
+            </label>
+
+            <label>
+                <input type="radio" name="q3" value="c">
+                Order → Home → Product
+            </label>
+
+        </div>
+
+
+        <!-- QUESTION 4 -->
+
+        <div class="quiz-question">
+
+            <p>4. What is a variable product?</p>
+
+            <label>
+                <input type="radio" name="q4" value="a">
+                A product that cannot have any options
+            </label>
+
+            <label>
+                <input type="radio" name="q4" value="b">
+                A product with selectable variations such as size or colour
+            </label>
+
+            <label>
+                <input type="radio" name="q4" value="c">
+                A product without a price
+            </label>
+
+        </div>
+
+
+        <button type="button" class="primary-btn" onclick="checkQuiz()">
+            <i class="fas fa-check-circle"></i> Check Answers
+        </button>
+
+        <button type="reset" class="primary-btn" style="background:#64748b;">
+            Try Again
+        </button>
+
+    </form>
+
+    <div id="quizResult"></div>
+
+</section>
+
+
+<!-- MODULE COMPLETION -->
+
+<section class="section complete">
+
+    <i class="fas fa-circle-check"></i>
+
+    <h2>Module 4 Complete</h2>
+
+    <p>
+        You have learned how an e-commerce store is structured,
+        how products and categories are managed, and how a customer
+        moves from product selection to checkout and order management.
+    </p>
+
+    <div class="module-navigation">
+
+        <a href="module-3.html">
+            <i class="fas fa-arrow-left"></i> Module 3
+        </a>
+
+        <a href="module-5.html">
+            Module 5: AI Content Creation
+            <i class="fas fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h3>WEB & E-COMMERCE Learning Lab</h3>
+
+    <p>Practical Web Skills for Digital Marketing Students</p>
+
+    <div class="footer-tag">
+        Module 4 — E-Commerce Application Development
+    </div>
+
+    <p style="margin-top:15px;">
+        Learn • Build • Optimize
+    </p>
+
+</footer>
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+// MOBILE MENU
+
+function toggleMenu() {
+
+    document.getElementById("navLinks").classList.toggle("active");
+
+}
+
+
+// CLOSE MENU AFTER CLICKING A LINK
+
+document.querySelectorAll(".nav-links a").forEach(function(link) {
+
+    link.addEventListener("click", function() {
+
+        document.getElementById("navLinks").classList.remove("active");
+
+    });
+
+});
+
+
+// QUIZ FUNCTION
+
+function checkQuiz() {
+
+    const answers = {
+        q1: "b",
+        q2: "b",
+        q3: "b",
+        q4: "b"
+    };
+
+    let score = 0;
+
+    let total = 4;
+
+    for (let question in answers) {
+
+        const selected = document.querySelector(
+            'input[name="' + question + '"]:checked'
+        );
+
+        if (selected && selected.value === answers[question]) {
+
+            score++;
+
+        }
+
+    }
+
+    const result = document.getElementById("quizResult");
+
+    result.style.display = "block";
+
+    if (score === total) {
+
+        result.style.background = "#dcfce7";
+
+        result.style.color = "#166534";
+
+        result.innerHTML =
+            "Excellent! You scored " + score + "/" + total +
+            ". All answers are correct!";
+
+    }
+
+    else {
+
+        result.style.background = "#fef3c7";
+
+        result.style.color = "#92400e";
+
+        result.innerHTML =
+            "You scored " + score + "/" + total +
+            ". Review the module and try again.";
+
+    }
+
+}
+
+
+// RESET QUIZ RESULT
+
+document.getElementById("quizForm").addEventListener("reset", function() {
+
+    document.getElementById("quizResult").style.display = "none";
+
+});
+
+</script>
+
+</body>
+</html>
